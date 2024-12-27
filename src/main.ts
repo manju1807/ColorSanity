@@ -1,13 +1,21 @@
 import "./assets/index.css";
-
 import { registerSW } from "virtual:pwa-register";
 import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import { createApp } from "vue";
 import App from "./App.vue";
 import { i18n } from "./i18n";
-import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import { VueQueryPlugin, vueQueryPluginOptions } from "./lib/vue-query";
 import router from "./router";
+import { useThemeStore } from "./stores/theme-store";
+
+// Create app instance first
+const app = createApp(App);
+
+// Initialize Pinia
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+app.use(pinia);
 
 // Initialize PWA
 const updateSW = registerSW({
@@ -22,13 +30,14 @@ const updateSW = registerSW({
 	immediate: true,
 });
 
-const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate);
-
-const app = createApp(App);
-
-app.use(pinia);
+// Initialize plugins
 app.use(router);
 app.use(i18n);
 app.use(VueQueryPlugin, vueQueryPluginOptions);
+
+// Initialize theme store (must be after pinia setup but before mount)
+const themeStore = useThemeStore();
+await themeStore.init();
+
+// Mount app
 app.mount("#app");

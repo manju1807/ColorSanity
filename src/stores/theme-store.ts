@@ -1,12 +1,13 @@
-import { defineStore } from "pinia";
-import { useDark } from "@vueuse/core";
-import type { ThemeSettings, ThemeColors, PresetTheme } from "@/types/themes";
 import {
 	DEFAULT_THEME_SETTINGS,
-	THEME_PRESETS,
 	FONT_FAMILIES,
+	THEME_PRESETS,
 	colorUtils,
 } from "@/config/constants/themes";
+import type { PresetTheme, ThemeColors, ThemeSettings } from "@/types/themes";
+import { useDark } from "@vueuse/core";
+import { defineStore } from "pinia";
+import { watch } from "vue";
 
 export const useThemeStore = defineStore("theme", {
 	state: () => ({
@@ -21,25 +22,13 @@ export const useThemeStore = defineStore("theme", {
 	getters: {
 		isDark: () => useDark().value,
 
-		currentColors: (state) => {
-			return state.settings.colors[useDark().value ? "dark" : "light"];
+		currentColors(): ThemeColors {
+			return this.settings.colors[this.isDark ? "dark" : "light"];
 		},
 
 		currentRadius: (state) => state.settings.radius,
-
 		currentBorderWidth: (state) => state.settings.borderWidth,
-
 		currentFontFamily: (state) => state.settings.fontFamily,
-
-		// New getters for theme utilities
-		isCurrentThemeWCAGCompliant: (state) => {
-			const colors =
-				state.settings.colors[useDark().value ? "dark" : "light"];
-			return colorUtils.isWCAGCompliant(
-				colors.background,
-				colors.foreground,
-			);
-		},
 
 		currentFontStack: (state) => {
 			return (
@@ -69,14 +58,13 @@ export const useThemeStore = defineStore("theme", {
 		},
 
 		updateColors(colors: Partial<ThemeColors>, mode: "light" | "dark") {
-			// Ensure all HSL values are properly formatted
 			const formattedColors = Object.entries(colors).reduce(
 				(acc, [key, value]) => {
 					try {
 						const [h, s, l] = colorUtils.parseHSL(value);
 						acc[key] = colorUtils.formatHSL(h, s, l);
 					} catch {
-						acc[key] = value; // Keep original value if parsing fails
+						acc[key] = value;
 					}
 					return acc;
 				},
@@ -91,44 +79,40 @@ export const useThemeStore = defineStore("theme", {
 		},
 
 		resetTheme() {
-			this.settings = { ...DEFAULT_THEME_SETTINGS };
+			localStorage.removeItem("theme-settings"); // Clear persisted state
+			this.settings = {
+				radius: 0.5,
+				borderWidth: 1,
+				fontFamily: "Inter",
+				colors: JSON.parse(JSON.stringify(THEME_PRESETS.zinc)),
+			};
 			this.applyTheme();
 		},
 
 		applyTheme() {
 			const root = document.documentElement;
-			const isDark = useDark().value;
+			const isDark = this.isDark;
 
-			// Apply radius
+			if (isDark) {
+				root.classList.add("dark");
+			} else {
+				root.classList.remove("dark");
+			}
+
 			root.style.setProperty("--radius", `${this.settings.radius}rem`);
-
-			// Apply border width
 			root.style.setProperty(
 				"--border-width",
 				`${this.settings.borderWidth}px`,
 			);
+			root.style.setProperty("--font-family", this.currentFontStack);
 
-			// Apply font family with complete stack
-			root.style.setProperty(
-				"--font-family",
-				FONT_FAMILIES[
-					this.settings.fontFamily as keyof typeof FONT_FAMILIES
-				] || FONT_FAMILIES.Inter,
-			);
-
-			// Apply current mode colors
 			const currentColors =
 				this.settings.colors[isDark ? "dark" : "light"];
 			Object.entries(currentColors).forEach(([key, value]) => {
-				// Set both the HSL variable and a CSS color variable
 				root.style.setProperty(`--${key}`, value);
-				root.style.setProperty(
-					`--${key}-hsl`,
-					`hsl(${value})`, // The HSL values are already in the correct format
-				);
+				root.style.setProperty(`--${key}-hsl`, `hsl(${value})`);
 			});
 
-			// Dispatch theme change event for components that need to react
 			window.dispatchEvent(
 				new CustomEvent("theme-changed", {
 					detail: {
@@ -145,12 +129,11 @@ export const useThemeStore = defineStore("theme", {
 		applyPreset(preset: PresetTheme) {
 			const presetColors = THEME_PRESETS[preset];
 			if (presetColors) {
-				this.settings.colors = { ...presetColors };
+				this.settings.colors = JSON.parse(JSON.stringify(presetColors));
 				this.applyTheme();
 			}
 		},
 
-		// New utility methods
 		adjustThemeLightness(amount: number, mode: "light" | "dark") {
 			const colors = this.settings.colors[mode];
 			const adjustedColors = Object.entries(colors).reduce(
@@ -162,6 +145,25 @@ export const useThemeStore = defineStore("theme", {
 			);
 
 			this.updateColors(adjustedColors, mode);
+		},
+
+		init() {
+			const dark = useDark();
+			this.applyTheme();
+
+			// Ensure theme stays in sync with system/user preference
+			watch(
+				dark,
+				(newValue) => {
+					if (newValue) {
+						document.documentElement.classList.add("dark");
+					} else {
+						document.documentElement.classList.remove("dark");
+					}
+					this.applyTheme();
+				},
+				{ immediate: true },
+			);
 		},
 	},
 });
