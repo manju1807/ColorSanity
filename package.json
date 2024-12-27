@@ -126,29 +126,20 @@
 		"workbox-strategies": "^7.3.0",
 		"workbox-window": "^7.3.0"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead",
-		"not ie 11"
-	],
+	"browserslist": ["> 1%", "last 2 versions", "not dead", "not ie 11"],
 	"resolutions": {
 		"vue": "^3.4.22",
 		"@vue/compiler-sfc": "^3.4.22"
 	},
 	"lint-staged": {
-		"*": "biome check --write",
-		"*.{js,ts,vue}": [
+		"*.{js,jsx,ts,tsx,vue}": [
+			"biome check --write",
 			"biome format --write"
 		],
-		"*.{json,css,scss,md}": [
-			"biome format --write"
-		]
+		"*.{json,css,scss,md}": ["biome format --write"]
 	},
 	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		]
+		"extends": ["@commitlint/config-conventional"]
 	},
 	"husky": {
 		"hooks": {
