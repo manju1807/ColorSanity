@@ -1,0 +1,108 @@
+# Dependencies
+node_modules
+.pnpm-store/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.ignored_node_modules
+
+# Build output
+dist
+dist-ssr
+*.local
+
+# Testing
+coverage
+/cypress/videos/
+/cypress/screenshots/
+__snapshots__
+*.spec.js.snap
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and IDE files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript
+*.tsbuildinfo
+.vue-tsc
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Cache directories
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# PWA assets
+dev-dist/
+.vite/
+
+# Temporary files
+*.tmp
+*.temp
+.temp
+.tmp
+
+# Project specific
+public/workbox-*.js
+public/sw.js
+public/workbox-*.js.map
+public/sw.js.map
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/

@@ -1,0 +1,72 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"organizeImports": {
+		"enabled": true,
+		"ignore": [
+			"node_modules",
+			"dist",
+			"out",
+			"public",
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/*.complex.js",
+			"**/coverage/**",
+			"**/.ignored_node_modules/**",
+			"**/env.d.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineWidth": 80,
+		"lineEnding": "lf",
+		"ignore": ["node_modules", "dist", "out", "public"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off"
+			},
+			"nursery": { "useSortedClasses": "warn" }
+		},
+		"ignore": [
+			"node_modules",
+			"dist",
+			"out",
+			"public",
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/coverage/**",
+			"**/.ignored_node_modules/**",
+			"**/env.d.ts"
+		]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"jsxQuoteStyle": "double",
+			"semicolons": "always",
+			"trailingCommas": "all",
+			"arrowParentheses": "always"
+		}
+	},
+	"files": {
+		"ignore": [
+			"**/node_modules",
+			"**/dist",
+			"CHANGELOG.md",
+			"pnpm-lock.yaml",
+			"out"
+		]
+	}
+}
