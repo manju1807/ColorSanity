@@ -18,7 +18,9 @@
 			"**/*.complex.js",
 			"**/coverage/**",
 			"**/.ignored_node_modules/**",
-			"**/env.d.ts"
+			"**/env.d.ts",
+			"./src/components/ui/**/*",
+			"./src/components/ui/chart/**/*"
 		]
 	},
 	"formatter": {
@@ -28,7 +30,9 @@
 		"indentWidth": 4,
 		"lineWidth": 80,
 		"lineEnding": "lf",
-		"ignore": ["node_modules", "dist", "out", "public"]
+		"ignore": [ "node_modules", "dist", "out", "public",
+			"./src/components/ui/**/*",
+			"./src/components/ui/chart/**/*" ]
 	},
 	"linter": {
 		"enabled": true,
@@ -48,7 +52,9 @@
 			"**/node_modules/**",
 			"**/coverage/**",
 			"**/.ignored_node_modules/**",
-			"**/env.d.ts"
+			"**/env.d.ts",
+			"./src/components/ui/**/*",
+			"./src/components/ui/chart/**/*"
 		]
 	},
 	"javascript": {
@@ -62,11 +68,12 @@
 	},
 	"files": {
 		"ignore": [
-			"**/node_modules",
-			"**/dist",
+			"**/node_modules/**",
+			"**/dist/**",
 			"CHANGELOG.md",
 			"pnpm-lock.yaml",
-			"out"
+			"**/out/**",
+			"src/components/ui/**"
 		]
 	}
 }

@@ -69,6 +69,9 @@ importers:
       pinia:
         specifier: ^2.3.0
         version: 2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
+      pinia-plugin-persistedstate:
+        specifier: ^4.2.0
+        version: 4.2.0(magicast@0.3.5)(pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))(rollup@2.79.2)
       radix-vue:
         specifier: ^1.9.11
         version: 1.9.11(vue@3.5.13(typescript@5.7.2))
@@ -3184,6 +3187,9 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
+  deep-pick-omit@1.2.1:
+    resolution: {integrity: sha512-2J6Kc/m3irCeqVG42T+SaUMesaK7oGWaedGnQQK/+O0gYc+2SP5bKh/KKTE7d7SJ+GCA9UUE1GRzh6oDe0EnGw==}
+
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
@@ -4970,6 +4976,17 @@ packages:
   pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
+
+  pinia-plugin-persistedstate@4.2.0:
+    resolution: {integrity: sha512-3buhA7ac+ssbOIx3VRCC8oHkoFwhDM9oHRCjo7nj+O8WUqnW+jRqh7eYT5eS/DNa3H28zp3dYf/nd/Vc8zj8eQ==}
+    peerDependencies:
+      '@pinia/nuxt': '>=0.9.0'
+      pinia: '>=2.3.0'
+    peerDependenciesMeta:
+      '@pinia/nuxt':
+        optional: true
+      pinia:
+        optional: true
 
   pinia@2.3.0:
     resolution: {integrity: sha512-ohZj3jla0LL0OH5PlLTDMzqKiVw2XARmC1XYLdLWIPBMdhDW/123ZWr4zVAhtJm+aoSkFa13pYXskAvAscIkhQ==}
@@ -7304,8 +7321,7 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@babel/standalone@7.26.4':
-    optional: true
+  '@babel/standalone@7.26.4': {}
 
   '@babel/template@7.25.9':
     dependencies:
@@ -7932,7 +7948,6 @@ snapshots:
       - magicast
       - rollup
       - supports-color
-    optional: true
 
   '@nuxt/schema@3.15.0(magicast@0.3.5)(rollup@2.79.2)':
     dependencies:
@@ -7953,7 +7968,6 @@ snapshots:
       - magicast
       - rollup
       - supports-color
-    optional: true
 
   '@one-ini/wasm@0.1.1': {}
 
@@ -8149,8 +8163,7 @@ snapshots:
 
   '@sindresorhus/is@0.14.0': {}
 
-  '@sindresorhus/merge-streams@2.3.0':
-    optional: true
+  '@sindresorhus/merge-streams@2.3.0': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
@@ -9430,8 +9443,7 @@ snapshots:
       array-ify: 1.0.0
       dot-prop: 5.3.0
 
-  compatx@0.1.8:
-    optional: true
+  compatx@0.1.8: {}
 
   concat-map@0.0.1: {}
 
@@ -9843,6 +9855,8 @@ snapshots:
 
   deep-is@0.1.4: {}
 
+  deep-pick-omit@1.2.1: {}
+
   deepmerge@4.3.1: {}
 
   default-browser-id@5.0.0: {}
@@ -10145,8 +10159,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  escape-string-regexp@5.0.0:
-    optional: true
+  escape-string-regexp@5.0.0: {}
 
   eslint-plugin-vue@9.32.0(eslint@9.17.0(jiti@2.4.2)):
     dependencies:
@@ -10562,7 +10575,6 @@ snapshots:
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
-    optional: true
 
   gonzales-pe@4.3.0:
     dependencies:
@@ -10676,8 +10688,7 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  ignore@7.0.0:
-    optional: true
+  ignore@7.0.0: {}
 
   image-size@0.5.5:
     optional: true
@@ -10986,8 +10997,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-tokens@9.0.1:
-    optional: true
+  js-tokens@9.0.1: {}
 
   js-yaml@4.1.0:
     dependencies:
@@ -11067,11 +11077,9 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  klona@2.0.6:
-    optional: true
+  klona@2.0.6: {}
 
-  knitwork@1.2.0:
-    optional: true
+  knitwork@1.2.0: {}
 
   kolorist@1.8.0: {}
 
@@ -11691,8 +11699,7 @@ snapshots:
 
   path-type@4.0.0: {}
 
-  path-type@5.0.0:
-    optional: true
+  path-type@5.0.0: {}
 
   pathe@1.1.2: {}
 
@@ -11717,6 +11724,19 @@ snapshots:
 
   pify@4.0.1:
     optional: true
+
+  pinia-plugin-persistedstate@4.2.0(magicast@0.3.5)(pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))(rollup@2.79.2):
+    dependencies:
+      '@nuxt/kit': 3.15.0(magicast@0.3.5)(rollup@2.79.2)
+      deep-pick-omit: 1.2.1
+      defu: 6.1.4
+      destr: 2.0.3
+    optionalDependencies:
+      pinia: 2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
 
   pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)):
     dependencies:
@@ -12192,8 +12212,7 @@ snapshots:
 
   scrollparent@2.1.0: {}
 
-  scule@1.3.0:
-    optional: true
+  scule@1.3.0: {}
 
   semver-diff@3.1.1:
     dependencies:
@@ -12307,8 +12326,7 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  slash@5.1.0:
-    optional: true
+  slash@5.1.0: {}
 
   slice-ansi@4.0.0:
     dependencies:
@@ -12483,7 +12501,6 @@ snapshots:
   strip-literal@2.1.1:
     dependencies:
       js-tokens: 9.0.1
-    optional: true
 
   striptags@3.2.0: {}
 
@@ -12844,8 +12861,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  uncrypto@0.1.3:
-    optional: true
+  uncrypto@0.1.3: {}
 
   unctx@2.4.1:
     dependencies:
@@ -12853,7 +12869,6 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.17
       unplugin: 2.1.0
-    optional: true
 
   underscore@1.13.7: {}
 
@@ -12899,7 +12914,6 @@ snapshots:
       unplugin: 1.16.0
     transitivePeerDependencies:
       - rollup
-    optional: true
 
   unique-string@2.0.0:
     dependencies:
@@ -12933,7 +12947,6 @@ snapshots:
     dependencies:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2
-    optional: true
 
   unplugin@2.1.0:
     dependencies:
@@ -12952,7 +12965,6 @@ snapshots:
       scule: 1.3.0
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   upath@1.2.0: {}
 

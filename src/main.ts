@@ -5,7 +5,8 @@ import { createPinia } from "pinia";
 import { createApp } from "vue";
 import App from "./App.vue";
 import { i18n } from "./i18n";
-import { VueQueryPlugin, vueQueryPluginOptions } from "./plugins/vue-query";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import { VueQueryPlugin, vueQueryPluginOptions } from "./lib/vue-query";
 import router from "./router";
 
 // Initialize PWA
@@ -21,9 +22,12 @@ const updateSW = registerSW({
 	immediate: true,
 });
 
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
 const app = createApp(App);
 
-app.use(createPinia());
+app.use(pinia);
 app.use(router);
 app.use(i18n);
 app.use(VueQueryPlugin, vueQueryPluginOptions);
