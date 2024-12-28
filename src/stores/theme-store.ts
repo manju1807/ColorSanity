@@ -11,7 +11,9 @@ import { watch } from "vue";
 
 export const useThemeStore = defineStore("theme", {
 	state: () => ({
-		settings: { ...DEFAULT_THEME_SETTINGS } as ThemeSettings,
+		settings: JSON.parse(
+			JSON.stringify(DEFAULT_THEME_SETTINGS),
+		) as ThemeSettings,
 	}),
 
 	persist: {
@@ -80,12 +82,7 @@ export const useThemeStore = defineStore("theme", {
 
 		resetTheme() {
 			localStorage.removeItem("theme-settings"); // Clear persisted state
-			this.settings = {
-				radius: 0.5,
-				borderWidth: 1,
-				fontFamily: "Inter",
-				colors: JSON.parse(JSON.stringify(THEME_PRESETS.zinc)),
-			};
+			this.settings = JSON.parse(JSON.stringify(DEFAULT_THEME_SETTINGS));
 			this.applyTheme();
 		},
 
@@ -148,6 +145,13 @@ export const useThemeStore = defineStore("theme", {
 		},
 
 		init() {
+			// If no theme settings exist, start with defaults
+			if (!localStorage.getItem("theme-settings")) {
+				this.settings = JSON.parse(
+					JSON.stringify(DEFAULT_THEME_SETTINGS),
+				);
+			}
+
 			const dark = useDark();
 			this.applyTheme();
 

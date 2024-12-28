@@ -14,7 +14,9 @@ export const FONT_FAMILIES = {
 // Color utility functions
 export const colorUtils = {
 	parseHSL: (hslString: string): [number, number, number] => {
-		const [h, s, l] = hslString.split(" ").map((val) => parseFloat(val));
+		const [h, s, l] = hslString
+			.split(" ")
+			.map((val) => Number.parseFloat(val));
 		return [h, s, l];
 	},
 
