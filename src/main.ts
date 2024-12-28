@@ -35,9 +35,10 @@ app.use(router);
 app.use(i18n);
 app.use(VueQueryPlugin, vueQueryPluginOptions);
 
-// Initialize theme store (must be after pinia setup but before mount)
-const themeStore = useThemeStore();
-await themeStore.init();
-
-// Mount app
-app.mount("#app");
+// Initialize theme store and mount app using IIFE
+(async () => {
+	const themeStore = useThemeStore();
+	await themeStore.init();
+	// Mount app
+	app.mount("#app");
+})();

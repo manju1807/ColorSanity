@@ -1,26 +1,6 @@
 <script setup lang="ts">
 import ModeToggle from "@/components/common/ModeToggle.vue";
-import {
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from "@/components/ui/sheet";
-import { Palette } from "lucide-vue-next";
-import { ref, computed } from "vue";
-import { useThemeStore } from "@/stores/theme-store";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
 	Card,
 	CardContent,
@@ -28,9 +8,29 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Paintbrush, RotateCcw, Sun, Moon } from "lucide-vue-next";
+import { Label } from "@/components/ui/label";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
+import { Slider } from "@/components/ui/slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FONT_FAMILIES, THEME_PRESETS } from "@/config/constants/themes";
+import { useThemeStore } from "@/stores/theme-store";
 import type { PresetTheme } from "@/types/themes";
+import { Palette } from "lucide-vue-next";
+import { Moon, Paintbrush, RotateCcw, Sun } from "lucide-vue-next";
+import { computed, ref } from "vue";
 
 const themeStore = useThemeStore();
 const activeTab = ref("colors");
@@ -95,7 +95,7 @@ defineOptions({
     <div class="container flex h-14 items-center justify-between px-4">
       <div class="flex items-center gap-2">
         <div class="h-6 w-6 rounded-md bg-primary"></div>
-        <span class="font-semibold">HueMain</span>
+        <span class="font-semibold">Gradio</span>
       </div>
 
       <div class="flex items-center gap-2">
