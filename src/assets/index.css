@@ -73,6 +73,11 @@
 		@apply border-border transition-colors duration-500 ease-in-out;
 	}
 
+	html {
+		font-family: var(--font-family), system-ui, -apple-system,
+			BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	}
+
 	html,
 	body {
 		@apply bg-background text-foreground;

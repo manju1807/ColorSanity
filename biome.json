@@ -30,9 +30,14 @@
 		"indentWidth": 4,
 		"lineWidth": 80,
 		"lineEnding": "lf",
-		"ignore": [ "node_modules", "dist", "out", "public",
+		"ignore": [
+			"node_modules",
+			"dist",
+			"out",
+			"public",
 			"./src/components/ui/**/*",
-			"./src/components/ui/chart/**/*" ]
+			"./src/components/ui/chart/**/*"
+		]
 	},
 	"linter": {
 		"enabled": true,

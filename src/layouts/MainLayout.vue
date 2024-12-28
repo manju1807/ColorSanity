@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppNavbar from "@/components/common/Navbar.vue";
-import Footer from "../components/common/Footer.vue";
 import { RouterView } from "vue-router";
+import Footer from "../components/common/Footer.vue";
 
 defineOptions({
 	name: "MainLayout",
@@ -12,7 +12,10 @@ defineOptions({
   <div class="min-h-screen flex flex-col">
     <AppNavbar />
     <main class="flex-grow">
-      <router-view />
+      <RouterView />
+      <h1 class="text-6xl text-center">
+        hello world
+      </h1>
     </main>
     <Footer />
   </div>
