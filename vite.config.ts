@@ -37,8 +37,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				enabled: true,
 			},
 			manifest: {
-				name: "Shrinkify",
-				short_name: "Shrinkify",
+				name: "Gradio",
+				short_name: "Gradio",
 				description: "Your application description",
 				theme_color: "#ffffff",
 				icons: [
@@ -70,6 +70,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 						handler: "NetworkFirst",
 						options: {
 							cacheName: "api-cache",
+							networkTimeoutSeconds: 10,
 							expiration: {
 								maxEntries: 100,
 								maxAgeSeconds: 60 * 60 * 24, // 24 hours
