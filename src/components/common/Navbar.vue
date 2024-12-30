@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LangToggle from "@/components/common/LangToggle.vue";
 import ModeToggle from "@/components/common/ModeToggle.vue";
 import { Button } from "@/components/ui/button";
 import {
@@ -91,14 +92,14 @@ defineOptions({
 
 <template>
   <nav
-    class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
+    class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
     <div class="container flex h-14 items-center justify-between px-4">
       <div class="flex items-center gap-2">
         <div class="h-6 w-6 rounded-md bg-primary"></div>
         <span class="font-semibold">Gradio</span>
       </div>
-
       <div class="flex items-center gap-2">
+        <LangToggle />
         <ModeToggle />
         <Sheet v-model:open="sheetOpen">
           <SheetTrigger as-child>

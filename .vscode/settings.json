@@ -1,9 +1,9 @@
 {
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
-		"tsconfig.json": "tsconfig.*.json, env.d.ts",
-		"vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-		"package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig"
+		"tsconfig.json": "tsconfig.*.json",
+		"vite.config.*": "vitest.config.*, cypress.config.*, playwright.config.*",
+		"package.json": "package-lock.json, pnpm*, yarn*"
 	},
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "explicit"
@@ -19,22 +19,10 @@
 	"[html]": {
 		"editor.defaultFormatter": "vscode.html-language-features"
 	},
-	"[css]": {
-		"editor.suggest.insertMode": "replace",
-		"cSpell.fixSpellingWithRenameProvider": false,
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "aeschli.vscode-css-formatter"
-	},
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[javascriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
 	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }
