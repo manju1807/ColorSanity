@@ -39,6 +39,7 @@ app.use(VueQueryPlugin, vueQueryPluginOptions);
 (async () => {
 	const themeStore = useThemeStore();
 	await themeStore.init();
+
 	// Mount app
 	app.mount("#app");
 })();

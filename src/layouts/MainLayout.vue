@@ -11,11 +11,8 @@ defineOptions({
 <template>
   <div class="min-h-screen flex flex-col">
     <AppNavbar />
-    <main class="flex-grow">
+    <main class="min-h-screen flex-grow">
       <RouterView />
-      <h1 class="text-6xl text-center">
-        hello world
-      </h1>
     </main>
     <Footer />
   </div>
