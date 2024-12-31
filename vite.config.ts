@@ -73,7 +73,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 							networkTimeoutSeconds: 10,
 							expiration: {
 								maxEntries: 100,
-								maxAgeSeconds: 60 * 60 * 24, // 24 hours
+					      maxAgeSeconds: 60 * 60 * 24, // 24 hours (fixed syntax)
 							},
 							cacheableResponse: {
 								statuses: [0, 200],

@@ -3,10 +3,14 @@
 	"explorer.fileNesting.patterns": {
 		"tsconfig.json": "tsconfig.*.json",
 		"vite.config.*": "vitest.config.*, cypress.config.*, playwright.config.*",
-		"package.json": "package-lock.json, pnpm*, yarn*"
+		"package.json": "package-lock.json, pnpm*, yarn*",
+		"*.tsx": "*.test.tsx, *.spec.tsx, *.stories.tsx, *.styles.ts",
+		"*.jsx": "*.test.jsx, *.spec.jsx, *.stories.jsx, *.styles.js"
 	},
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit"
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "explicit"
 	},
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -20,9 +24,36 @@
 		"editor.defaultFormatter": "vscode.html-language-features"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[less]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"javascript.format.enable": true,
+	"typescript.format.enable": true,
+	"css.validate": true,
+	"scss.validate": true,
+	"less.validate": true,
+	"editor.tabSize": 2,
+	"files.associations": {
+		"*.jsx": "javascriptreact",
+		"*.tsx": "typescriptreact"
+	},
+	"json.format.keepLines": true,
+	"editor.formatOnPaste": true
 }
