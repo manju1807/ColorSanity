@@ -67,128 +67,132 @@
 </template>
 
 <script setup lang="ts">
-import type { CardOptions, ColorData, GradientColor, SolidColor } from '@/types/colors';
-import { Copy, Download, Settings } from 'lucide-vue-next';
-import { computed, ref } from 'vue';
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
-import { Label } from '../ui/label';
+import type {
+	CardOptions,
+	ColorData,
+	GradientColor,
+	SolidColor,
+} from "@/types/colors";
+import { Copy, Download, Settings } from "lucide-vue-next";
+import { computed, ref } from "vue";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Label } from "../ui/label";
 import {
-  Select,
-  SelectContent, SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '../ui/select';
-import { Slider } from '../ui/slider';
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "../ui/select";
+import { Slider } from "../ui/slider";
 const props = defineProps<{
-  colorData: ColorData
-}>()
+	colorData: ColorData;
+}>();
 
-const showOptions = ref(false)
+const showOptions = ref(false);
 const options = ref<CardOptions>({
-  opacity: 1,
-  direction: 'linear',
-  angle: 180
-} as CardOptions)
+	opacity: 1,
+	direction: "linear",
+	angle: 180,
+} as CardOptions);
 
 // Computed properties for slider values as arrays
-const angleArray = computed(() => [options.value.angle ?? 180])
-const opacityArray = computed(() => [options.value.opacity ?? 1])
+const angleArray = computed(() => [options.value.angle ?? 180]);
+const opacityArray = computed(() => [options.value.opacity ?? 1]);
 
 // Update handlers for sliders
 const updateAngle = (values: number[] | undefined) => {
-  if (values?.length) {
-    options.value.angle = values[0]
-  }
-}
+	if (values?.length) {
+		options.value.angle = values[0];
+	}
+};
 
 const updateOpacity = (values: number[] | undefined) => {
-  if (values?.length) {
-    options.value.opacity = values[0]
-  }
-}
+	if (values?.length) {
+		options.value.opacity = values[0];
+	}
+};
 
 // Computed property to check if the color is gradient
-const isGradient = computed(() =>
-  'colors' in props.colorData
-)
+const isGradient = computed(() => "colors" in props.colorData);
 
 // Generate background style based on color type and options
 const backgroundStyle = computed(() => {
-  if (isGradient.value) {
-    const { colors } = props.colorData as GradientColor
-    const { direction, angle, opacity } = options.value
+	if (isGradient.value) {
+		const { colors } = props.colorData as GradientColor;
+		const { direction, angle, opacity } = options.value;
 
-    if (direction === 'linear') {
-      return {
-        background: `linear-gradient(${angle}deg, ${colors.join(', ')})`,
-        opacity
-      }
-    } else if (direction === 'radial') {
-      return {
-        background: `radial-gradient(circle, ${colors.join(', ')})`,
-        opacity
-      }
-    } else {
-      return {
-        background: `conic-gradient(${colors.join(', ')})`,
-        opacity
-      }
-    }
-  } else {
-    const { color } = props.colorData as SolidColor
-    return {
-      backgroundColor: color,
-      opacity: options.value.opacity
-    }
-  }
-})
+		if (direction === "linear") {
+			return {
+				background: `linear-gradient(${angle}deg, ${colors.join(", ")})`,
+				opacity,
+			};
+		} else if (direction === "radial") {
+			return {
+				background: `radial-gradient(circle, ${colors.join(", ")})`,
+				opacity,
+			};
+		} else {
+			return {
+				background: `conic-gradient(${colors.join(", ")})`,
+				opacity,
+			};
+		}
+	} else {
+		const { color } = props.colorData as SolidColor;
+		return {
+			backgroundColor: color,
+			opacity: options.value.opacity,
+		};
+	}
+});
 
 // Generate CSS code for copying
 const cssCode = computed(() => {
-  if (isGradient.value) {
-    const { colors } = props.colorData as GradientColor
-    const { direction, angle, opacity } = options.value
+	if (isGradient.value) {
+		const { colors } = props.colorData as GradientColor;
+		const { direction, angle, opacity } = options.value;
 
-    let gradient = ''
-    if (direction === 'linear') {
-      gradient = `linear-gradient(${angle}deg, ${colors.join(', ')})`
-    } else if (direction === 'radial') {
-      gradient = `radial-gradient(circle, ${colors.join(', ')})`
-    } else {
-      gradient = `conic-gradient(${colors.join(', ')})`
-    }
+		let gradient = "";
+		if (direction === "linear") {
+			gradient = `linear-gradient(${angle}deg, ${colors.join(", ")})`;
+		} else if (direction === "radial") {
+			gradient = `radial-gradient(circle, ${colors.join(", ")})`;
+		} else {
+			gradient = `conic-gradient(${colors.join(", ")})`;
+		}
 
-    return `background: ${gradient};\nopacity: ${opacity};`
-  } else {
-    const { color } = props.colorData as SolidColor
-    return `background-color: ${color};\nopacity: ${options.value.opacity};`
-  }
-})
+		return `background: ${gradient};\nopacity: ${opacity};`;
+	} else {
+		const { color } = props.colorData as SolidColor;
+		return `background-color: ${color};\nopacity: ${options.value.opacity};`;
+	}
+});
 
 // Action handlers
 const actions = [
-  {
-    label: 'Download',
-    icon: Download,
-    handler: () => {
-      // Implement download functionality
-    }
-  },
-  {
-    label: 'Copy',
-    icon: Copy,
-    handler: () => copyCSS()
-  },
-  {
-    label: 'Options',
-    icon: Settings,
-    handler: () => showOptions.value = !showOptions.value
-  }
-]
+	{
+		label: "Download",
+		icon: Download,
+		handler: () => {
+			// Implement download functionality
+		},
+	},
+	{
+		label: "Copy",
+		icon: Copy,
+		handler: () => copyCSS(),
+	},
+	{
+		label: "Options",
+		icon: Settings,
+		handler: () => (showOptions.value = !showOptions.value),
+	},
+];
 
 const copyCSS = () => {
-  navigator.clipboard.writeText(cssCode.value)
-  // Optional: Show a toast notification
-}
+	navigator.clipboard.writeText(cssCode.value);
+	// Optional: Show a toast notification
+};
 </script>

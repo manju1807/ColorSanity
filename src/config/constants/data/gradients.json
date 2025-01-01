@@ -1,122 +1,122 @@
 [
 	{
 		"name": "Apple",
-		"colors": [ "#000000", "#1A1A1A" ]
+		"colors": ["#000000", "#1A1A1A"]
 	},
 	{
 		"name": "Azure Pop",
-		"colors": [ "#00B4DB", "#0083B0" ]
+		"colors": ["#00B4DB", "#0083B0"]
 	},
 	{
 		"name": "Blockchain",
-		"colors": [ "#17EAD9", "#6078EA" ]
+		"colors": ["#17EAD9", "#6078EA"]
 	},
 	{
 		"name": "Cosmic Fusion",
-		"colors": [ "#FF00CC", "#333399" ]
+		"colors": ["#FF00CC", "#333399"]
 	},
 	{
 		"name": "Deep Space",
-		"colors": [ "#000000", "#434343" ]
+		"colors": ["#000000", "#434343"]
 	},
 	{
 		"name": "Digital Water",
-		"colors": [ "#74EBD5", "#ACB6E5" ]
+		"colors": ["#74EBD5", "#ACB6E5"]
 	},
 	{
 		"name": "Discord",
-		"colors": [ "#5865F2", "#404EED" ]
+		"colors": ["#5865F2", "#404EED"]
 	},
 	{
 		"name": "Dusk",
-		"colors": [ "#2C3E50", "#3498DB" ]
+		"colors": ["#2C3E50", "#3498DB"]
 	},
 	{
 		"name": "Electric Violet",
-		"colors": [ "#4776E6", "#8E54E9" ]
+		"colors": ["#4776E6", "#8E54E9"]
 	},
 	{
 		"name": "Emerald",
-		"colors": [ "#348F50", "#56B4D3" ]
+		"colors": ["#348F50", "#56B4D3"]
 	},
 	{
 		"name": "Facebook",
-		"colors": [ "#3B5998", "#2B4170" ]
+		"colors": ["#3B5998", "#2B4170"]
 	},
 	{
 		"name": "Instagram",
-		"colors": [ "#833AB4", "#FD1D1D", "#FCB045" ]
+		"colors": ["#833AB4", "#FD1D1D", "#FCB045"]
 	},
 	{
 		"name": "LinkedIn",
-		"colors": [ "#0077B5", "#00A0DC" ]
+		"colors": ["#0077B5", "#00A0DC"]
 	},
 	{
 		"name": "Material Design",
-		"colors": [ "#4285F4", "#34A853" ]
+		"colors": ["#4285F4", "#34A853"]
 	},
 	{
 		"name": "Midnight City",
-		"colors": [ "#232526", "#414345" ]
+		"colors": ["#232526", "#414345"]
 	},
 	{
 		"name": "Mojave",
-		"colors": [ "#FFB75E", "#ED8F03" ]
+		"colors": ["#FFB75E", "#ED8F03"]
 	},
 	{
 		"name": "Netflix Red",
-		"colors": [ "#E50914", "#B20710" ]
+		"colors": ["#E50914", "#B20710"]
 	},
 	{
 		"name": "Northern Lights",
-		"colors": [ "#00C9FF", "#92FE9D" ]
+		"colors": ["#00C9FF", "#92FE9D"]
 	},
 	{
 		"name": "Ocean View",
-		"colors": [ "#2193b0", "#6dd5ed" ]
+		"colors": ["#2193b0", "#6dd5ed"]
 	},
 	{
 		"name": "Purple Love",
-		"colors": [ "#CC2B5E", "#753A88" ]
+		"colors": ["#CC2B5E", "#753A88"]
 	},
 	{
 		"name": "Royal",
-		"colors": [ "#141E30", "#243B55" ]
+		"colors": ["#141E30", "#243B55"]
 	},
 	{
 		"name": "Spotify",
-		"colors": [ "#1DB954", "#191414" ]
+		"colors": ["#1DB954", "#191414"]
 	},
 	{
 		"name": "Starfall",
-		"colors": [ "#F0C27B", "#4B1248" ]
+		"colors": ["#F0C27B", "#4B1248"]
 	},
 	{
 		"name": "Stripe",
-		"colors": [ "#635BFF", "#3A36D8" ]
+		"colors": ["#635BFF", "#3A36D8"]
 	},
 	{
 		"name": "Sublime Light",
-		"colors": [ "#FC5C7D", "#6A82FB" ]
+		"colors": ["#FC5C7D", "#6A82FB"]
 	},
 	{
 		"name": "Sunrise",
-		"colors": [ "#FF512F", "#F09819" ]
+		"colors": ["#FF512F", "#F09819"]
 	},
 	{
 		"name": "Twitter Blue",
-		"colors": [ "#1DA1F2", "#0D8ECD" ]
+		"colors": ["#1DA1F2", "#0D8ECD"]
 	},
 	{
 		"name": "Ultra Violet",
-		"colors": [ "#654EA3", "#EAAFC8" ]
+		"colors": ["#654EA3", "#EAAFC8"]
 	},
 	{
 		"name": "Wiretap",
-		"colors": [ "#8E2DE2", "#4A00E0" ]
+		"colors": ["#8E2DE2", "#4A00E0"]
 	},
 	{
 		"name": "YouTube",
-		"colors": [ "#FF0000", "#CC0000" ]
+		"colors": ["#FF0000", "#CC0000"]
 	}
 ]

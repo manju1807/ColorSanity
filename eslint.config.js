@@ -9,12 +9,17 @@ export default [
 	},
 	{
 		name: "app/files-to-ignore",
-		ignores: ["**/dist/**", "**/dist-ssr/**", "**/coverage/**", "**/dev-dist/**"],
+		ignores: [
+			"**/dist/**",
+			"**/dist-ssr/**",
+			"**/coverage/**",
+			"**/dev-dist/**",
+		],
 	},
 	{
 		name: "app/vue-rules",
 		rules: {
-      "vue/multi-word-component-names": "off"
+			"vue/multi-word-component-names": "off",
 		},
 	},
 	...pluginVue.configs["flat/essential"],

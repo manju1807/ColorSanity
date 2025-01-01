@@ -1,1178 +1,1178 @@
 [
 	{
 		"name": "Alpine Meadow",
-		"colors": [ "#ABC4AA", "#675D50", "#A9907E" ]
+		"colors": ["#ABC4AA", "#675D50", "#A9907E"]
 	},
 	{
 		"name": "Amber Glow",
-		"colors": [ "#FFB84C", "#F16767", "#A459D1" ]
+		"colors": ["#FFB84C", "#F16767", "#A459D1"]
 	},
 	{
 		"name": "Amethyst Dream",
-		"colors": [ "#9d50bb", "#6e48aa" ]
+		"colors": ["#9d50bb", "#6e48aa"]
 	},
 	{
 		"name": "Amethyst Prism",
-		"colors": [ "#4C3575", "#5B4B8A", "#7858A6" ]
+		"colors": ["#4C3575", "#5B4B8A", "#7858A6"]
 	},
 	{
 		"name": "Arctic Aurora",
-		"colors": [ "#18c2c0", "#7e48d6" ]
+		"colors": ["#18c2c0", "#7e48d6"]
 	},
 	{
 		"name": "Arctic Circle",
-		"colors": [ "#00f2fe", "#4facfe" ]
+		"colors": ["#00f2fe", "#4facfe"]
 	},
 	{
 		"name": "Arctic Dream",
-		"colors": [ "#89f7fe", "#66a6ff" ]
+		"colors": ["#89f7fe", "#66a6ff"]
 	},
 	{
 		"name": "Arctic Ember",
-		"colors": [ "#d3cce3", "#e9e4f0", "#f7f7f7" ]
+		"colors": ["#d3cce3", "#e9e4f0", "#f7f7f7"]
 	},
 	{
 		"name": "Arctic Fox",
-		"colors": [ "#9cecfb", "#65c7f7", "#0052d4" ]
+		"colors": ["#9cecfb", "#65c7f7", "#0052d4"]
 	},
 	{
 		"name": "Arctic Glacier",
-		"colors": [ "#CDFCF6", "#98ECF6", "#7EB8E1" ]
+		"colors": ["#CDFCF6", "#98ECF6", "#7EB8E1"]
 	},
 	{
 		"name": "Arctic Lights",
-		"colors": [ "#81ffef", "#f067b4" ]
+		"colors": ["#81ffef", "#f067b4"]
 	},
 	{
 		"name": "Arctic Rose",
-		"colors": [ "#F7C8E0", "#FFF6DC", "#DFFFD8" ]
+		"colors": ["#F7C8E0", "#FFF6DC", "#DFFFD8"]
 	},
 	{
 		"name": "Arctic Silence",
-		"colors": [ "#E3F4F4", "#D2E9E9", "#C4DFDF" ]
+		"colors": ["#E3F4F4", "#D2E9E9", "#C4DFDF"]
 	},
 	{
 		"name": "Arctic Storm",
-		"colors": [ "#146C94", "#19A7CE", "#AFD3E2" ]
+		"colors": ["#146C94", "#19A7CE", "#AFD3E2"]
 	},
 	{
 		"name": "Arctic Thunder",
-		"colors": [ "#bdc3c7", "#2c3e50" ]
+		"colors": ["#bdc3c7", "#2c3e50"]
 	},
 	{
 		"name": "Arctic Wind",
-		"colors": [ "#6dd5ed", "#2193b0" ]
+		"colors": ["#6dd5ed", "#2193b0"]
 	},
 	{
 		"name": "Astral Plane",
-		"colors": [ "#5ee7df", "#b490ca" ]
+		"colors": ["#5ee7df", "#b490ca"]
 	},
 	{
 		"name": "Aurora Borealis",
-		"colors": [ "#1dd1a1", "#48dbfb", "#00d2d3" ]
+		"colors": ["#1dd1a1", "#48dbfb", "#00d2d3"]
 	},
 	{
 		"name": "Aurora Wave",
-		"colors": [ "#3B44F6", "#5272F2", "#6C9BCF" ]
+		"colors": ["#3B44F6", "#5272F2", "#6C9BCF"]
 	},
 	{
 		"name": "Autumn Whisper",
-		"colors": [ "#dad299", "#b0dab9" ]
+		"colors": ["#dad299", "#b0dab9"]
 	},
 	{
 		"name": "Azure Depths",
-		"colors": [ "#1B9C85", "#4C4C6D", "#E8F6EF" ]
+		"colors": ["#1B9C85", "#4C4C6D", "#E8F6EF"]
 	},
 	{
 		"name": "Bamboo Forest",
-		"colors": [ "#43a047", "#1de9b6" ]
+		"colors": ["#43a047", "#1de9b6"]
 	},
 	{
 		"name": "Bamboo Forest",
-		"colors": [ "#1C6758", "#227C70", "#3D8361" ]
+		"colors": ["#1C6758", "#227C70", "#3D8361"]
 	},
 	{
 		"name": "Berry Smoothie",
-		"colors": [ "#ff7eb3", "#ff758c", "#ff7070" ]
+		"colors": ["#ff7eb3", "#ff758c", "#ff7070"]
 	},
 	{
 		"name": "Binary Sunset",
-		"colors": [ "#ff4b1f", "#1fddff" ]
+		"colors": ["#ff4b1f", "#1fddff"]
 	},
 	{
 		"name": "Binary Sunset",
-		"colors": [ "#FF8B13", "#FF6E31", "#CD1818" ]
+		"colors": ["#FF8B13", "#FF6E31", "#CD1818"]
 	},
 	{
 		"name": "Blue Lagoon",
-		"colors": [ "#43c6ac", "#191654" ]
+		"colors": ["#43c6ac", "#191654"]
 	},
 	{
 		"name": "Borealis Dream",
-		"colors": [ "#47b8e0", "#7ccfdd", "#9fe6d6" ]
+		"colors": ["#47b8e0", "#7ccfdd", "#9fe6d6"]
 	},
 	{
 		"name": "Bourbon Vanilla",
-		"colors": [ "#FFB07F", "#FFCF96", "#FFF6DC" ]
+		"colors": ["#FFB07F", "#FFCF96", "#FFF6DC"]
 	},
 	{
 		"name": "Byzantine",
-		"colors": [ "#590696", "#8806A6", "#CA01C9" ]
+		"colors": ["#590696", "#8806A6", "#CA01C9"]
 	},
 	{
 		"name": "Cherry Blossom",
-		"colors": [ "#ffd1ff", "#ff99cc", "#ff6699" ]
+		"colors": ["#ffd1ff", "#ff99cc", "#ff6699"]
 	},
 	{
 		"name": "Cherry Cola",
-		"colors": [ "#eb3349", "#f45c43" ]
+		"colors": ["#eb3349", "#f45c43"]
 	},
 	{
 		"name": "Citrus Dream",
-		"colors": [ "#ffd89b", "#19547b" ]
+		"colors": ["#ffd89b", "#19547b"]
 	},
 	{
 		"name": "Coral Garden",
-		"colors": [ "#E57C23", "#E8AA42", "#F8F1F1" ]
+		"colors": ["#E57C23", "#E8AA42", "#F8F1F1"]
 	},
 	{
 		"name": "Coral Reef",
-		"colors": [ "#ff7e5f", "#feb47b" ]
+		"colors": ["#ff7e5f", "#feb47b"]
 	},
 	{
 		"name": "Coral Springs",
-		"colors": [ "#ff8177", "#b12a5b" ]
+		"colors": ["#ff8177", "#b12a5b"]
 	},
 	{
 		"name": "Cosmic Aura",
-		"colors": [ "#4364f7", "#6fb1fc" ]
+		"colors": ["#4364f7", "#6fb1fc"]
 	},
 	{
 		"name": "Cosmic Dust",
-		"colors": [ "#e94057", "#f27121" ]
+		"colors": ["#e94057", "#f27121"]
 	},
 	{
 		"name": "Cosmic Fusion",
-		"colors": [ "#ff0099", "#493240" ]
+		"colors": ["#ff0099", "#493240"]
 	},
 	{
 		"name": "Cosmic Latte",
-		"colors": [ "#fff1eb", "#ace0f9" ]
+		"colors": ["#fff1eb", "#ace0f9"]
 	},
 	{
 		"name": "Cosmic Ray",
-		"colors": [ "#654ea3", "#eaafc8" ]
+		"colors": ["#654ea3", "#eaafc8"]
 	},
 	{
 		"name": "Cosmic Ray",
-		"colors": [ "#0F0F0F", "#232D3F", "#005B41" ]
+		"colors": ["#0F0F0F", "#232D3F", "#005B41"]
 	},
 	{
 		"name": "Cosmic Wave",
-		"colors": [ "#6441a5", "#2a0845", "#6441a5" ]
+		"colors": ["#6441a5", "#2a0845", "#6441a5"]
 	},
 	{
 		"name": "Cotton Candy",
-		"colors": [ "#FFB6C1", "#FFC0CB", "#FFE4E1" ]
+		"colors": ["#FFB6C1", "#FFC0CB", "#FFE4E1"]
 	},
 	{
 		"name": "Crimson Fire",
-		"colors": [ "#7b4397", "#dc2430" ]
+		"colors": ["#7b4397", "#dc2430"]
 	},
 	{
 		"name": "Crimson Night",
-		"colors": [ "#ed213a", "#93291e" ]
+		"colors": ["#ed213a", "#93291e"]
 	},
 	{
 		"name": "Crimson Silk",
-		"colors": [ "#D80032", "#FF7D7D", "#FFB7B7" ]
+		"colors": ["#D80032", "#FF7D7D", "#FFB7B7"]
 	},
 	{
 		"name": "Crimson Steel",
-		"colors": [ "#636363", "#a2ab58" ]
+		"colors": ["#636363", "#a2ab58"]
 	},
 	{
 		"name": "Crystal Blue",
-		"colors": [ "#9bafd9", "#103783" ]
+		"colors": ["#9bafd9", "#103783"]
 	},
 	{
 		"name": "Crystal Cave",
-		"colors": [ "#3a1c71", "#d76d77", "#ffaf7b" ]
+		"colors": ["#3a1c71", "#d76d77", "#ffaf7b"]
 	},
 	{
 		"name": "Crystal Clear",
-		"colors": [ "#159957", "#155799" ]
+		"colors": ["#159957", "#155799"]
 	},
 	{
 		"name": "Crystal Dawn",
-		"colors": [ "#FF8989", "#FFB6B6", "#FDF7C3" ]
+		"colors": ["#FF8989", "#FFB6B6", "#FDF7C3"]
 	},
 	{
 		"name": "Crystal Fire",
-		"colors": [ "#ff0844", "#ffb199" ]
+		"colors": ["#ff0844", "#ffb199"]
 	},
 	{
 		"name": "Crystal Fog",
-		"colors": [ "#96B6C5", "#ADC4CE", "#EEE0C9" ]
+		"colors": ["#96B6C5", "#ADC4CE", "#EEE0C9"]
 	},
 	{
 		"name": "Crystal Forest",
-		"colors": [ "#C9FFBF", "#FFAFBD" ]
+		"colors": ["#C9FFBF", "#FFAFBD"]
 	},
 	{
 		"name": "Crystal Lagoon",
-		"colors": [ "#B0DAFF", "#19A7CE", "#0C134F" ]
+		"colors": ["#B0DAFF", "#19A7CE", "#0C134F"]
 	},
 	{
 		"name": "Crystal Maze",
-		"colors": [ "#3f51b5", "#7986cb", "#9fa8da" ]
+		"colors": ["#3f51b5", "#7986cb", "#9fa8da"]
 	},
 	{
 		"name": "Crystal Pine",
-		"colors": [ "#065535", "#127547", "#23A455" ]
+		"colors": ["#065535", "#127547", "#23A455"]
 	},
 	{
 		"name": "Crystal Prism",
-		"colors": [ "#fc00ff", "#21d4fd" ]
+		"colors": ["#fc00ff", "#21d4fd"]
 	},
 	{
 		"name": "Crystal River",
-		"colors": [ "#000046", "#1CB5E0" ]
+		"colors": ["#000046", "#1CB5E0"]
 	},
 	{
 		"name": "Crystal Void",
-		"colors": [ "#060047", "#B3005E", "#FF5F9E" ]
+		"colors": ["#060047", "#B3005E", "#FF5F9E"]
 	},
 	{
 		"name": "Crystal Waters",
-		"colors": [ "#22e1ff", "#1d8fe1" ]
+		"colors": ["#22e1ff", "#1d8fe1"]
 	},
 	{
 		"name": "Cyber Bronze",
-		"colors": [ "#4F4557", "#6D5D6E", "#F4EEE0" ]
+		"colors": ["#4F4557", "#6D5D6E", "#F4EEE0"]
 	},
 	{
 		"name": "Cyber Chrome",
-		"colors": [ "#2C3639", "#3F4E4F", "#A27B5C" ]
+		"colors": ["#2C3639", "#3F4E4F", "#A27B5C"]
 	},
 	{
 		"name": "Cyber Dawn",
-		"colors": [ "#00c9ff", "#92fe9d" ]
+		"colors": ["#00c9ff", "#92fe9d"]
 	},
 	{
 		"name": "Cyber Forest",
-		"colors": [ "#00b712", "#5aff15" ]
+		"colors": ["#00b712", "#5aff15"]
 	},
 	{
 		"name": "Cyber Fusion",
-		"colors": [ "#3494E6", "#EC6EAD" ]
+		"colors": ["#3494E6", "#EC6EAD"]
 	},
 	{
 		"name": "Cyber Gold",
-		"colors": [ "#FFB000", "#FFCB42", "#FFE5CA" ]
+		"colors": ["#FFB000", "#FFCB42", "#FFE5CA"]
 	},
 	{
 		"name": "Cyber Green",
-		"colors": [ "#00b09b", "#96c93d" ]
+		"colors": ["#00b09b", "#96c93d"]
 	},
 	{
 		"name": "Cyber Jade",
-		"colors": [ "#13005A", "#00337C", "#1C82AD" ]
+		"colors": ["#13005A", "#00337C", "#1C82AD"]
 	},
 	{
 		"name": "Cyber Lime",
-		"colors": [ "#BABD42", "#D4E157", "#CDDC39" ]
+		"colors": ["#BABD42", "#D4E157", "#CDDC39"]
 	},
 	{
 		"name": "Cyber Matrix",
-		"colors": [ "#000000", "#0f9b0f" ]
+		"colors": ["#000000", "#0f9b0f"]
 	},
 	{
 		"name": "Cyber Mint",
-		"colors": [ "#82CD47", "#54B435", "#379237" ]
+		"colors": ["#82CD47", "#54B435", "#379237"]
 	},
 	{
 		"name": "Cyber Navy",
-		"colors": [ "#27374D", "#526D82", "#9DB2BF" ]
+		"colors": ["#27374D", "#526D82", "#9DB2BF"]
 	},
 	{
 		"name": "Cyber Noir",
-		"colors": [ "#141e30", "#243b55", "#34495e" ]
+		"colors": ["#141e30", "#243b55", "#34495e"]
 	},
 	{
 		"name": "Cyber Orange",
-		"colors": [ "#f7971e", "#ffd200" ]
+		"colors": ["#f7971e", "#ffd200"]
 	},
 	{
 		"name": "Cyber Orchid",
-		"colors": [ "#B799FF", "#ACBCFF", "#AEE2FF" ]
+		"colors": ["#B799FF", "#ACBCFF", "#AEE2FF"]
 	},
 	{
 		"name": "Cyber Punk",
-		"colors": [ "#ff0099", "#00ffff" ]
+		"colors": ["#ff0099", "#00ffff"]
 	},
 	{
 		"name": "Cyber Purple",
-		"colors": [ "#bc4e9c", "#f80759" ]
+		"colors": ["#bc4e9c", "#f80759"]
 	},
 	{
 		"name": "Cyber Rain",
-		"colors": [ "#088395", "#05BFDB", "#00FFCA" ]
+		"colors": ["#088395", "#05BFDB", "#00FFCA"]
 	},
 	{
 		"name": "Cyber Rose",
-		"colors": [ "#EC008C", "#FC6767" ]
+		"colors": ["#EC008C", "#FC6767"]
 	},
 	{
 		"name": "Cyber Sunset",
-		"colors": [ "#ff00cc", "#333399" ]
+		"colors": ["#ff00cc", "#333399"]
 	},
 	{
 		"name": "Cyber Sunset",
-		"colors": [ "#ff6e7f", "#bfe9ff" ]
+		"colors": ["#ff6e7f", "#bfe9ff"]
 	},
 	{
 		"name": "Dark Forest",
-		"colors": [ "#004e92", "#000428" ]
+		"colors": ["#004e92", "#000428"]
 	},
 	{
 		"name": "Dark Matter",
-		"colors": [ "#1e130c", "#9a8478" ]
+		"colors": ["#1e130c", "#9a8478"]
 	},
 	{
 		"name": "Dark Skies",
-		"colors": [ "#4b79a1", "#283e51" ]
+		"colors": ["#4b79a1", "#283e51"]
 	},
 	{
 		"name": "Dark Wave",
-		"colors": [ "#0f2027", "#203a43", "#2c5364" ]
+		"colors": ["#0f2027", "#203a43", "#2c5364"]
 	},
 	{
 		"name": "Deep Blue",
-		"colors": [ "#0575e6", "#021b79" ]
+		"colors": ["#0575e6", "#021b79"]
 	},
 	{
 		"name": "Deep Ocean",
-		"colors": [ "#2c3e50", "#3498db" ]
+		"colors": ["#2c3e50", "#3498db"]
 	},
 	{
 		"name": "Deep Purple",
-		"colors": [ "#6a3093", "#a044ff" ]
+		"colors": ["#6a3093", "#a044ff"]
 	},
 	{
 		"name": "Deep Space",
-		"colors": [ "#000000", "#434343" ]
+		"colors": ["#000000", "#434343"]
 	},
 	{
 		"name": "Desert Bloom",
-		"colors": [ "#ff9a9e", "#fad0c4" ]
+		"colors": ["#ff9a9e", "#fad0c4"]
 	},
 	{
 		"name": "Desert Night",
-		"colors": [ "#0f0c29", "#302b63", "#24243e" ]
+		"colors": ["#0f0c29", "#302b63", "#24243e"]
 	},
 	{
 		"name": "Desert Rose",
-		"colors": [ "#c23866", "#ffc3a0" ]
+		"colors": ["#c23866", "#ffc3a0"]
 	},
 	{
 		"name": "Desert Rose",
-		"colors": [ "#E26868", "#FF9551", "#FFE6C7" ]
+		"colors": ["#E26868", "#FF9551", "#FFE6C7"]
 	},
 	{
 		"name": "Desert Storm",
-		"colors": [ "#fa709a", "#fee140" ]
+		"colors": ["#fa709a", "#fee140"]
 	},
 	{
 		"name": "Desert Wind",
-		"colors": [ "#e5a663", "#d46f4d" ]
+		"colors": ["#e5a663", "#d46f4d"]
 	},
 	{
 		"name": "Desert Wind",
-		"colors": [ "#C38154", "#884A39", "#FFC26F" ]
+		"colors": ["#C38154", "#884A39", "#FFC26F"]
 	},
 	{
 		"name": "Diamond Dust",
-		"colors": [ "#c9d6ff", "#e2e2e2", "#f0f2f0" ]
+		"colors": ["#c9d6ff", "#e2e2e2", "#f0f2f0"]
 	},
 	{
 		"name": "Digital Coral",
-		"colors": [ "#E76161", "#F99B7D", "#FFD8A9" ]
+		"colors": ["#E76161", "#F99B7D", "#FFD8A9"]
 	},
 	{
 		"name": "Digital Dawn",
-		"colors": [ "#ff0f7b", "#f89b29" ]
+		"colors": ["#ff0f7b", "#f89b29"]
 	},
 	{
 		"name": "Digital Dream",
-		"colors": [ "#3b41c5", "#a981bb", "#ffc8dd" ]
+		"colors": ["#3b41c5", "#a981bb", "#ffc8dd"]
 	},
 	{
 		"name": "Digital Dusk",
-		"colors": [ "#283c86", "#45a247" ]
+		"colors": ["#283c86", "#45a247"]
 	},
 	{
 		"name": "Digital Forest",
-		"colors": [ "#16a085", "#2ecc71" ]
+		"colors": ["#16a085", "#2ecc71"]
 	},
 	{
 		"name": "Digital Iris",
-		"colors": [ "#A31ACB", "#3E00FF", "#B5F1CC" ]
+		"colors": ["#A31ACB", "#3E00FF", "#B5F1CC"]
 	},
 	{
 		"name": "Digital Moss",
-		"colors": [ "#94A684", "#AEC3AE", "#E4E4D0" ]
+		"colors": ["#94A684", "#AEC3AE", "#E4E4D0"]
 	},
 	{
 		"name": "Digital Moss",
-		"colors": [ "#1F441E", "#386B35", "#629460" ]
+		"colors": ["#1F441E", "#386B35", "#629460"]
 	},
 	{
 		"name": "Digital Plum",
-		"colors": [ "#451952", "#662549", "#AE445A" ]
+		"colors": ["#451952", "#662549", "#AE445A"]
 	},
 	{
 		"name": "Digital Rain",
-		"colors": [ "#4b6cb7", "#182848" ]
+		"colors": ["#4b6cb7", "#182848"]
 	},
 	{
 		"name": "Digital Sage",
-		"colors": [ "#395144", "#4E6C50", "#AA8B56" ]
+		"colors": ["#395144", "#4E6C50", "#AA8B56"]
 	},
 	{
 		"name": "Digital Storm",
-		"colors": [ "#4776e6", "#8e54e9", "#4776e6" ]
+		"colors": ["#4776e6", "#8e54e9", "#4776e6"]
 	},
 	{
 		"name": "Digital Sun",
-		"colors": [ "#FFE000", "#799F0C" ]
+		"colors": ["#FFE000", "#799F0C"]
 	},
 	{
 		"name": "Digital Sunset",
-		"colors": [ "#ff416c", "#ff4b2b" ]
+		"colors": ["#ff416c", "#ff4b2b"]
 	},
 	{
 		"name": "Dragon Fire",
-		"colors": [ "#850000", "#B31312", "#EA906C" ]
+		"colors": ["#850000", "#B31312", "#EA906C"]
 	},
 	{
 		"name": "Dragon Scale",
-		"colors": [ "#ee0979", "#ff6a00", "#ff0f7b" ]
+		"colors": ["#ee0979", "#ff6a00", "#ff0f7b"]
 	},
 	{
 		"name": "Electric Dreams",
-		"colors": [ "#a17fe0", "#5d26c1" ]
+		"colors": ["#a17fe0", "#5d26c1"]
 	},
 	{
 		"name": "Electric Forest",
-		"colors": [ "#ABC270", "#FEC868", "#FDA769" ]
+		"colors": ["#ABC270", "#FEC868", "#FDA769"]
 	},
 	{
 		"name": "Electric Lime",
-		"colors": [ "#aeff00", "#32ded4" ]
+		"colors": ["#aeff00", "#32ded4"]
 	},
 	{
 		"name": "Electric Ruby",
-		"colors": [ "#D71313", "#F31559", "#FF9B9B" ]
+		"colors": ["#D71313", "#F31559", "#FF9B9B"]
 	},
 	{
 		"name": "Electric Sky",
-		"colors": [ "#00c6fb", "#005bea" ]
+		"colors": ["#00c6fb", "#005bea"]
 	},
 	{
 		"name": "Emerald City",
-		"colors": [ "#348f50", "#56b4d3" ]
+		"colors": ["#348f50", "#56b4d3"]
 	},
 	{
 		"name": "Emerald Dream",
-		"colors": [ "#028090", "#00a896", "#02c39a" ]
+		"colors": ["#028090", "#00a896", "#02c39a"]
 	},
 	{
 		"name": "Emerald Forest",
-		"colors": [ "#134e5e", "#71b280" ]
+		"colors": ["#134e5e", "#71b280"]
 	},
 	{
 		"name": "Emerald Mist",
-		"colors": [ "#285430", "#5F8D4E", "#A4BE7B" ]
+		"colors": ["#285430", "#5F8D4E", "#A4BE7B"]
 	},
 	{
 		"name": "Emerald Night",
-		"colors": [ "#203a43", "#2c5364" ]
+		"colors": ["#203a43", "#2c5364"]
 	},
 	{
 		"name": "Emerald Night",
-		"colors": [ "#1A5F7A", "#86A789", "#C7D36F" ]
+		"colors": ["#1A5F7A", "#86A789", "#C7D36F"]
 	},
 	{
 		"name": "Emerald Sea",
-		"colors": [ "#05386b", "#5cdb95" ]
+		"colors": ["#05386b", "#5cdb95"]
 	},
 	{
 		"name": "Enchanted Forest",
-		"colors": [ "#076585", "#fff" ]
+		"colors": ["#076585", "#fff"]
 	},
 	{
 		"name": "Ethereal",
-		"colors": [ "#8e54e9", "#4776e6" ]
+		"colors": ["#8e54e9", "#4776e6"]
 	},
 	{
 		"name": "Forest Canopy",
-		"colors": [ "#1B4242", "#5C8374", "#9EC8B9" ]
+		"colors": ["#1B4242", "#5C8374", "#9EC8B9"]
 	},
 	{
 		"name": "Forest Mist",
-		"colors": [ "#2ecc71", "#1abc9c" ]
+		"colors": ["#2ecc71", "#1abc9c"]
 	},
 	{
 		"name": "Frost Bite",
-		"colors": [ "#0A4D68", "#088395", "#05BFDB" ]
+		"colors": ["#0A4D68", "#088395", "#05BFDB"]
 	},
 	{
 		"name": "Frost Crystal",
-		"colors": [ "#a1c4fd", "#c2e9fb" ]
+		"colors": ["#a1c4fd", "#c2e9fb"]
 	},
 	{
 		"name": "Frost Fire",
-		"colors": [ "#e8cbc0", "#636fa4" ]
+		"colors": ["#e8cbc0", "#636fa4"]
 	},
 	{
 		"name": "Frozen Time",
-		"colors": [ "#7f7fd5", "#86a8e7", "#91eae4" ]
+		"colors": ["#7f7fd5", "#86a8e7", "#91eae4"]
 	},
 	{
 		"name": "Frozen Time",
-		"colors": [ "#c9d6ff", "#e2e2e2" ]
+		"colors": ["#c9d6ff", "#e2e2e2"]
 	},
 	{
 		"name": "Glacier Whisper",
-		"colors": [ "#e0f7fa", "#80deea", "#4dd0e1" ]
+		"colors": ["#e0f7fa", "#80deea", "#4dd0e1"]
 	},
 	{
 		"name": "Golden Dawn",
-		"colors": [ "#ffd700", "#ff7f50" ]
+		"colors": ["#ffd700", "#ff7f50"]
 	},
 	{
 		"name": "Iron Forge",
-		"colors": [ "#2D2727", "#413543", "#8F43EE" ]
+		"colors": ["#2D2727", "#413543", "#8F43EE"]
 	},
 	{
 		"name": "Jade Garden",
-		"colors": [ "#1f4037", "#99f2c8" ]
+		"colors": ["#1f4037", "#99f2c8"]
 	},
 	{
 		"name": "Jade Temple",
-		"colors": [ "#004d40", "#00695c", "#00897b" ]
+		"colors": ["#004d40", "#00695c", "#00897b"]
 	},
 	{
 		"name": "Jungle Night",
-		"colors": [ "#141517", "#6a9113" ]
+		"colors": ["#141517", "#6a9113"]
 	},
 	{
 		"name": "Lavender Fog",
-		"colors": [ "#9376E0", "#B931FC", "#E5B8F4" ]
+		"colors": ["#9376E0", "#B931FC", "#E5B8F4"]
 	},
 	{
 		"name": "Lost Memory",
-		"colors": [ "#de6262", "#ffb88c" ]
+		"colors": ["#de6262", "#ffb88c"]
 	},
 	{
 		"name": "Lotus Petal",
-		"colors": [ "#ff758c", "#ff7eb3" ]
+		"colors": ["#ff758c", "#ff7eb3"]
 	},
 	{
 		"name": "Lunar Dust",
-		"colors": [ "#1A374D", "#406882", "#6998AB" ]
+		"colors": ["#1A374D", "#406882", "#6998AB"]
 	},
 	{
 		"name": "Lunar Eclipse",
-		"colors": [ "#2c3e50", "#fd746c" ]
+		"colors": ["#2c3e50", "#fd746c"]
 	},
 	{
 		"name": "Lunar Surface",
-		"colors": [ "#283048", "#859398" ]
+		"colors": ["#283048", "#859398"]
 	},
 	{
 		"name": "Magic Hour",
-		"colors": [ "#ff6b6b", "#556270" ]
+		"colors": ["#ff6b6b", "#556270"]
 	},
 	{
 		"name": "Magma Chamber",
-		"colors": [ "#772f1a", "#f24b1a", "#ff9a00" ]
+		"colors": ["#772f1a", "#f24b1a", "#ff9a00"]
 	},
 	{
 		"name": "Maple Sunset",
-		"colors": [ "#E55604", "#FF6000", "#FF9F29" ]
+		"colors": ["#E55604", "#FF6000", "#FF9F29"]
 	},
 	{
 		"name": "Martian Sky",
-		"colors": [ "#dd2476", "#ff512f" ]
+		"colors": ["#dd2476", "#ff512f"]
 	},
 	{
 		"name": "Mercury Rising",
-		"colors": [ "#7c4dff", "#448aff" ]
+		"colors": ["#7c4dff", "#448aff"]
 	},
 	{
 		"name": "Midnight Bloom",
-		"colors": [ "#020024", "#090979", "#00d4ff" ]
+		"colors": ["#020024", "#090979", "#00d4ff"]
 	},
 	{
 		"name": "Midnight Fire",
-		"colors": [ "#8e0e00", "#1f1c18" ]
+		"colors": ["#8e0e00", "#1f1c18"]
 	},
 	{
 		"name": "Midnight Purple",
-		"colors": [ "#2b5876", "#4e4376" ]
+		"colors": ["#2b5876", "#4e4376"]
 	},
 	{
 		"name": "Mint Breeze",
-		"colors": [ "#2af598", "#009efd" ]
+		"colors": ["#2af598", "#009efd"]
 	},
 	{
 		"name": "Mint Julep",
-		"colors": [ "#CDFADB", "#E4FFE1", "#FFE1E1" ]
+		"colors": ["#CDFADB", "#E4FFE1", "#FFE1E1"]
 	},
 	{
 		"name": "Molten Steel",
-		"colors": [ "#251749", "#263159", "#495579" ]
+		"colors": ["#251749", "#263159", "#495579"]
 	},
 	{
 		"name": "Moonlight Shadow",
-		"colors": [ "#141e30", "#243b55", "#324b6b" ]
+		"colors": ["#141e30", "#243b55", "#324b6b"]
 	},
 	{
 		"name": "Moonstone",
-		"colors": [ "#D8D9DA", "#F6F1F1", "#ffffff" ]
+		"colors": ["#D8D9DA", "#F6F1F1", "#ffffff"]
 	},
 	{
 		"name": "Morning Glory",
-		"colors": [ "#ff5f6d", "#ffc371" ]
+		"colors": ["#ff5f6d", "#ffc371"]
 	},
 	{
 		"name": "Mountain Mist",
-		"colors": [ "#394867", "#212A3E", "#9BA4B5" ]
+		"colors": ["#394867", "#212A3E", "#9BA4B5"]
 	},
 	{
 		"name": "Mountain Peak",
-		"colors": [ "#9796f0", "#fbc7d4" ]
+		"colors": ["#9796f0", "#fbc7d4"]
 	},
 	{
 		"name": "Mystic Forest",
-		"colors": [ "#1d976c", "#93f9b9" ]
+		"colors": ["#1d976c", "#93f9b9"]
 	},
 	{
 		"name": "Mystic Meadow",
-		"colors": [ "#2af598", "#08aeea" ]
+		"colors": ["#2af598", "#08aeea"]
 	},
 	{
 		"name": "Mystic Mountains",
-		"colors": [ "#6441a5", "#2a0845" ]
+		"colors": ["#6441a5", "#2a0845"]
 	},
 	{
 		"name": "Mystic Vale",
-		"colors": [ "#23074d", "#cc5333" ]
+		"colors": ["#23074d", "#cc5333"]
 	},
 	{
 		"name": "Nebula Dust",
-		"colors": [ "#3F0071", "#FB2576", "#FFB84C" ]
+		"colors": ["#3F0071", "#FB2576", "#FFB84C"]
 	},
 	{
 		"name": "Nebula Path",
-		"colors": [ "#905bfd", "#3498db", "#2980b9" ]
+		"colors": ["#905bfd", "#3498db", "#2980b9"]
 	},
 	{
 		"name": "Neo Cyber",
-		"colors": [ "#29323c", "#485563" ]
+		"colors": ["#29323c", "#485563"]
 	},
 	{
 		"name": "Neon Abyss",
-		"colors": [ "#380036", "#0CBABA" ]
+		"colors": ["#380036", "#0CBABA"]
 	},
 	{
 		"name": "Neon Blade",
-		"colors": [ "#00ff87", "#60efff" ]
+		"colors": ["#00ff87", "#60efff"]
 	},
 	{
 		"name": "Neon Blue",
-		"colors": [ "#00c6ff", "#0072ff" ]
+		"colors": ["#00c6ff", "#0072ff"]
 	},
 	{
 		"name": "Neon City",
-		"colors": [ "#ff1e56", "#f9c942", "#1e90ff" ]
+		"colors": ["#ff1e56", "#f9c942", "#1e90ff"]
 	},
 	{
 		"name": "Neon Coral",
-		"colors": [ "#FF8787", "#FF5F5F", "#FF4949" ]
+		"colors": ["#FF8787", "#FF5F5F", "#FF4949"]
 	},
 	{
 		"name": "Neon Dreams",
-		"colors": [ "#ff00cc", "#00ffff" ]
+		"colors": ["#ff00cc", "#00ffff"]
 	},
 	{
 		"name": "Neon Forest",
-		"colors": [ "#00c3ff", "#ffff1c" ]
+		"colors": ["#00c3ff", "#ffff1c"]
 	},
 	{
 		"name": "Neon Genesis",
-		"colors": [ "#da22ff", "#9733ee" ]
+		"colors": ["#da22ff", "#9733ee"]
 	},
 	{
 		"name": "Neon Glow",
-		"colors": [ "#12c2e9", "#c471ed", "#f64f59" ]
+		"colors": ["#12c2e9", "#c471ed", "#f64f59"]
 	},
 	{
 		"name": "Neon Life",
-		"colors": [ "#b3ffab", "#12fff7" ]
+		"colors": ["#b3ffab", "#12fff7"]
 	},
 	{
 		"name": "Neon Lights",
-		"colors": [ "#b92b27", "#1565c0" ]
+		"colors": ["#b92b27", "#1565c0"]
 	},
 	{
 		"name": "Neon Lotus",
-		"colors": [ "#FF0032", "#CD0404", "#FF8080" ]
+		"colors": ["#FF0032", "#CD0404", "#FF8080"]
 	},
 	{
 		"name": "Neon Pink",
-		"colors": [ "#ff057c", "#8d0b93" ]
+		"colors": ["#ff057c", "#8d0b93"]
 	},
 	{
 		"name": "Neon Pulse",
-		"colors": [ "#FF0060", "#FF6D60", "#FFB6C1" ]
+		"colors": ["#FF0060", "#FF6D60", "#FFB6C1"]
 	},
 	{
 		"name": "Neon Rain",
-		"colors": [ "#00c3ff", "#ffff1c", "#00ff87" ]
+		"colors": ["#00c3ff", "#ffff1c", "#00ff87"]
 	},
 	{
 		"name": "Neon Rose",
-		"colors": [ "#ff00cc", "#493240" ]
+		"colors": ["#ff00cc", "#493240"]
 	},
 	{
 		"name": "Neon Slate",
-		"colors": [ "#2B2A4C", "#4B4952", "#B31312" ]
+		"colors": ["#2B2A4C", "#4B4952", "#B31312"]
 	},
 	{
 		"name": "Neon Soul",
-		"colors": [ "#fc466b", "#3f5efb" ]
+		"colors": ["#fc466b", "#3f5efb"]
 	},
 	{
 		"name": "Neon Wave",
-		"colors": [ "#fc00ff", "#00dbde" ]
+		"colors": ["#fc00ff", "#00dbde"]
 	},
 	{
 		"name": "Nordic Frost",
-		"colors": [ "#9BABB8", "#D7E3EC", "#EEF5FF" ]
+		"colors": ["#9BABB8", "#D7E3EC", "#EEF5FF"]
 	},
 	{
 		"name": "Nova Burst",
-		"colors": [ "#F24C3D", "#FF8551", "#FFF6DC" ]
+		"colors": ["#F24C3D", "#FF8551", "#FFF6DC"]
 	},
 	{
 		"name": "Nova Red",
-		"colors": [ "#f12711", "#f5af19" ]
+		"colors": ["#f12711", "#f5af19"]
 	},
 	{
 		"name": "Obsidian Dawn",
-		"colors": [ "#2C3333", "#395B64", "#A5C9CA" ]
+		"colors": ["#2C3333", "#395B64", "#A5C9CA"]
 	},
 	{
 		"name": "Ocean Depths",
-		"colors": [ "#0052d4", "#4364f7", "#6fb1fc" ]
+		"colors": ["#0052d4", "#4364f7", "#6fb1fc"]
 	},
 	{
 		"name": "Ocean Dream",
-		"colors": [ "#04befe", "#4481eb" ]
+		"colors": ["#04befe", "#4481eb"]
 	},
 	{
 		"name": "Ocean Storm",
-		"colors": [ "#373b44", "#4286f4" ]
+		"colors": ["#373b44", "#4286f4"]
 	},
 	{
 		"name": "Ocean Wave",
-		"colors": [ "#36d1dc", "#5b86e5" ]
+		"colors": ["#36d1dc", "#5b86e5"]
 	},
 	{
 		"name": "Orange Coral",
-		"colors": [ "#ffb75e", "#ed8f03" ]
+		"colors": ["#ffb75e", "#ed8f03"]
 	},
 	{
 		"name": "Pastel Dream",
-		"colors": [ "#ffafbd", "#ffc3a0" ]
+		"colors": ["#ffafbd", "#ffc3a0"]
 	},
 	{
 		"name": "Phoenix Fire",
-		"colors": [ "#f83600", "#f9d423" ]
+		"colors": ["#f83600", "#f9d423"]
 	},
 	{
 		"name": "Phoenix Rising",
-		"colors": [ "#ff416c", "#ff4b2b", "#f7797d" ]
+		"colors": ["#ff416c", "#ff4b2b", "#f7797d"]
 	},
 	{
 		"name": "Plasma Arc",
-		"colors": [ "#0081B4", "#2F58CD", "#4942E4" ]
+		"colors": ["#0081B4", "#2F58CD", "#4942E4"]
 	},
 	{
 		"name": "Plasma Field",
-		"colors": [ "#240b36", "#c31432" ]
+		"colors": ["#240b36", "#c31432"]
 	},
 	{
 		"name": "Plasma Pulse",
-		"colors": [ "#fc00ff", "#00dbde", "#0093e9" ]
+		"colors": ["#fc00ff", "#00dbde", "#0093e9"]
 	},
 	{
 		"name": "Plasma Storm",
-		"colors": [ "#9400FF", "#7000FF", "#4B0082" ]
+		"colors": ["#9400FF", "#7000FF", "#4B0082"]
 	},
 	{
 		"name": "Plasma Storm 2",
-		"colors": [ "#5614b0", "#dbd65c" ]
+		"colors": ["#5614b0", "#dbd65c"]
 	},
 	{
 		"name": "Plasma Void",
-		"colors": [ "#1F1C2C", "#928DAB" ]
+		"colors": ["#1F1C2C", "#928DAB"]
 	},
 	{
 		"name": "Plasma Void",
-		"colors": [ "#0C134F", "#1D267D", "#5C469C" ]
+		"colors": ["#0C134F", "#1D267D", "#5C469C"]
 	},
 	{
 		"name": "Plasma Void",
-		"colors": [ "#1B1A55", "#535C91", "#9290C3" ]
+		"colors": ["#1B1A55", "#535C91", "#9290C3"]
 	},
 	{
 		"name": "Plasma Wave",
-		"colors": [ "#4facfe", "#00bfe8" ]
+		"colors": ["#4facfe", "#00bfe8"]
 	},
 	{
 		"name": "Plasma Wave",
-		"colors": [ "#0081C9", "#5BC0F8", "#86E5FF" ]
+		"colors": ["#0081C9", "#5BC0F8", "#86E5FF"]
 	},
 	{
 		"name": "Polar Aurora",
-		"colors": [ "#068FFF", "#4FB5FF", "#7ED7FF" ]
+		"colors": ["#068FFF", "#4FB5FF", "#7ED7FF"]
 	},
 	{
 		"name": "Prism Break",
-		"colors": [ "#ff0080", "#ff8c00", "#40e0d0" ]
+		"colors": ["#ff0080", "#ff8c00", "#40e0d0"]
 	},
 	{
 		"name": "Purple Dusk",
-		"colors": [ "#a8c0ff", "#3f2b96" ]
+		"colors": ["#a8c0ff", "#3f2b96"]
 	},
 	{
 		"name": "Purple Haze",
-		"colors": [ "#7f00ff", "#e100ff" ]
+		"colors": ["#7f00ff", "#e100ff"]
 	},
 	{
 		"name": "Purple Mist",
-		"colors": [ "#b621fe", "#1fd1f9" ]
+		"colors": ["#b621fe", "#1fd1f9"]
 	},
 	{
 		"name": "Purple Moon",
-		"colors": [ "#4e54c8", "#8f94fb" ]
+		"colors": ["#4e54c8", "#8f94fb"]
 	},
 	{
 		"name": "Purple Mountains Majesty",
-		"colors": [ "#2c3e50", "#4ca1af" ]
+		"colors": ["#2c3e50", "#4ca1af"]
 	},
 	{
 		"name": "Purple Night",
-		"colors": [ "#5f2c82", "#49a09d" ]
+		"colors": ["#5f2c82", "#49a09d"]
 	},
 	{
 		"name": "Purple Paradise",
-		"colors": [ "#1d2b64", "#f8cdda" ]
+		"colors": ["#1d2b64", "#f8cdda"]
 	},
 	{
 		"name": "Purple Rain",
-		"colors": [ "#8e2de2", "#4a00e0" ]
+		"colors": ["#8e2de2", "#4a00e0"]
 	},
 	{
 		"name": "Quantum Ash",
-		"colors": [ "#474E68", "#50577A", "#6B728E" ]
+		"colors": ["#474E68", "#50577A", "#6B728E"]
 	},
 	{
 		"name": "Quantum Bronze",
-		"colors": [ "#B99B6B", "#F1DEC9", "#A4907C" ]
+		"colors": ["#B99B6B", "#F1DEC9", "#A4907C"]
 	},
 	{
 		"name": "Quantum Dream",
-		"colors": [ "#6a11cb", "#2575fc" ]
+		"colors": ["#6a11cb", "#2575fc"]
 	},
 	{
 		"name": "Quantum Flux",
-		"colors": [ "#ff3e9d", "#0e1f40" ]
+		"colors": ["#ff3e9d", "#0e1f40"]
 	},
 	{
 		"name": "Quantum Gate",
-		"colors": [ "#3C3B3F", "#605C3C" ]
+		"colors": ["#3C3B3F", "#605C3C"]
 	},
 	{
 		"name": "Quantum Glass",
-		"colors": [ "#2B2A4C", "#B31312", "#EA906C" ]
+		"colors": ["#2B2A4C", "#B31312", "#EA906C"]
 	},
 	{
 		"name": "Quantum Haze",
-		"colors": [ "#b06ab3", "#4568dc" ]
+		"colors": ["#b06ab3", "#4568dc"]
 	},
 	{
 		"name": "Quantum Pearl",
-		"colors": [ "#E8F3F3", "#D3E0DC", "#98B4AA" ]
+		"colors": ["#E8F3F3", "#D3E0DC", "#98B4AA"]
 	},
 	{
 		"name": "Quantum Realm",
-		"colors": [ "#000428", "#004e92", "#000428" ]
+		"colors": ["#000428", "#004e92", "#000428"]
 	},
 	{
 		"name": "Quantum Rose",
-		"colors": [ "#FF597B", "#FF8E9E", "#F9B5D0" ]
+		"colors": ["#FF597B", "#FF8E9E", "#F9B5D0"]
 	},
 	{
 		"name": "Quantum Rust",
-		"colors": [ "#BE3144", "#FF8B8B", "#FFD384" ]
+		"colors": ["#BE3144", "#FF8B8B", "#FFD384"]
 	},
 	{
 		"name": "Quantum Slate",
-		"colors": [ "#040D12", "#183D3D", "#5C8374" ]
+		"colors": ["#040D12", "#183D3D", "#5C8374"]
 	},
 	{
 		"name": "Quantum Spark",
-		"colors": [ "#793FDF", "#7091F5", "#97FFF4" ]
+		"colors": ["#793FDF", "#7091F5", "#97FFF4"]
 	},
 	{
 		"name": "Quantum Star",
-		"colors": [ "#1488CC", "#2B32B2" ]
+		"colors": ["#1488CC", "#2B32B2"]
 	},
 	{
 		"name": "Rainbow Bridge",
-		"colors": [ "#ff6b6b", "#4ecdc4", "#45b649" ]
+		"colors": ["#ff6b6b", "#4ecdc4", "#45b649"]
 	},
 	{
 		"name": "Rainbow Road",
-		"colors": [ "#ff0084", "#33001b" ]
+		"colors": ["#ff0084", "#33001b"]
 	},
 	{
 		"name": "Rainbow Sherbet",
-		"colors": [ "#ff9a9e", "#fecfef", "#fad0c4" ]
+		"colors": ["#ff9a9e", "#fecfef", "#fad0c4"]
 	},
 	{
 		"name": "Rose Gold",
-		"colors": [ "#f6d365", "#fda085" ]
+		"colors": ["#f6d365", "#fda085"]
 	},
 	{
 		"name": "Rose Quartz",
-		"colors": [ "#F5E9CF", "#FFB6C1", "#FF8E9E" ]
+		"colors": ["#F5E9CF", "#FFB6C1", "#FF8E9E"]
 	},
 	{
 		"name": "Royal Purple",
-		"colors": [ "#673ab7", "#512da8" ]
+		"colors": ["#673ab7", "#512da8"]
 	},
 	{
 		"name": "Ruby Ember",
-		"colors": [ "#850000", "#DC0000", "#FF0000" ]
+		"colors": ["#850000", "#DC0000", "#FF0000"]
 	},
 	{
 		"name": "Ruby Fusion",
-		"colors": [ "#f2709c", "#ff9472" ]
+		"colors": ["#f2709c", "#ff9472"]
 	},
 	{
 		"name": "Ruby Fusion",
-		"colors": [ "#B70404", "#DB005B", "#F79327" ]
+		"colors": ["#B70404", "#DB005B", "#F79327"]
 	},
 	{
 		"name": "Rustic Copper",
-		"colors": [ "#C57B57", "#D7A86E", "#F1C27B" ]
+		"colors": ["#C57B57", "#D7A86E", "#F1C27B"]
 	},
 	{
 		"name": "Sage Meditation",
-		"colors": [ "#618264", "#79AC78", "#B0D9B1" ]
+		"colors": ["#618264", "#79AC78", "#B0D9B1"]
 	},
 	{
 		"name": "Sahara Mirage",
-		"colors": [ "#fcb69f", "#ffecd2" ]
+		"colors": ["#fcb69f", "#ffecd2"]
 	},
 	{
 		"name": "Sea Breeze",
-		"colors": [ "#c2e59c", "#64b3f4" ]
+		"colors": ["#c2e59c", "#64b3f4"]
 	},
 	{
 		"name": "Silk Road",
-		"colors": [ "#e8d07a", "#994e35" ]
+		"colors": ["#e8d07a", "#994e35"]
 	},
 	{
 		"name": "Silver Lake",
-		"colors": [ "#e0eafc", "#cfdef3" ]
+		"colors": ["#e0eafc", "#cfdef3"]
 	},
 	{
 		"name": "Solar Eclipse",
-		"colors": [ "#ffd700", "#000000" ]
+		"colors": ["#ffd700", "#000000"]
 	},
 	{
 		"name": "Solar Eclipse",
-		"colors": [ "#f6d365", "#fda085", "#fee140" ]
+		"colors": ["#f6d365", "#fda085", "#fee140"]
 	},
 	{
 		"name": "Solar Ember",
-		"colors": [ "#CF0A0A", "#DC5F00", "#FFB000" ]
+		"colors": ["#CF0A0A", "#DC5F00", "#FFB000"]
 	},
 	{
 		"name": "Solar Flare",
-		"colors": [ "#f9d423", "#ff4e50" ]
+		"colors": ["#f9d423", "#ff4e50"]
 	},
 	{
 		"name": "Solar Flax",
-		"colors": [ "#FFA41B", "#FFD93D", "#F6F1E9" ]
+		"colors": ["#FFA41B", "#FFD93D", "#F6F1E9"]
 	},
 	{
 		"name": "Solar Storm",
-		"colors": [ "#FFB000", "#FF4D00", "#FF0060" ]
+		"colors": ["#FFB000", "#FF4D00", "#FF0060"]
 	},
 	{
 		"name": "Solar Wind",
-		"colors": [ "#fdc830", "#f37335" ]
+		"colors": ["#fdc830", "#f37335"]
 	},
 	{
 		"name": "Solar Wind",
-		"colors": [ "#ffd194", "#70e1f5" ]
+		"colors": ["#ffd194", "#70e1f5"]
 	},
 	{
 		"name": "Solar Wind",
-		"colors": [ "#ffd700", "#ffcc00", "#ff9900" ]
+		"colors": ["#ffd700", "#ffcc00", "#ff9900"]
 	},
 	{
 		"name": "Solar Winds",
-		"colors": [ "#F7D060", "#FF6D60", "#F3E99F" ]
+		"colors": ["#F7D060", "#FF6D60", "#F3E99F"]
 	},
 	{
 		"name": "Sonic Boom",
-		"colors": [ "#3d72b4", "#525252" ]
+		"colors": ["#3d72b4", "#525252"]
 	},
 	{
 		"name": "Spice Market",
-		"colors": [ "#ff9966", "#ff5e62" ]
+		"colors": ["#ff9966", "#ff5e62"]
 	},
 	{
 		"name": "Spring Meadow",
-		"colors": [ "#76b852", "#8dc26f" ]
+		"colors": ["#76b852", "#8dc26f"]
 	},
 	{
 		"name": "Stargate",
-		"colors": [ "#11998e", "#38ef7d" ]
+		"colors": ["#11998e", "#38ef7d"]
 	},
 	{
 		"name": "Starlight",
-		"colors": [ "#1a2980", "#26d0ce" ]
+		"colors": ["#1a2980", "#26d0ce"]
 	},
 	{
 		"name": "Starlight Path",
-		"colors": [ "#8e2de2", "#4a00e0", "#8e2de2" ]
+		"colors": ["#8e2de2", "#4a00e0", "#8e2de2"]
 	},
 	{
 		"name": "Steel Dawn",
-		"colors": [ "#868f96", "#596164" ]
+		"colors": ["#868f96", "#596164"]
 	},
 	{
 		"name": "Summer Rain",
-		"colors": [ "#74ebd5", "#acb6e5" ]
+		"colors": ["#74ebd5", "#acb6e5"]
 	},
 	{
 		"name": "Summer Sky",
-		"colors": [ "#00b4db", "#0083b0" ]
+		"colors": ["#00b4db", "#0083b0"]
 	},
 	{
 		"name": "Sunset Drive",
-		"colors": [ "#ee0979", "#ff6a00" ]
+		"colors": ["#ee0979", "#ff6a00"]
 	},
 	{
 		"name": "Sunset Palm",
-		"colors": [ "#98D8AA", "#F7D060", "#FF6D60" ]
+		"colors": ["#98D8AA", "#F7D060", "#FF6D60"]
 	},
 	{
 		"name": "Synthwave Nights",
-		"colors": [ "#cc208e", "#6713d2" ]
+		"colors": ["#cc208e", "#6713d2"]
 	},
 	{
 		"name": "Tangerine Dream",
-		"colors": [ "#FFB000", "#FF7A00", "#FF4D00" ]
+		"colors": ["#FFB000", "#FF7A00", "#FF4D00"]
 	},
 	{
 		"name": "Tech Azure",
-		"colors": [ "#146C94", "#19A7CE", "#B0DAFF" ]
+		"colors": ["#146C94", "#19A7CE", "#B0DAFF"]
 	},
 	{
 		"name": "Tech Green",
-		"colors": [ "#43cea2", "#185a9d" ]
+		"colors": ["#43cea2", "#185a9d"]
 	},
 	{
 		"name": "Tech Noir",
-		"colors": [ "#141e30", "#243b55" ]
+		"colors": ["#141e30", "#243b55"]
 	},
 	{
 		"name": "Techno Jade",
-		"colors": [ "#0D1282", "#A31ACB", "#FF6D60" ]
+		"colors": ["#0D1282", "#A31ACB", "#FF6D60"]
 	},
 	{
 		"name": "Terra Cotta",
-		"colors": [ "#B04759", "#FF6B6B", "#FFB3B3" ]
+		"colors": ["#B04759", "#FF6B6B", "#FFB3B3"]
 	},
 	{
 		"name": "Thunder Cloud",
-		"colors": [ "#bdc3c7", "#2c3e50", "#34495e" ]
+		"colors": ["#bdc3c7", "#2c3e50", "#34495e"]
 	},
 	{
 		"name": "Tiger Eye",
-		"colors": [ "#c79081", "#dfa579" ]
+		"colors": ["#c79081", "#dfa579"]
 	},
 	{
 		"name": "Titanium Wave",
-		"colors": [ "#2B2730", "#3B3486", "#5C469C" ]
+		"colors": ["#2B2730", "#3B3486", "#5C469C"]
 	},
 	{
 		"name": "Toxic Green",
-		"colors": [ "#52c234", "#061700" ]
+		"colors": ["#52c234", "#061700"]
 	},
 	{
 		"name": "Tropical Monsoon",
-		"colors": [ "#3D30A2", "#B15EFF", "#FFA33C" ]
+		"colors": ["#3D30A2", "#B15EFF", "#FFA33C"]
 	},
 	{
 		"name": "Tropical Storm",
-		"colors": [ "#0fd850", "#f9f047" ]
+		"colors": ["#0fd850", "#f9f047"]
 	},
 	{
 		"name": "Twilight Harbor",
-		"colors": [ "#4b6cb7", "#182848", "#0f2027" ]
+		"colors": ["#4b6cb7", "#182848", "#0f2027"]
 	},
 	{
 		"name": "Twilight Haze",
-		"colors": [ "#1D267D", "#5C469C", "#A459D1" ]
+		"colors": ["#1D267D", "#5C469C", "#A459D1"]
 	},
 	{
 		"name": "Vapor Wave",
-		"colors": [ "#17ead9", "#6078ea" ]
+		"colors": ["#17ead9", "#6078ea"]
 	},
 	{
 		"name": "Velvet Morning",
-		"colors": [ "#355c7d", "#6c5b7b", "#c06c84" ]
+		"colors": ["#355c7d", "#6c5b7b", "#c06c84"]
 	},
 	{
 		"name": "Velvet Night",
-		"colors": [ "#27005D", "#9400FF", "#AED2FF" ]
+		"colors": ["#27005D", "#9400FF", "#AED2FF"]
 	},
 	{
 		"name": "Violet Dream",
-		"colors": [ "#bf5ae0", "#a811da" ]
+		"colors": ["#bf5ae0", "#a811da"]
 	},
 	{
 		"name": "Volcanic Glass",
-		"colors": [ "#1e130c", "#9a8478", "#000000" ]
+		"colors": ["#1e130c", "#9a8478", "#000000"]
 	},
 	{
 		"name": "Winter Frost",
-		"colors": [ "#e6dada", "#274046" ]
+		"colors": ["#e6dada", "#274046"]
 	},
 	{
 		"name": "Zen Garden",
-		"colors": [ "#94d82d", "#1b8d59" ]
+		"colors": ["#94d82d", "#1b8d59"]
 	}
 ]

@@ -1,9 +1,9 @@
-import "./assets/index.css";
-import { registerSW } from "virtual:pwa-register";
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import { registerSW } from "virtual:pwa-register";
 import { createApp } from "vue";
 import App from "./App.vue";
+import "./assets/index.css";
 import { i18n } from "./i18n";
 import { VueQueryPlugin, vueQueryPluginOptions } from "./lib/vue-query";
 import router from "./router";
