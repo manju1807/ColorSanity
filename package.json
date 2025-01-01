@@ -49,6 +49,7 @@
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
 		"defu": "^6.1.4",
+		"html2canvas": "^1.4.1",
 		"lucide-vue-next": "^0.469.0",
 		"pinia": "^2.3.0",
 		"pinia-plugin-persistedstate": "^4.2.0",
@@ -127,7 +128,12 @@
 		"workbox-strategies": "^7.3.0",
 		"workbox-window": "^7.3.0"
 	},
-	"browserslist": ["> 1%", "last 2 versions", "not dead", "not ie 11"],
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead",
+		"not ie 11"
+	],
 	"resolutions": {
 		"vue": "^3.4.22",
 		"@vue/compiler-sfc": "^3.4.22"
@@ -137,10 +143,14 @@
 			"biome check --write",
 			"biome format --write"
 		],
-		"*.{json,css,scss,md}": ["biome format --write"]
+		"*.{json,css,scss,md}": [
+			"biome format --write"
+		]
 	},
 	"commitlint": {
-		"extends": ["@commitlint/config-conventional"]
+		"extends": [
+			"@commitlint/config-conventional"
+		]
 	},
 	"husky": {
 		"hooks": {
