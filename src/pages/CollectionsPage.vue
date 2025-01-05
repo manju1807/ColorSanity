@@ -7,12 +7,12 @@ import ColorCard from "@/components/custom/ColorCard.vue";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-	Pagination,
-	PaginationEllipsis,
-	PaginationList,
-	PaginationListItem,
-	PaginationNext,
-	PaginationPrev,
+  Pagination,
+  PaginationEllipsis,
+  PaginationList,
+  PaginationListItem,
+  PaginationNext,
+  PaginationPrev,
 } from "@/components/ui/pagination";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -28,7 +28,7 @@ const PAGE_SIZE = 16;
 
 // Refs
 const currentPage = ref(1);
-const activeTab = ref("solid-colors");
+const activeTab = ref("gradient-colors");
 const isLoading = ref(true);
 const searchQuery = ref("");
 const showBackToTop = ref(false);
@@ -43,120 +43,120 @@ let observer: IntersectionObserver | null = null;
 
 // Lifecycle
 onMounted(async () => {
-	try {
-		solidColorData.value = solidColors;
-		gradientColorData.value = gradientColors;
-		setupIntersectionObserver();
-	} catch (error) {
-		console.error("Error loading color data:", error);
-	} finally {
-		isLoading.value = false;
-	}
+  try {
+    solidColorData.value = solidColors;
+    gradientColorData.value = gradientColors;
+    setupIntersectionObserver();
+  } catch (error) {
+    console.error("Error loading color data:", error);
+  } finally {
+    isLoading.value = false;
+  }
 });
 
 onUnmounted(() => {
-	observer?.disconnect();
-	if (pageChangeTimeout.value) clearTimeout(pageChangeTimeout.value);
+  observer?.disconnect();
+  if (pageChangeTimeout.value) clearTimeout(pageChangeTimeout.value);
 });
 
 // Methods
 const setupIntersectionObserver = () => {
-	observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				showBackToTop.value = !entry.isIntersecting;
-			});
-		},
-		{ threshold: 0.1 },
-	);
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        showBackToTop.value = !entry.isIntersecting;
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-	if (contentRef.value) observer.observe(contentRef.value);
+  if (contentRef.value) observer.observe(contentRef.value);
 };
 
 const handleSearch = (event: Event) => {
-	searchQuery.value = (event.target as HTMLInputElement).value;
+  searchQuery.value = (event.target as HTMLInputElement).value;
 };
 
 const scrollToTop = () => window.scrollTo({ top: 0 });
 
 const handlePageChange = async (event: { page: number }) => {
-	const newPage = Math.min(Math.max(1, event.page), totalPages.value);
-	if (newPage === currentPage.value) return;
+  const newPage = Math.min(Math.max(1, event.page), totalPages.value);
+  if (newPage === currentPage.value) return;
 
-	isPageChanging.value = true;
-	currentPage.value = newPage;
+  isPageChanging.value = true;
+  currentPage.value = newPage;
 
-	if (pageChangeTimeout.value) clearTimeout(pageChangeTimeout.value);
-	pageChangeTimeout.value = window.setTimeout(() => {
-		isPageChanging.value = false;
-	}, 300);
+  if (pageChangeTimeout.value) clearTimeout(pageChangeTimeout.value);
+  pageChangeTimeout.value = window.setTimeout(() => {
+    isPageChanging.value = false;
+  }, 300);
 };
 
 // Watchers
 watch([activeTab, searchQuery], () => {
-	currentPage.value = 1;
-	nextTick(() => window.scrollTo({ top: 0 }));
+  currentPage.value = 1;
+  nextTick(() => window.scrollTo({ top: 0 }));
 });
 
 // Utils
 const filterColors = (
-	colors: Array<SolidColor | GradientColor>,
-	query: string,
+  colors: Array<SolidColor | GradientColor>,
+  query: string,
 ) => {
-	const searchTerms = query.toLowerCase().trim().split(/\s+/);
-	return colors.filter((color) =>
-		searchTerms.every((term) => {
-			const hasTag =
-				"tags" in color &&
-				Array.isArray(color.tags) &&
-				color.tags.every((tag) => typeof tag === "string");
-			return (
-				color.name.toLowerCase().includes(term) ||
-				(hasTag &&
-					(color.tags as string[]).some((tag) =>
-						tag.toLowerCase().includes(term),
-					))
-			);
-		}),
-	);
+  const searchTerms = query.toLowerCase().trim().split(/\s+/);
+  return colors.filter((color) =>
+    searchTerms.every((term) => {
+      const hasTag =
+        "tags" in color &&
+        Array.isArray(color.tags) &&
+        color.tags.every((tag) => typeof tag === "string");
+      return (
+        color.name.toLowerCase().includes(term) ||
+        (hasTag &&
+          (color.tags as string[]).some((tag) =>
+            tag.toLowerCase().includes(term),
+          ))
+      );
+    }),
+  );
 };
 
 // Computed
 const filteredSolids = computed(() =>
-	searchQuery.value
-		? filterColors(solidColorData.value, searchQuery.value)
-		: solidColorData.value,
+  searchQuery.value
+    ? filterColors(solidColorData.value, searchQuery.value)
+    : solidColorData.value,
 );
 
 const filteredGradients = computed(() =>
-	searchQuery.value
-		? filterColors(gradientColorData.value, searchQuery.value)
-		: gradientColorData.value,
+  searchQuery.value
+    ? filterColors(gradientColorData.value, searchQuery.value)
+    : gradientColorData.value,
 );
 
 const paginatedColors = computed(() => {
-	const currentData =
-		activeTab.value === "solid-colors"
-			? filteredSolids.value
-			: filteredGradients.value;
-	return currentData.slice(
-		(currentPage.value - 1) * PAGE_SIZE,
-		currentPage.value * PAGE_SIZE,
-	);
+  const currentData =
+    activeTab.value === "solid-colors"
+      ? filteredSolids.value
+      : filteredGradients.value;
+  return currentData.slice(
+    (currentPage.value - 1) * PAGE_SIZE,
+    currentPage.value * PAGE_SIZE,
+  );
 });
 
 const totalPages = computed(() => {
-	const total =
-		activeTab.value === "solid-colors"
-			? filteredSolids.value.length
-			: filteredGradients.value.length;
-	return Math.ceil(total / PAGE_SIZE) || 1;
+  const total =
+    activeTab.value === "solid-colors"
+      ? filteredSolids.value.length
+      : filteredGradients.value.length;
+  return Math.ceil(total / PAGE_SIZE) || 1;
 });
 
 const totalItems = computed(() =>
-	activeTab.value === "solid-colors"
-		? filteredSolids.value.length
-		: filteredGradients.value.length,
+  activeTab.value === "solid-colors"
+    ? filteredSolids.value.length
+    : filteredGradients.value.length,
 );
 </script>
 
@@ -177,8 +177,8 @@ const totalItems = computed(() =>
     <Tabs v-model="activeTab" class="w-full space-y-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6 sticky top-0 z-10 py-4">
         <TabsList class="grid w-full md:w-auto grid-cols-2">
-          <TabsTrigger value="solid-colors" class="px-8">Solid Colors</TabsTrigger>
           <TabsTrigger value="gradient-colors" class="px-8">Gradients</TabsTrigger>
+          <TabsTrigger value="solid-colors" class="px-8">Solid Colors</TabsTrigger>
         </TabsList>
 
         <div class="w-full md:w-auto relative bg-background border-border">

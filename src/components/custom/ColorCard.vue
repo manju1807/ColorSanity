@@ -1,10 +1,9 @@
-<!-- components/ColorCard.vue -->
 <script setup lang="ts">
 import type { CardOptions, ColorData, GradientColor, SolidColor } from "@/types/colors";
-import html2canvas from 'html2canvas';
+import html2canvas from "html2canvas";
 import { Copy, Download, EllipsisVertical, Eye } from "lucide-vue-next";
-import { computed, ref } from "vue";
-import { toast } from 'vue-sonner';
+import { computed, ref, watch } from "vue";
+import { toast } from "vue-sonner";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
@@ -19,35 +18,41 @@ const props = defineProps<{
 const options = ref<CardOptions>({
   opacity: 1,
   direction: "linear",
-  angle: 180,
+  angle: 90,
 });
 
-const angleArray = computed(() => [options.value.angle ?? 180]);
-const opacityArray = computed(() => [options.value.opacity ?? 1]);
+// Create refs for the slider values
+const angleValue = ref<number[]>([options.value.angle ?? 180]);
+const opacityValue = ref<number[]>([options.value.opacity ?? 1]);
 
-const updateAngle = (values: number[] | undefined) => {
-  if (values?.length) {
-    options.value.angle = values[0];
+// Watch for changes in the slider values and update options
+watch(angleValue, (newValue) => {
+  if (newValue?.length) {
+    options.value.angle = newValue[0];
   }
-};
+});
 
-const updateOpacity = (values: number[] | undefined) => {
-  if (values?.length) {
-    options.value.opacity = values[0];
+watch(opacityValue, (newValue) => {
+  if (newValue?.length && newValue[0] !== undefined) {
+    options.value.opacity = Number(newValue[0].toFixed(2));
   }
-};
+});
 
 const isGradient = computed(() => "colors" in props.colorData);
 
-
 const backgroundStyle = computed(() => {
+  const opacity = options.value.opacity;
+
   if (isGradient.value) {
     const { colors } = props.colorData as GradientColor;
-    const { direction, angle, opacity } = options.value;
-    const colorStops = colors.map(color => {
-      if (color.startsWith('rgba')) return color;
-      return color.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
-    }).join(', ');
+    const { direction, angle } = options.value;
+
+    const colorStops = colors
+      .map((color) => {
+        const rgbColor = color.replace(/rgba?\(([^)]+)\)/, "rgb($1)").replace(/,\s*[\d.]+\s*\)/, ")");
+        return rgbColor.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
+      })
+      .join(", ");
 
     if (direction === "linear") {
       return {
@@ -65,7 +70,7 @@ const backgroundStyle = computed(() => {
   } else {
     const { color } = props.colorData as SolidColor;
     return {
-      backgroundColor: color.replace('rgb', 'rgba').replace(')', `, ${options.value.opacity})`),
+      backgroundColor: color.replace("rgb", "rgba").replace(")", `, ${opacity})`),
     };
   }
 });
@@ -75,19 +80,23 @@ const cssCode = computed(() => {
     const { colors } = props.colorData as GradientColor;
     const { direction, angle, opacity } = options.value;
 
-    let gradient = "";
-    if (direction === "linear") {
-      gradient = `linear-gradient(${angle}deg, ${colors.join(", ")})`;
-    } else if (direction === "radial") {
-      gradient = `radial-gradient(circle, ${colors.join(", ")})`;
-    } else {
-      gradient = `conic-gradient(${colors.join(", ")})`;
-    }
+    const colorStops = colors
+      .map((color) => {
+        const rgbColor = color.replace(/rgba?\(([^)]+)\)/, "rgb($1)").replace(/,\s*[\d.]+\s*\)/, ")");
+        return rgbColor.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
+      })
+      .join(", ");
 
-    return `background: ${gradient};\nopacity: ${opacity};`;
+    if (direction === "linear") {
+      return `background: linear-gradient(${angle}deg, ${colorStops});`;
+    } else if (direction === "radial") {
+      return `background: radial-gradient(circle, ${colorStops});`;
+    } else {
+      return `background: conic-gradient(${colorStops});`;
+    }
   } else {
     const { color } = props.colorData as SolidColor;
-    return `background-color: ${color};\nopacity: ${options.value.opacity};`;
+    return `background-color: ${color.replace("rgb", "rgba").replace(")", `, ${options.value.opacity})`)}`
   }
 });
 
@@ -97,73 +106,83 @@ const nonSettingsActions = [
     icon: Download,
     handler: async () => {
       try {
-        const element = document.querySelector('#downloadable');
+        const element = document.querySelector("#downloadable");
         if (!element) return;
 
-        // Hide controls before capture
-        const controls = document.querySelector('#controls');
-        if (controls) {
-          controls.classList.add('hidden');
-        }
+        const controls = document.querySelector("#controls");
+        if (controls) controls.classList.add("hidden");
 
         const canvas = await html2canvas(element as HTMLElement, {
           backgroundColor: null,
-          scale: 10, // Better quality
+          scale: 10,
         });
 
-        // Show controls after capture
-        if (controls) {
-          controls.classList.remove('hidden');
-        }
+        if (controls) controls.classList.remove("hidden");
 
-        const img = canvas.toDataURL('image/png');
-        const a = document.createElement('a');
+        const img = canvas.toDataURL("image/png");
+        const a = document.createElement("a");
         a.href = img;
-        a.download = `${props.colorData.name || 'color'}.png`;
+        a.download = `${props.colorData.name || "color"}.png`;
         a.click();
 
-        toast.success('Successfully downloaded image!');
+        toast.success("Successfully downloaded image!");
       } catch (error) {
         console.error("Failed to download image", error);
-        toast.error('Failed to download image!');
+        toast.error("Failed to download image!");
       }
     },
   },
   {
     label: "Preview",
     icon: Eye,
-    handler: () => (window.location.href = "/preview"),
+    handler: () => {
+      // Create a query string with the color data
+      const colorParams = new URLSearchParams();
+
+      if (isGradient.value) {
+        const gradientData = props.colorData as GradientColor;
+        colorParams.set('type', 'gradient');
+        colorParams.set('colors', JSON.stringify(gradientData.colors));
+        colorParams.set('direction', options.value.direction || 'linear');
+        colorParams.set('angle', (options.value.angle ?? 90).toString());
+      } else {
+        const solidData = props.colorData as SolidColor;
+        colorParams.set('type', 'solid');
+        colorParams.set('color', solidData.color);
+      }
+
+      colorParams.set('opacity', (options.value.opacity ?? 1).toString());
+      colorParams.set('name', props.colorData.name || '');
+
+      // Redirect to preview page with color data
+      window.location.href = `/preview?${colorParams.toString()}`;
+    },
   },
 ];
 
 const copyCSS = () => {
   try {
     navigator.clipboard.writeText(cssCode.value);
-    toast.success('Successfully copied css code!')
+    toast.success("Successfully copied CSS code!");
   } catch (error) {
-    toast.error('Failed to copy css code!')
     console.error("Failed to copy CSS code", error);
+    toast.error("Failed to copy CSS code!");
   }
 };
-
 </script>
 
 <template>
   <div class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-    <!-- Downloadable content -->
     <div id="downloadable" class="w-full h-48 relative">
-      <!-- Background color/gradient -->
       <div class="w-full h-full" :style="backgroundStyle"></div>
     </div>
 
-    <!-- Centered badge -->
     <div class="absolute inset-0 flex items-end p-4 justify-center">
       <Badge variant="secondary" class="bg-white/60 py-1.5 text-slate-900 rounded-full">
         {{ colorData.name }}
       </Badge>
     </div>
 
-    <!-- Controls overlay (not included in download) -->
     <div id="controls" class="absolute top-0 right-0 p-4 flex gap-2">
       <Button v-for="action in nonSettingsActions" :key="action.label" variant="secondary" size="icon"
         class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white" @click="action.handler">
@@ -196,13 +215,13 @@ const copyCSS = () => {
 
               <div v-if="options.direction === 'linear'" class="space-y-2">
                 <Label>Angle: {{ options.angle }}°</Label>
-                <Slider :model-value="angleArray" @update:model-value="updateAngle" :min="0" :max="360" :step="1" />
+                <Slider v-model="angleValue" :min="0" :max="360" :step="1" />
               </div>
             </div>
 
             <div class="space-y-2">
               <Label>Opacity: {{ Math.round((options.opacity ?? 1) * 100) }}%</Label>
-              <Slider :model-value="opacityArray" @update:model-value="updateOpacity" :min="0" :max="1" :step="0.01" />
+              <Slider v-model="opacityValue" :min="0" :max="1" :step="0.01" />
             </div>
 
             <div class="space-y-2">
