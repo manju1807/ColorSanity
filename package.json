@@ -74,6 +74,7 @@
 		"@commitlint/config-conventional": "^19.6.0",
 		"@iconify-json/radix-icons": "^1.2.2",
 		"@iconify/vue": "^4.2.0",
+		"@netlify/functions-utils": "^5.3.1",
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
 		"@testing-library/vue": "^8.1.0",
@@ -128,12 +129,7 @@
 		"workbox-strategies": "^7.3.0",
 		"workbox-window": "^7.3.0"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead",
-		"not ie 11"
-	],
+	"browserslist": ["> 1%", "last 2 versions", "not dead", "not ie 11"],
 	"resolutions": {
 		"vue": "^3.4.22",
 		"@vue/compiler-sfc": "^3.4.22"
@@ -143,14 +139,10 @@
 			"biome check --write",
 			"biome format --write"
 		],
-		"*.{json,css,scss,md}": [
-			"biome format --write"
-		]
+		"*.{json,css,scss,md}": ["biome format --write"]
 	},
 	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		]
+		"extends": ["@commitlint/config-conventional"]
 	},
 	"husky": {
 		"hooks": {
