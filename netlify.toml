@@ -1,11 +1,11 @@
 [build]
-  command = "pnpm run build" # Updated to use pnpm
+  command = "pnpm run build"
   publish = "dist"
   environment = { NODE_VERSION = "20.0.0" }
 
 [dev]
   framework = "vite"
-  command = "pnpm run dev" # Updated to use pnpm
+  command = "pnpm run dev"
   port = 3000
   targetPort = 5173
 
@@ -27,8 +27,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-vue"
+
 [[plugins]]
   package = "@netlify/plugin-inline-functions"
 
-[[functions]]
-  directory = "netlify/functions"
+[functions]
+  directory = "netlify/functions" # Changed to correct syntax
