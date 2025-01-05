@@ -17,7 +17,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # Security headers
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
@@ -28,8 +27,5 @@
 [[plugins]]
   package = "@netlify/plugin-vue"
 
-[[plugins]]
-  package = "@netlify/plugin-inline-functions"
-
 [functions]
-  directory = "netlify/functions" # Changed to correct syntax
+  directory = "netlify/functions"
