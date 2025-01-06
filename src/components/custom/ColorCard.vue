@@ -22,8 +22,8 @@ const options = ref<CardOptions>({
 });
 
 // Create refs for the slider values
-const angleValue = ref<number[]>([options.value.angle ?? 180]);
 const opacityValue = ref<number[]>([options.value.opacity ?? 1]);
+const angleValue = ref<number[]>([options.value.angle ?? 180]);
 
 // Watch for changes in the slider values and update options
 watch(angleValue, (newValue) => {
@@ -40,6 +40,20 @@ watch(opacityValue, (newValue) => {
 
 const isGradient = computed(() => "colors" in props.colorData);
 
+const applyOpacityToColor = (color: string, opacity: number): string => {
+  if (color.startsWith("rgb(")) {
+    return color.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
+  } else if (color.startsWith("#")) {
+    // Convert HEX to RGBA
+    const hex = color.replace("#", "");
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+  }
+  return color; // Fallback for unsupported formats
+};
+
 const backgroundStyle = computed(() => {
   const opacity = options.value.opacity;
 
@@ -48,10 +62,7 @@ const backgroundStyle = computed(() => {
     const { direction, angle } = options.value;
 
     const colorStops = colors
-      .map((color) => {
-        const rgbColor = color.replace(/rgba?\(([^)]+)\)/, "rgb($1)").replace(/,\s*[\d.]+\s*\)/, ")");
-        return rgbColor.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
-      })
+      .map((color) => applyOpacityToColor(color, opacity ?? 1))
       .join(", ");
 
     if (direction === "linear") {
@@ -70,21 +81,20 @@ const backgroundStyle = computed(() => {
   } else {
     const { color } = props.colorData as SolidColor;
     return {
-      backgroundColor: color.replace("rgb", "rgba").replace(")", `, ${opacity})`),
+      backgroundColor: applyOpacityToColor(color, opacity ?? 1),
     };
   }
 });
 
 const cssCode = computed(() => {
+  const opacity = options.value.opacity;
+
   if (isGradient.value) {
     const { colors } = props.colorData as GradientColor;
-    const { direction, angle, opacity } = options.value;
+    const { direction, angle } = options.value;
 
     const colorStops = colors
-      .map((color) => {
-        const rgbColor = color.replace(/rgba?\(([^)]+)\)/, "rgb($1)").replace(/,\s*[\d.]+\s*\)/, ")");
-        return rgbColor.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
-      })
+      .map((color) => applyOpacityToColor(color, opacity ?? 1))
       .join(", ");
 
     if (direction === "linear") {
@@ -96,7 +106,7 @@ const cssCode = computed(() => {
     }
   } else {
     const { color } = props.colorData as SolidColor;
-    return `background-color: ${color.replace("rgb", "rgba").replace(")", `, ${options.value.opacity})`)}`
+    return `background-color: ${applyOpacityToColor(color, opacity ?? 1)};`;
   }
 });
 
@@ -105,19 +115,18 @@ const nonSettingsActions = [
     label: "Download",
     icon: Download,
     handler: async () => {
-      try {
-        const element = document.querySelector("#downloadable");
-        if (!element) return;
+      const element = document.querySelector("#downloadable");
+      const controls = document.querySelector("#controls");
 
-        const controls = document.querySelector("#controls");
+      if (!element) return;
+
+      try {
         if (controls) controls.classList.add("hidden");
 
         const canvas = await html2canvas(element as HTMLElement, {
           backgroundColor: null,
           scale: 10,
         });
-
-        if (controls) controls.classList.remove("hidden");
 
         const img = canvas.toDataURL("image/png");
         const a = document.createElement("a");
@@ -129,6 +138,8 @@ const nonSettingsActions = [
       } catch (error) {
         console.error("Failed to download image", error);
         toast.error("Failed to download image!");
+      } finally {
+        if (controls) controls.classList.remove("hidden");
       }
     },
   },
@@ -136,25 +147,23 @@ const nonSettingsActions = [
     label: "Preview",
     icon: Eye,
     handler: () => {
-      // Create a query string with the color data
       const colorParams = new URLSearchParams();
 
       if (isGradient.value) {
         const gradientData = props.colorData as GradientColor;
-        colorParams.set('type', 'gradient');
-        colorParams.set('colors', JSON.stringify(gradientData.colors));
-        colorParams.set('direction', options.value.direction || 'linear');
-        colorParams.set('angle', (options.value.angle ?? 90).toString());
+        colorParams.set("type", "gradient");
+        colorParams.set("colors", JSON.stringify(gradientData.colors));
+        colorParams.set("direction", options.value.direction || "linear");
+        colorParams.set("angle", (options.value.angle ?? 90).toString());
       } else {
         const solidData = props.colorData as SolidColor;
-        colorParams.set('type', 'solid');
-        colorParams.set('color', solidData.color);
+        colorParams.set("type", "solid");
+        colorParams.set("color", solidData.color);
       }
 
-      colorParams.set('opacity', (options.value.opacity ?? 1).toString());
-      colorParams.set('name', props.colorData.name || '');
+      colorParams.set("opacity", (options.value.opacity ?? 1).toString());
+      colorParams.set("name", props.colorData.name || "");
 
-      // Redirect to preview page with color data
       window.location.href = `/preview?${colorParams.toString()}`;
     },
   },
@@ -169,6 +178,7 @@ const copyCSS = () => {
     toast.error("Failed to copy CSS code!");
   }
 };
+
 </script>
 
 <template>
@@ -191,12 +201,13 @@ const copyCSS = () => {
 
       <Popover>
         <PopoverTrigger>
-          <Button variant="secondary" size="icon" class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white">
+          <Button variant="secondary" size="icon" class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white"
+            aria-label="More options">
             <EllipsisVertical class="h-4 w-4" />
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent class="w-80">
+        <PopoverContent class="w-80 max-w-[90vw]">
           <div class="space-y-4">
             <div v-if="isGradient" class="space-y-4">
               <div class="space-y-2">
@@ -227,7 +238,9 @@ const copyCSS = () => {
             <div class="space-y-2">
               <Label>CSS Code</Label>
               <div class="relative">
-                <pre class="p-2 bg-slate-100 rounded text-sm">{{ cssCode }}</pre>
+                <pre class="p-2 bg-slate-100 rounded text-sm whitespace-pre-wrap break-words">
+                  {{ cssCode }}
+                </pre>
                 <Button variant="secondary" size="sm" class="absolute top-2 right-2" @click="copyCSS">
                   <Copy class="h-4 w-4" />
                 </Button>

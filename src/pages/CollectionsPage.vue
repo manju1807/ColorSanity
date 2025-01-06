@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import solidColors from "@/config/constants/data/solid-colors.json";
 import gradientColors from "@/config/constants/data/ui-gradients.json";
 import type { GradientColor, SolidColor } from "@/types/colors";
+import { shuffleArray } from "@/utils/radomizer";
 import { ChevronUp, Search } from "lucide-vue-next";
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 
@@ -34,8 +35,9 @@ const searchQuery = ref("");
 const showBackToTop = ref(false);
 const isPageChanging = ref(false);
 const pageChangeTimeout = ref<number | null>(null);
-const solidColorData = ref<SolidColor[]>([]);
-const gradientColorData = ref<GradientColor[]>([]);
+// Refs
+const shuffledSolidColorData = ref<SolidColor[]>([]);
+const shuffledGradientColorData = ref<GradientColor[]>([]);
 const contentRef = ref<HTMLElement | null>(null);
 
 // Observer
@@ -44,8 +46,9 @@ let observer: IntersectionObserver | null = null;
 // Lifecycle
 onMounted(async () => {
   try {
-    solidColorData.value = solidColors;
-    gradientColorData.value = gradientColors;
+    // Directly shuffle the imported data
+    shuffledSolidColorData.value = shuffleArray(solidColors);
+    shuffledGradientColorData.value = shuffleArray(gradientColors);
     setupIntersectionObserver();
   } catch (error) {
     console.error("Error loading color data:", error);
@@ -124,14 +127,14 @@ const filterColors = (
 // Computed
 const filteredSolids = computed(() =>
   searchQuery.value
-    ? filterColors(solidColorData.value, searchQuery.value)
-    : solidColorData.value,
+    ? filterColors(shuffledSolidColorData.value, searchQuery.value)
+    : shuffledSolidColorData.value
 );
 
 const filteredGradients = computed(() =>
   searchQuery.value
-    ? filterColors(gradientColorData.value, searchQuery.value)
-    : gradientColorData.value,
+    ? filterColors(shuffledGradientColorData.value, searchQuery.value)
+    : shuffledGradientColorData.value
 );
 
 const paginatedColors = computed(() => {
