@@ -1,4 +1,64 @@
-# ColorPalette.vue
+<script setup lang="ts">
+import { TransitionRoot } from "@headlessui/vue";
+import {
+  AlertCircle as AlertCircleIcon,
+  Check as CheckIcon,
+  Copy as CopyIcon,
+} from "lucide-vue-next";
+import { ref } from "vue";
+
+interface ColorInfo {
+  className: string;
+  rgb: string;
+  hsl: string;
+  hex: string;
+}
+
+interface Props {
+  colors: Record<string, Record<string, ColorInfo>>;
+  format?: "hex" | "rgb" | "hsl";
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  format: "hex",
+});
+
+const copiedStates = ref<Record<string, boolean>>({});
+const showError = ref(false);
+
+const getFormattedValue = (colorInfo: ColorInfo): string => {
+  switch (props.format) {
+    case "rgb":
+      return colorInfo.rgb;
+    case "hsl":
+      return colorInfo.hsl;
+    default:
+      return colorInfo.hex;
+  }
+};
+
+const handleCopy = async (
+  colorName: string,
+  shade: string,
+  colorInfo: ColorInfo,
+) => {
+  const textToCopy = getFormattedValue(colorInfo);
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    copiedStates.value[`${colorName}-${shade}`] = true;
+    setTimeout(() => {
+      copiedStates.value[`${colorName}-${shade}`] = false;
+    }, 2000);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (err) {
+    showError.value = true;
+    setTimeout(() => {
+      showError.value = false;
+    }, 3000);
+  }
+};
+</script>
+
 <template>
   <div class="w-full space-y-4 sm:space-y-8 px-2 sm:px-0">
     <!-- Error Alert -->
@@ -19,7 +79,7 @@
 
       <div class="color-grid">
         <div v-for="(colorInfo, shade) in shades" :key="shade"
-          class="group relative flex flex-col rounded-lg overflow-hidden">
+          class="group relative flex flex-col rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
           <!-- Copy Button - Always visible on mobile, hover on desktop -->
           <button @click="handleCopy(colorName, shade, colorInfo)" class="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-white/10 backdrop-blur-sm
                   sm:opacity-0 sm:group-hover:opacity-100
@@ -48,67 +108,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { TransitionRoot } from "@headlessui/vue";
-import {
-	AlertCircle as AlertCircleIcon,
-	Check as CheckIcon,
-	Copy as CopyIcon,
-} from "lucide-vue-next";
-import { ref } from "vue";
-
-interface ColorInfo {
-	className: string;
-	rgb: string;
-	hsl: string;
-	hex: string;
-}
-
-interface Props {
-	colors: Record<string, Record<string, ColorInfo>>;
-	format?: "hex" | "rgb" | "hsl";
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	format: "hex",
-});
-
-const copiedStates = ref<Record<string, boolean>>({});
-const showError = ref(false);
-
-const getFormattedValue = (colorInfo: ColorInfo): string => {
-	switch (props.format) {
-		case "rgb":
-			return colorInfo.rgb;
-		case "hsl":
-			return colorInfo.hsl;
-		default:
-			return colorInfo.hex;
-	}
-};
-
-const handleCopy = async (
-	colorName: string,
-	shade: string,
-	colorInfo: ColorInfo,
-) => {
-	const textToCopy = getFormattedValue(colorInfo);
-	try {
-		await navigator.clipboard.writeText(textToCopy);
-		copiedStates.value[`${colorName}-${shade}`] = true;
-		setTimeout(() => {
-			copiedStates.value[`${colorName}-${shade}`] = false;
-		}, 2000);
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	} catch (err) {
-		showError.value = true;
-		setTimeout(() => {
-			showError.value = false;
-		}, 3000);
-	}
-};
-</script>
-
 <style scoped>
 .color-grid {
   display: grid;
@@ -120,5 +119,16 @@ const handleCopy = async (
   .color-grid {
     grid-template-columns: repeat(11, minmax(0, 1fr));
   }
+}
+
+/* Custom transitions for error alert */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

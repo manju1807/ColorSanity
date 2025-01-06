@@ -21,11 +21,9 @@ const options = ref<CardOptions>({
   angle: 90,
 });
 
-// Create refs for the slider values
 const opacityValue = ref<number[]>([options.value.opacity ?? 1]);
 const angleValue = ref<number[]>([options.value.angle ?? 180]);
 
-// Watch for changes in the slider values and update options
 watch(angleValue, (newValue) => {
   if (newValue?.length) {
     options.value.angle = newValue[0];
@@ -44,14 +42,13 @@ const applyOpacityToColor = (color: string, opacity: number): string => {
   if (color.startsWith("rgb(")) {
     return color.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
   } else if (color.startsWith("#")) {
-    // Convert HEX to RGBA
     const hex = color.replace("#", "");
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
     return `rgba(${r}, ${g}, ${b}, ${opacity})`;
   }
-  return color; // Fallback for unsupported formats
+  return color;
 };
 
 const backgroundStyle = computed(() => {
@@ -178,11 +175,10 @@ const copyCSS = () => {
     toast.error("Failed to copy CSS code!");
   }
 };
-
 </script>
 
 <template>
-  <div class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+  <div class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white">
     <div id="downloadable" class="w-full h-48 relative">
       <div class="w-full h-full" :style="backgroundStyle"></div>
     </div>
@@ -195,26 +191,28 @@ const copyCSS = () => {
 
     <div id="controls" class="absolute top-0 right-0 p-4 flex gap-2">
       <Button v-for="action in nonSettingsActions" :key="action.label" variant="secondary" size="icon"
-        class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white" @click="action.handler">
+        class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white transition-transform transform hover:scale-110"
+        :title="action.label" @click="action.handler">
         <component :is="action.icon" class="h-4 w-4" />
       </Button>
 
       <Popover>
         <PopoverTrigger>
-          <Button variant="secondary" size="icon" class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white"
+          <Button variant="secondary" size="icon"
+            class="rounded-full bg-slate-900/80 hover:bg-slate-900 text-white transition-transform transform hover:scale-110"
             aria-label="More options">
             <EllipsisVertical class="h-4 w-4" />
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent class="w-80 max-w-[90vw]">
+        <PopoverContent class="w-80 max-w-[90vw] p-4 bg-white shadow-lg rounded-lg">
           <div class="space-y-4">
             <div v-if="isGradient" class="space-y-4">
               <div class="space-y-2">
-                <Label>Direction</Label>
+                <Label class="text-sm font-medium">Direction</Label>
                 <Select v-model="options.direction">
-                  <SelectTrigger>
-                    <SelectValue />
+                  <SelectTrigger class="w-full">
+                    <SelectValue placeholder="Select direction" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="linear">Linear</SelectItem>
@@ -225,23 +223,24 @@ const copyCSS = () => {
               </div>
 
               <div v-if="options.direction === 'linear'" class="space-y-2">
-                <Label>Angle: {{ options.angle }}°</Label>
+                <Label class="text-sm font-medium">Angle: {{ options.angle }}°</Label>
                 <Slider v-model="angleValue" :min="0" :max="360" :step="1" />
               </div>
             </div>
 
             <div class="space-y-2">
-              <Label>Opacity: {{ Math.round((options.opacity ?? 1) * 100) }}%</Label>
+              <Label class="text-sm font-medium">Opacity: {{ Math.round((options.opacity ?? 1) * 100) }}%</Label>
               <Slider v-model="opacityValue" :min="0" :max="1" :step="0.01" />
             </div>
 
             <div class="space-y-2">
-              <Label>CSS Code</Label>
+              <Label class="text-sm font-medium">CSS Code</Label>
               <div class="relative">
-                <pre class="p-2 bg-slate-100 rounded text-sm whitespace-pre-wrap break-words">
+                <p class="p-6 bg-slate-100 rounded text-xs text-wrap font-mono">
                   {{ cssCode }}
-                </pre>
-                <Button variant="secondary" size="sm" class="absolute top-2 right-2" @click="copyCSS">
+                </p>
+                <Button variant="secondary" size="xs" class="absolute top-2 right-2 bg-white/80 hover:bg-white"
+                  @click="copyCSS" title="Copy CSS">
                   <Copy class="h-4 w-4" />
                 </Button>
               </div>
@@ -252,3 +251,30 @@ const copyCSS = () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Add custom styles for transitions and animations */
+.button-hover {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button-hover:hover {
+  transform: scale(1.1);
+}
+
+.popover-content {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

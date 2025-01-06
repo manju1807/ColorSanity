@@ -3,49 +3,49 @@ import { GithubIcon, Linkedin } from "lucide-vue-next";
 import IconLogo from "../icons/IconLogo.vue";
 
 interface Column {
-	title: string;
-	items: string[];
+  title: string;
+  items: string[];
 }
 
 const mainColumns: Column[] = [
-	{
-		title: "Main Tools",
-		items: [
-			"Social Media Editor",
-			"Geometric Patterns Generator",
-			"Seamless Patterns Generator",
-			"Mesh Gradients Generator",
-			"API Docs",
-		],
-	},
-	{
-		title: "Free Generator Tools",
-		items: [
-			"CSS Patterns",
-			"Blob Generator",
-			"SVG Wave Generator",
-			"SVG Chart Generator",
-			"SVG Doodle Backgrounds",
-			"Image Noise Generator",
-			"CSS Gradients Collection",
-			"Free HD Wallpapers",
-		],
-	},
-	{
-		title: "Company",
-		items: [
-			"About",
-			"Blog",
-			"Changelog",
-			"Privacy Policy",
-			"Cookies Policy",
-			"Terms",
-		],
-	},
+  {
+    title: "Main Tools",
+    items: [
+      "Social Media Editor",
+      "Geometric Patterns Generator",
+      "Seamless Patterns Generator",
+      "Mesh Gradients Generator",
+      "API Docs",
+    ],
+  },
+  {
+    title: "Free Generator Tools",
+    items: [
+      "CSS Patterns",
+      "Blob Generator",
+      "SVG Wave Generator",
+      "SVG Chart Generator",
+      "SVG Doodle Backgrounds",
+      "Image Noise Generator",
+      "CSS Gradients Collection",
+      "Free HD Wallpapers",
+    ],
+  },
+  {
+    title: "Company",
+    items: [
+      "About",
+      "Blog",
+      "Changelog",
+      "Privacy Policy",
+      "Cookies Policy",
+      "Terms",
+    ],
+  },
 ];
 
 defineOptions({
-	name: "AppFooter",
+  name: "AppFooter",
 });
 </script>
 
@@ -55,8 +55,8 @@ defineOptions({
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <div class="flex items-center mb-6 space-x-2">
-            <IconLogo color="hsl(var(--foreground))" />
-            <span class="text-xl font-semibold text-foreground">Gradio</span>
+            <IconLogo />
+            <span class="text-xl font-semibold text-foreground tracking-tight">ColorSanity</span>
           </div>
           <p class="mb-6">
             Create Unlimited Beautiful Backgrounds. Brand Your Product, Website, Business Uniquely.
@@ -85,7 +85,7 @@ defineOptions({
               class="h-5 w-5 text-muted-foreground hover:text-foreground transition-all duration-300 ease-in-out cursor-pointer" />
           </div>
           <div class="text-sm">
-            ©{{ new Date().getFullYear() }} Gradio. Made with ❤️ by Manjunath R
+            ©{{ new Date().getFullYear() }} ColorSanity. Made with ❤️ by Manjunath R
           </div>
         </div>
       </div>
