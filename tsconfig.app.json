@@ -10,20 +10,24 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"lib": ["esnext", "dom"],
-		"types": ["vite/client", "node"],
+		"lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+		"types": ["vite/client", "node", "vue"],
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+		"allowJs": true,
+		"isolatedModules": true
 	},
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.tsx",
 		"src/**/*.vue",
+		"src/**/*.json",
 		"vite.config.ts"
 	],
+	"exclude": ["node_modules", "dist"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"

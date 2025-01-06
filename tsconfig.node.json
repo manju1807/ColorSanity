@@ -6,7 +6,10 @@
 		"cypress.config.*",
 		"playwright.config.*",
 		"vite.config.ts",
-		"src/**/*.ts"
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue"
 	],
 	"compilerOptions": {
 		"composite": true,

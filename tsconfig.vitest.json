@@ -1,11 +1,12 @@
 {
 	"extends": "./tsconfig.app.json",
-	"exclude": [],
+	"exclude": ["node_modules", "dist"],
 	"compilerOptions": {
 		"composite": true,
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.tsbuildinfo",
-
-		"lib": [],
-		"types": ["node", "jsdom"]
-	}
+		"lib": ["esnext", "dom", "dom.iterable"],
+		"types": ["node", "jsdom", "vitest", "vitest/globals"],
+		"isolatedModules": true
+	},
+	"include": ["src/**/*.{test,spec}.{js,ts,jsx,tsx}", "vitest.config.*"]
 }

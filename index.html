@@ -2,24 +2,68 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="<%= siteConfig.manifest.icons.favicon %>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <link rel="icon" href="<%= siteConfig.manifest.icons.favicon %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
   <title>
     <%= siteConfig.name %>
   </title>
-  <meta name="theme-color" content="<%= siteConfig.themeColor %>">
-  <link rel="apple-touch-icon" href="<%= siteConfig.manifest.icons.appleTouchIcon %>" sizes="180x180">
-  <link rel="mask-icon" href="<%= siteConfig.manifest.icons.maskIcon %>" color="<%= siteConfig.themeColor %>">
-  <meta name="description" content="<%= siteConfig.description %>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="<%= siteConfig.themeColor %>" />
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="<%= siteConfig.manifest.icons.appleTouchIcon %>" sizes="180x180" />
+
+  <!-- Mask Icon -->
+  <link rel="mask-icon" href="<%= siteConfig.manifest.icons.maskIcon %>" color="<%= siteConfig.themeColor %>" />
+
+  <!-- Meta Description -->
+  <meta name="description" content="<%= siteConfig.description %>" />
+
+  <!-- Keywords -->
+  <meta name="keywords" content="<%= siteConfig.keywords.join(', ') %>" />
+
+  <!-- Author -->
+  <meta name="author" content="<%= siteConfig.author %>" />
+
+  <!-- Web Manifest -->
+  <link rel="manifest" href="<%= siteConfig.manifest.webmanifest %>" />
+
+  <!-- Open Graph (OG) Tags for Social Media -->
+  <meta property="og:title" content="<%= siteConfig.name %>" />
+  <meta property="og:description" content="<%= siteConfig.description %>" />
+  <meta property="og:image" content="<%= siteConfig.manifest.icons.androidChrome.large %>" />
+  <meta property="og:url" content="https://colorsanity.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= siteConfig.name %>" />
+  <meta name="twitter:description" content="<%= siteConfig.description %>" />
+  <meta name="twitter:image" content="<%= siteConfig.manifest.icons.androidChrome.large %>" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=<%= siteConfig.fonts.families.join('&') %>&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
+
+  <!-- PWA Splash Screen (Optional) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="<%= siteConfig.themeColor %>" />
+  <meta name="apple-mobile-web-app-title" content="<%= siteConfig.name %>" />
 </head>
 
 <body>
+  <!-- App Root -->
   <div id="app"></div>
+
+  <!-- Main Script -->
   <script type="module" src="/src/main.ts"></script>
 </body>
 
