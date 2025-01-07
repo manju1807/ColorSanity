@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://colorsanity.netlify.app/</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://colorsanity.netlify.app/about</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Color Palette Generator -->
+  <url>
+    <loc>https://colorsanity.netlify.app/color-palette</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Gradient Generator -->
+  <url>
+    <loc>https://colorsanity.netlify.app/gradient-generator</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tints & Shades -->
+  <url>
+    <loc>https://colorsanity.netlify.app/tints-shades</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Theme Customization -->
+  <url>
+    <loc>https://colorsanity.netlify.app/theme-customization</loc>
+    <lastmod>2023-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Add more routes as needed -->
+</urlset>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colorsanity.netlify.app/sitemap.xml
