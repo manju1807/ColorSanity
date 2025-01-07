@@ -3,43 +3,43 @@ import { GithubIcon, Linkedin } from "lucide-vue-next";
 import IconLogo from "../icons/IconLogo.vue";
 
 interface Column {
-	title: string;
-	items: { name: string; link: string }[];
+  title: string;
+  items: { name: string; link: string }[];
 }
 
 const mainColumns: Column[] = [
-	{
-		title: "Features",
-		items: [
-			{ name: "Color Palette Generator", link: "/color-palettes" },
-			{ name: "Gradient Generator", link: "/collections" },
-			{ name: "Tints & Shades", link: "/tints" },
-			{ name: "Real-Time Preview", link: "/preview" },
-		],
-	},
-	{
-		title: "Collections",
-		items: [
-			{ name: "Solid Colors", link: "/collections" },
-			{ name: "Gradients", link: "/collections" },
-			{ name: "Tints & Shades", link: "/tints" },
-			{ name: "Custom Palettes", link: "/color-palettes" },
-		],
-	},
-	{
-		title: "Resources",
-		items: [
-			{ name: "Blog", link: "#" },
-			{ name: "Documentation", link: "#" },
-			{ name: "Changelog", link: "#" },
-			{ name: "Privacy Policy", link: "#" },
-			{ name: "Terms of Service", link: "#" },
-		],
-	},
+  {
+    title: "Features",
+    items: [
+      { name: "Color Palette Generator", link: "/color-palettes" },
+      { name: "Gradient Generator", link: "/collections" },
+      { name: "Tints & Shades", link: "/tints" },
+      { name: "Real-Time Preview", link: "/preview" },
+    ],
+  },
+  {
+    title: "Collections",
+    items: [
+      { name: "Solid Colors", link: "/collections" },
+      { name: "Gradients", link: "/collections" },
+      { name: "Tints & Shades", link: "/tints" },
+      { name: "Custom Palettes", link: "/color-palettes" },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      { name: "Blog", link: "#" },
+      { name: "Documentation", link: "#" },
+      { name: "Changelog", link: "#" },
+      { name: "Privacy Policy", link: "#" },
+      { name: "Terms of Service", link: "#" },
+    ],
+  },
 ];
 
 defineOptions({
-	name: "AppFooter",
+  name: "AppFooter",
 });
 </script>
 
@@ -57,7 +57,7 @@ defineOptions({
             Create, customize, and explore stunning color palettes, gradients, and CSS code snippets. Perfect for
             designers, developers, and creatives.
           </p>
-          <router-link to="/color-palettes"
+          <router-link to="/collections"
             class="bg-primary text-sm text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
             Get Started Now
           </router-link>

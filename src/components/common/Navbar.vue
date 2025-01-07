@@ -3,11 +3,11 @@ import LangToggle from "@/components/common/LangToggle.vue";
 import ModeToggle from "@/components/common/ModeToggle.vue";
 import { Button } from "@/components/ui/button";
 import {
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { useDark } from "@vueuse/core";
 import { Menu, Palette } from "lucide-vue-next"; // Import Menu icon for hamburger
@@ -24,10 +24,20 @@ const isDark = useDark();
 const isNavOpen = ref(false); // Reactive property to toggle navigation menu
 
 const NavItems = [
-	{ label: "Collections", navRoute: "/collections" },
-	{ label: "Tints", navRoute: "/tints" },
-	// { label: "Color Palettes", navRoute: "/color-palettes" },
+  { label: "Collections", navRoute: "/collections" },
+  { label: "Tints", navRoute: "/tints" },
+  // { label: "Color Palettes", navRoute: "/color-palettes" },
 ];
+
+const navigateAndCloseSheet = (navRoute: string) => {
+  router.push(navRoute);
+  isNavOpen.value = false; // Close the sheet after navigation
+};
+
+// Helper function to check if the current route matches the navRoute
+const isCurrentRoute = (navRoute: string) => {
+  return router.currentRoute.value.path === navRoute;
+};
 </script>
 
 <template>
@@ -49,10 +59,10 @@ const NavItems = [
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
             <div class="flex flex-col space-y-2">
-              <Button v-for="item in NavItems" :key="item.label" variant="ghost" @click="router.push(item.navRoute)"
-                :class="[
+              <Button v-for="item in NavItems" :key="item.label" variant="ghost"
+                @click="navigateAndCloseSheet(item.navRoute)" :class="[
                   'text-left hover:bg-accent hover:text-accent-foreground',
-                  router.currentRoute.value.path === item.navRoute ? 'bg-primary/10 text-primary font-semibold' : 'text-foreground'
+                  isCurrentRoute(item.navRoute) ? 'bg-primary/10 text-primary font-semibold' : 'text-foreground'
                 ]">
                 {{ item.label }}
               </Button>
@@ -66,7 +76,7 @@ const NavItems = [
         <div class="hidden md:flex items-center space-x-4">
           <Button v-for="item in NavItems" :key="item.label" variant="ghost" @click="router.push(item.navRoute)" :class="[
             'hover:bg-accent hover:text-accent-foreground',
-            router.currentRoute.value.path === item.navRoute ? 'bg-primary/10 text-primary font-semibold' : 'text-foreground'
+            isCurrentRoute(item.navRoute) ? 'bg-primary/10 text-primary font-semibold' : 'text-foreground'
           ]">
             {{ item.label }}
           </Button>

@@ -1,19 +1,48 @@
 <script setup lang="ts">
 import ColorPalette from "@/components/custom/ColorPalette.vue";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import TintColors from "@/config/constants/data/tints.json";
 import { ChevronDownIcon } from "lucide-vue-next";
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 // Simple format state
 const selectedFormat = ref<"hex" | "rgb" | "hsl">("hex");
+
+// Reactive props for dropdown positioning
+const dropdownSide = ref<"left" | "right">("right");
+const dropdownAlign = ref<"start" | "center" | "end">("start");
+const dropdownSideOffset = ref(5);
+
+// Function to update dropdown position based on screen size
+const updateDropdownPosition = () => {
+  if (window.innerWidth < 768) {
+    dropdownSide.value = "left"; // Position dropdown to the left on small screens
+    dropdownAlign.value = "start";
+    dropdownSideOffset.value = 10; // Add some spacing
+  } else {
+    dropdownSide.value = "right"; // Default to right on larger screens
+    dropdownAlign.value = "start";
+    dropdownSideOffset.value = 5;
+  }
+};
+
+// Update position on mount and window resize
+onMounted(() => {
+  updateDropdownPosition();
+  window.addEventListener("resize", updateDropdownPosition);
+});
+
+// Cleanup event listener on unmount
+onUnmounted(() => {
+  window.removeEventListener("resize", updateDropdownPosition);
+});
 </script>
 
 <template>
@@ -39,7 +68,8 @@ const selectedFormat = ref<"hex" | "rgb" | "hsl">("hex");
             {{ selectedFormat.toUpperCase() }}
             <ChevronDownIcon class="h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent class="absolute z-10">
+          <DropdownMenuContent class="w-48" :side="dropdownSide" :align="dropdownAlign" :sideOffset="dropdownSideOffset"
+            collisionPadding={10}>
             <DropdownMenuLabel>Color Format</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem @select="selectedFormat = 'hex'" class="cursor-pointer">
