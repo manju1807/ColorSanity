@@ -35,15 +35,18 @@
   <!-- Open Graph (OG) Tags for Social Media -->
   <meta property="og:title" content="<%= siteConfig.name %>" />
   <meta property="og:description" content="<%= siteConfig.description %>" />
-  <meta property="og:image" content="<%= siteConfig.manifest.icons.androidChrome.large %>" />
-  <meta property="og:url" content="https://colorsanity.com" />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="<%= siteConfig.openGraph.images[0].url %>" />
+  <meta property="og:image:width" content="<%= siteConfig.openGraph.images[0].width %>" />
+  <meta property="og:image:height" content="<%= siteConfig.openGraph.images[0].height %>" />
+  <meta property="og:type" content="<%= siteConfig.openGraph.type %>" />
+  <meta property="og:locale" content="<%= siteConfig.openGraph.locale %>" />
+  <meta property="og:url" content="https://colorsanity.netlify.app/" />
 
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="<%= siteConfig.name %>" />
   <meta name="twitter:description" content="<%= siteConfig.description %>" />
-  <meta name="twitter:image" content="<%= siteConfig.manifest.icons.androidChrome.large %>" />
+  <meta name="twitter:image" content="<%= siteConfig.openGraph.images[0].url %>" />
 
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

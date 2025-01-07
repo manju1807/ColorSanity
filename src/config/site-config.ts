@@ -30,6 +30,16 @@ interface SiteConfig {
 		families: string[];
 		preconnect: string[];
 	};
+	openGraph: {
+		images: {
+			url: string;
+			width: number;
+			height: number;
+			alt: string;
+		}[];
+		type?: string;
+		locale?: string;
+	};
 	keywords: string[];
 	author: string;
 }
@@ -83,6 +93,18 @@ export const siteConfig: SiteConfig = {
 			"https://fonts.googleapis.com",
 			"https://fonts.gstatic.com",
 		],
+	},
+	openGraph: {
+		images: [
+			{
+				url: "/manifests/opengraph.png",
+				width: 1200,
+				height: 630,
+				alt: "ColorSanity - Color Palette Generator",
+			},
+		],
+		type: "website",
+		locale: "en_US",
 	},
 	keywords: [
 		"color palette generator",
