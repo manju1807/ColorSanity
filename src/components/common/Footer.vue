@@ -3,43 +3,43 @@ import { GithubIcon, Linkedin } from "lucide-vue-next";
 import IconLogo from "../icons/IconLogo.vue";
 
 interface Column {
-  title: string;
-  items: { name: string; link: string }[];
+	title: string;
+	items: { name: string; link: string }[];
 }
 
 const mainColumns: Column[] = [
-  {
-    title: "Features",
-    items: [
-      { name: "Color Palette Generator", link: "/color-palettes" },
-      { name: "Gradient Generator", link: "/collections" },
-      { name: "Tints & Shades", link: "/tints" },
-      { name: "Real-Time Preview", link: "/preview" },
-    ],
-  },
-  {
-    title: "Collections",
-    items: [
-      { name: "Solid Colors", link: "/collections" },
-      { name: "Gradients", link: "/collections" },
-      { name: "Tints & Shades", link: "/tints" },
-      { name: "Custom Palettes", link: "/color-palettes" },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { name: "Blog", link: "#" },
-      { name: "Documentation", link: "#" },
-      { name: "Changelog", link: "#" },
-      { name: "Privacy Policy", link: "#" },
-      { name: "Terms of Service", link: "#" },
-    ],
-  },
+	{
+		title: "Features",
+		items: [
+			{ name: "Color Palette Generator", link: "/color-palettes" },
+			{ name: "Gradient Generator", link: "/collections" },
+			{ name: "Tints & Shades", link: "/tints" },
+			{ name: "Real-Time Preview", link: "/preview" },
+		],
+	},
+	{
+		title: "Collections",
+		items: [
+			{ name: "Solid Colors", link: "/collections" },
+			{ name: "Gradients", link: "/collections" },
+			{ name: "Tints & Shades", link: "/tints" },
+			{ name: "Custom Palettes", link: "/color-palettes" },
+		],
+	},
+	{
+		title: "Resources",
+		items: [
+			{ name: "Blog", link: "#" },
+			{ name: "Documentation", link: "#" },
+			{ name: "Changelog", link: "#" },
+			{ name: "Privacy Policy", link: "#" },
+			{ name: "Terms of Service", link: "#" },
+		],
+	},
 ];
 
 defineOptions({
-  name: "AppFooter",
+	name: "AppFooter",
 });
 </script>
 
@@ -53,12 +53,12 @@ defineOptions({
             <IconLogo />
             <span class="text-xl font-semibold text-foreground tracking-tight">ColorSanity</span>
           </div>
-          <p class="mb-6 text-sm">
+          <p class="mb-6 text-sm leading-relaxed">
             Create, customize, and explore stunning color palettes, gradients, and CSS code snippets. Perfect for
             designers, developers, and creatives.
           </p>
           <router-link to="/collections"
-            class="bg-primary text-sm text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            class="bg-primary text-sm text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-300">
             Get Started Now
           </router-link>
         </div>
@@ -69,7 +69,8 @@ defineOptions({
             <h3 class="text-lg font-semibold mb-4 text-foreground">{{ col.title }}</h3>
             <ul>
               <li v-for="(item, i) in col.items" :key="i" class="mb-1">
-                <router-link :to="item.link" class="hover:text-foreground text-sm transition-colors">
+                <router-link :to="item.link" class="hover:text-foreground text-sm transition-colors hover:underline"
+                  prefetch>
                   {{ item.name }}
                 </router-link>
               </li>
@@ -83,11 +84,13 @@ defineOptions({
         <div class="flex flex-col md:flex-row justify-between items-center">
           <!-- Social Media Links -->
           <div class="flex space-x-6 mb-4 md:mb-0">
-            <a href="https://www.linkedin.com/in/manju1807/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/manju1807/" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn" title="LinkedIn">
               <Linkedin
                 class="h-5 w-5 text-muted-foreground hover:text-foreground transition-all duration-300 ease-in-out cursor-pointer" />
             </a>
-            <a href="https://github.com/manju1807" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/manju1807" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              title="GitHub">
               <GithubIcon
                 class="h-5 w-5 text-muted-foreground hover:text-foreground transition-all duration-300 ease-in-out cursor-pointer" />
             </a>
