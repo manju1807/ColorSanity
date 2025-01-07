@@ -53,7 +53,7 @@ export const useThemeStore = defineStore("theme", {
 		},
 
 		updateFontFamily(value: string) {
-			console.log("Updating font family:", value);
+			// console.log("Updating font family:", value);
 			if (value in FONT_FAMILIES) {
 				this.settings.fontFamily = value;
 				this.applyTheme();
@@ -107,14 +107,14 @@ export const useThemeStore = defineStore("theme", {
 				FONT_FAMILIES[
 					this.settings.fontFamily as keyof typeof FONT_FAMILIES
 				] || FONT_FAMILIES.Inter;
-			console.log("Applying font family:", {
-				selectedFont: this.settings.fontFamily,
-				fontStack,
-				currentStyle:
-					document.documentElement.style.getPropertyValue(
-						"--font-family",
-					),
-			});
+			// console.log("Applying font family:", {
+			//   selectedFont: this.settings.fontFamily,
+			//   fontStack,
+			//   currentStyle:
+			//     document.documentElement.style.getPropertyValue(
+			//       "--font-family",
+			//     ),
+			// });
 			root.style.setProperty("--font-family", fontStack);
 			const currentColors =
 				this.settings.colors[isDark ? "dark" : "light"];

@@ -1,7 +1,7 @@
 // src/composables/useWebVitals.ts
-import { ref, onMounted } from "vue";
-import { onCLS, onFID, onFCP, onLCP, onTTFB, onINP } from "web-vitals";
+import { onMounted, ref } from "vue";
 import type { Metric } from "web-vitals";
+import { onCLS, onFCP, onFID, onINP, onLCP, onTTFB } from "web-vitals";
 
 interface MetricData {
 	value: number;

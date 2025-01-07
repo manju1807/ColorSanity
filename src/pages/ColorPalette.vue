@@ -26,12 +26,12 @@ const generatePalette = () => {
 
 const exportPalette = () => {
 	// Function to export the color palette
-	console.log("Exporting palette:", colors.value);
+	// console.log("Exporting palette:", colors.value);
 };
 
 const savePalette = () => {
 	// Function to save the color palette
-	console.log("Saving palette:", colors.value);
+	// console.log("Saving palette:", colors.value);
 };
 </script>
 

@@ -1,6 +1,6 @@
 // src/utils/web-vitals.ts
-import { onCLS, onFID, onFCP, onLCP, onTTFB, onINP } from "web-vitals";
 import type { Metric } from "web-vitals";
+import { onCLS, onFCP, onFID, onINP, onLCP, onTTFB } from "web-vitals";
 
 // Define analytics interface
 interface AnalyticsOptions {
