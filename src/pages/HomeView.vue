@@ -313,26 +313,26 @@ onMounted(() => {
     </section>
 
     <!-- Footer -->
-    <footer class="bg-muted text-muted-foreground py-8 md:py-16 px-4 md:px-8">
+    <footer class="bg-muted text-foreground py-8 md:py-16 px-4 md:px-8">
       <div class="container mx-auto flex flex-col md:flex-row gap-4 md:gap-6 min-h-[50dvh]">
         <!-- Personal Message Section -->
         <div class="flex flex-col w-full px-4 md:px-16 justify-center">
-          <h3 class="text-lg font-semibold mb-4 relative">
+          <h3 class="text-lg font-semibold mb-4 relative text-foreground">
             <span class="z-20">Hello fellow creators!</span>
             <div class="absolute bg-blue-400 h-2 w-32 top-4 z-0 opacity-30"></div>
           </h3>
           <p class="text-sm mb-4">
-            I'm Manjunath R, the creator and developer behind the <b>ColorSanity</b>.
+            I'm Manjunath R, the creator and developer behind the <b class="text-foreground">ColorSanity</b>.
           </p>
           <p class="text-sm mb-4">
             For years, I struggled to craft visually appealing designs for projects, brands, and interfaces. It often
             required advanced design skills or countless hours of trial and error.
           </p>
           <p class="text-sm mb-4">
-            That's why I created <b>ColorSanity</b>. My goal is to empower everyone to create professional-quality
-            designs effortlessly, without needing prior design experience.
+            That's why I created <b class="text-foreground">ColorSanity</b>. My goal is to empower everyone to create
+            professional-quality designs effortlessly, without needing prior design experience.
           </p>
-          <p class="text-sm font-semibold">- Manjunath R</p>
+          <p class="text-sm font-semibold">- Manjunath R ❤️</p>
         </div>
 
         <!-- Additional Content Section -->
@@ -340,7 +340,7 @@ onMounted(() => {
           <div class="h-48 w-48 md:h-60 md:w-60 rounded-xl shadow-xl border-border card">
             <img class="grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
               v-bind:src="'https://manjunath18.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDP.630992a6.png&w=1080&q=100'"
-              height="100%" width="100%" alt="" />
+              height="100%" width="100%" alt="Manjunath R's profile picture" />
           </div>
         </div>
       </div>

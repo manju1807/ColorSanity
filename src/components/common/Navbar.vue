@@ -44,7 +44,7 @@ const isCurrentRoute = (navRoute: string): boolean => {
     class="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div class="container flex h-14 items-center justify-between px-4">
       <!-- Logo Section -->
-      <div class="flex items-center gap-2 cursor-pointer" @click="router.replace('/')">
+      <div class="flex items-center gap-2 cursor-pointer" @click="router.replace('/')" aria-label="Home">
         <IconLogo />
         <span class="font-bold text-primary tracking-tight">ColorSanity</span>
       </div>
@@ -56,7 +56,7 @@ const isCurrentRoute = (navRoute: string): boolean => {
           isCurrentRoute(item.navRoute)
             ? 'bg-primary/10 text-primary font-semibold'
             : 'text-foreground',
-        ]">
+        ]" :aria-label="`Navigate to ${item.label}`">
           {{ item.label }}
         </Button>
       </div>
@@ -102,7 +102,7 @@ const isCurrentRoute = (navRoute: string): boolean => {
                   isCurrentRoute(item.navRoute)
                     ? 'bg-primary/10 text-primary font-semibold'
                     : 'text-foreground',
-                ]">
+                ]" :aria-label="`Navigate to ${item.label}`">
                 {{ item.label }}
               </Button>
             </div>

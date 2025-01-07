@@ -24,7 +24,7 @@ defineOptions({
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <Button variant="outline" size="icon" class="h-9 w-9 rounded-full">
+      <Button variant="outline" size="icon" class="h-9 w-9 rounded-full" :aria-label="`Toggle Languages`">
         <Languages class="h-4 w-4" />
         <span class="sr-only">Toggle language</span>
       </Button>
