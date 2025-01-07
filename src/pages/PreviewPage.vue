@@ -1,10 +1,8 @@
-# ColorPreview.vue
 <script setup lang="ts">
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import type {
 	CardOptions,
 	ColorData,
@@ -18,7 +16,6 @@ import {
 	Github,
 	Instagram,
 	Layers,
-	Menu,
 	Palette,
 	Star,
 	Twitter,
@@ -35,14 +32,12 @@ const options = ref<CardOptions>({
 const backgroundStyle = ref<{ background?: string; backgroundColor?: string }>(
 	{},
 );
-const isMenuOpen = ref(false);
 
 // Helper Functions
-// URL Parameter Processing
 onMounted(() => {
 	const params = new URLSearchParams(window.location.search);
 	const type = params.get("type");
-	const opacity = parseFloat(params.get("opacity") || "1");
+	const opacity = Number.parseFloat(params.get("opacity") || "1");
 	const name = params.get("name") || "";
 
 	if (type === "gradient") {
@@ -54,7 +49,7 @@ onMounted(() => {
 			directionParam === "conic"
 				? directionParam
 				: "linear";
-		const angle = parseInt(params.get("angle") || "90");
+		const angle = Number.parseInt(params.get("angle") || "90");
 
 		colorData.value = { name, colors } as GradientColor;
 		options.value = { opacity, direction, angle };
@@ -183,48 +178,6 @@ const testimonials = ref([
 
 <template>
   <div class="relative min-h-screen">
-    <!-- Navigation -->
-    <header class="sticky w-full z-50 bg-transparent">
-      <nav class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 rounded-full" :style="backgroundStyle"></div>
-            <span class="font-bold text-xl">Color Preview</span>
-          </div>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#features" class="hover:text-primary">Features</a>
-            <a href="#showcase" class="hover:text-primary">Showcase</a>
-            <a href="#components" class="hover:text-primary">Components</a>
-            <a href="#cta" class="hover:text-primary">Get Started</a>
-            <Button variant="default" :style="backgroundStyle">
-              Try Now
-            </Button>
-          </div>
-
-          <!-- Mobile Menu -->
-          <Sheet v-model:open="isMenuOpen">
-            <SheetTrigger class="md:hidden">
-              <Menu class="h-6 w-6" />
-            </SheetTrigger>
-            <SheetContent>
-              <div class="flex flex-col space-y-4 mt-8">
-                <a href="#features" class="hover:text-primary">Features</a>
-                <a href="#showcase" class="hover:text-primary">Showcase</a>
-                <a href="#components" class="hover:text-primary">Components</a>
-                <a href="#cta" class="hover:text-primary">Get Started</a>
-                <Button variant="default" :style="backgroundStyle">
-                  Try Now
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </nav>
-    </header>
-
     <!-- Hero Section -->
     <section class="pt-32 pb-20 relative overflow-hidden">
       <div class="container mx-auto px-4">
@@ -240,11 +193,11 @@ const testimonials = ref([
                 Perfect Colors
               </span>
             </h1>
-            <p class="text-xl text-gray-600">
+            <p class="text-xl text-gray-600 dark:text-gray-300">
               Experience how this color scheme can elevate your design system and create stunning user interfaces.
             </p>
             <div class="flex space-x-4">
-              <Button size="lg" :style="backgroundStyle">
+              <Button size="lg" :style="backgroundStyle" class="text-background">
                 Get Started
                 <ArrowRight class="ml-2 h-5 w-5" />
               </Button>
@@ -273,7 +226,7 @@ const testimonials = ref([
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold mb-4">Features</h2>
-          <p class="text-xl text-black">Discover our powerful features</p>
+          <p class="text-xl text-gray-600 dark:text-gray-300">Discover our powerful features</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -282,7 +235,7 @@ const testimonials = ref([
               <component :is="feature.icon" class="w-12 h-12 mb-4"
                 :style="{ color: backgroundStyle.backgroundColor }" />
               <h3 class="text-xl font-bold mb-2">{{ feature.title }}</h3>
-              <p class="text-gray-600">{{ feature.description }}</p>
+              <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
             </CardContent>
           </Card>
         </div>
@@ -290,11 +243,11 @@ const testimonials = ref([
     </section>
 
     <!-- Services Section -->
-    <section id="showcase" class="py-20 bg-gray-50">
+    <section id="showcase" class="py-20 bg-gray-50 dark:bg-gray-800">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4 text-black">Services</h2>
-          <p class="text-xl text-muted-foreground">Professional solutions for your needs</p>
+          <h2 class="text-4xl font-bold mb-4">Services</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">Professional solutions for your needs</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -302,7 +255,7 @@ const testimonials = ref([
             <CardContent class="p-6">
               <div class="w-12 h-12 rounded-full mb-4" :style="backgroundStyle"></div>
               <h3 class="text-xl font-bold mb-2">{{ service.title }}</h3>
-              <p class="text-gray-600 mb-4">{{ service.description }}</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">{{ service.description }}</p>
               <p class="font-bold text-lg" :style="{ color: backgroundStyle.backgroundColor }">
                 {{ service.price }}
               </p>
@@ -322,18 +275,18 @@ const testimonials = ref([
               <div class="w-16 h-16 rounded-full" :style="backgroundStyle"></div>
             </div>
             <h3 class="text-4xl font-bold mb-2">{{ stat.value }}</h3>
-            <p class="text-gray-600">{{ stat.label }}</p>
+            <p class="text-gray-600 dark:text-gray-300">{{ stat.label }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="components" class="py-20 bg-gray-50">
+    <section id="components" class="py-20 bg-gray-50 dark:bg-gray-800">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4 text-black">Testimonials</h2>
-          <p class="text-xl text-muted-foreground">What our clients say</p>
+          <h2 class="text-4xl font-bold mb-4">Testimonials</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">What our clients say</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -345,10 +298,10 @@ const testimonials = ref([
                 </Avatar>
                 <div class="ml-4">
                   <h4 class="font-bold">{{ testimonial.name }}</h4>
-                  <p class="text-sm text-muted-foreground">{{ testimonial.position }}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-300">{{ testimonial.position }}</p>
                 </div>
               </div>
-              <p class="text-muted-foreground mb-4">"{{ testimonial.text }}"</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">"{{ testimonial.text }}"</p>
               <div class="flex space-x-1">
                 <Star v-for="i in 5" :key="i" class="w-5 h-5" :style="{ color: backgroundStyle.backgroundColor }" />
               </div>
@@ -367,10 +320,10 @@ const testimonials = ref([
             <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p class="text-xl mb-8">Transform your design system with our color palette</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" variant="default" class="bg-white text-foreground hover:bg-white/90">
+              <Button size="lg" variant="default" class="bg-primary text-background hover:bg-white/90">
                 Get Started Now
               </Button>
-              <Button size="lg" variant="outline" class="border-white text-foreground hover:bg-white/20">
+              <Button size="lg" variant="outline" class="border-border text-foreground hover:bg-white/20">
                 Learn More
               </Button>
             </div>
@@ -380,7 +333,7 @@ const testimonials = ref([
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-white">
+    <footer class="py-12 bg-white dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -388,14 +341,15 @@ const testimonials = ref([
               <div class="w-8 h-8 rounded-full" :style="backgroundStyle"></div>
               <span class="font-bold text-xl">Color Preview</span>
             </div>
-            <p class="text-muted-foreground">Elevate your design system with our color palette solutions.</p>
+            <p class="text-gray-600 dark:text-gray-300">Elevate your design system with our color palette solutions.</p>
           </div>
 
           <div v-for="i in 3" :key="i">
             <h4 class="font-bold mb-4">Category {{ i }}</h4>
             <ul class="space-y-2">
               <li v-for="j in 4" :key="j">
-                <a href="#" class="text-muted-foreground hover:text-gray-900">Link {{ j }}</a>
+                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">Link
+                  {{ j }}</a>
               </li>
             </ul>
           </div>
@@ -404,19 +358,19 @@ const testimonials = ref([
         <Separator class="my-8" />
 
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-600 mb-4 md:mb-0">© 2024 Color Preview. All rights reserved.</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 md:mb-0">© 2024 Color Preview. All rights reserved.</p>
           <div class="flex space-x-4">
             <Button :variant="'outline'" :size="'icon'" class="cursor-pointer hover:cursor-pointer"
               :style="{ cursor: 'pointer' }">
-              <Twitter class="h-5 w-5" :style="{ backgroundColor: backgroundStyle.backgroundColor }" />
+              <Twitter class="h-5 w-5" :style="{ color: backgroundStyle.backgroundColor }" />
             </Button>
             <Button :variant="'outline'" :size="'icon'" class="cursor-pointer hover:cursor-pointer"
               :style="{ cursor: 'pointer' }">
-              <Github class="h-5 w-5" :style="{ backgroundColor: backgroundStyle.backgroundColor }" />
+              <Github class="h-5 w-5" :style="{ color: backgroundStyle.backgroundColor }" />
             </Button>
             <Button :variant="'outline'" :size="'icon'" class="cursor-pointer hover:cursor-pointer"
               :style="{ cursor: 'pointer' }">
-              <Instagram class="h-5 w-5" :style="{ backgroundColor: backgroundStyle.backgroundColor }" />
+              <Instagram class="h-5 w-5" :style="{ color: backgroundStyle.backgroundColor }" />
             </Button>
           </div>
         </div>
