@@ -121,10 +121,12 @@ To run ColorSanity locally, follow these steps:
 
 ## 📸 Screenshots
 
-![Home Page - Color Palette Generator](/screenshots/screenshot1.png)
-![Gradient Customization Tool](/screenshots/screenshot2.png)
-![Theme Customization](/screenshots/screenshot3.png)
-![Tints & Shades](/screenshots/screenshot4.png)
+![Home Page](https://github.com/user-attachments/assets/c987c4d8-9f4f-4249-a0f9-e22a090505cc)
+![Gradient Customization Tool](https://github.com/user-attachments/assets/cd060b79-c7dd-422d-9d14-5164945c26e8)
+![Tints & Shades](https://github.com/user-attachments/assets/995fc20b-dbef-4814-aa32-e9fae4c656bf)
+![Theme Customization 1](https://github.com/user-attachments/assets/56beab03-9051-4edb-91e8-462dcc967675)
+![Theme Customization 2](https://github.com/user-attachments/assets/2d017dd9-b013-46cc-a31b-2d9ac4cd749a)
+![Theme Customization 3](https://github.com/user-attachments/assets/95bcf8db-26cb-4685-8454-63bed7a491c3)
 
 ---
 
