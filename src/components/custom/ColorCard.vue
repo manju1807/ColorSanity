@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import type { CardOptions, ColorData, GradientColor, SolidColor } from "@/types/colors";
+import type {
+	CardOptions,
+	ColorData,
+	GradientColor,
+	SolidColor,
+} from "@/types/colors";
 import html2canvas from "html2canvas";
 import { Copy, Download, EllipsisVertical, Eye } from "lucide-vue-next";
 import { computed, ref, watch } from "vue";
@@ -8,172 +13,184 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "../ui/select";
 import { Slider } from "../ui/slider";
 
 const props = defineProps<{
-  colorData: ColorData;
+	colorData: ColorData;
 }>();
 
 const options = ref<CardOptions>({
-  opacity: 1,
-  direction: "linear",
-  angle: 90,
+	opacity: 1,
+	direction: "linear",
+	angle: 90,
 });
 
 const opacityValue = ref<number[]>([options.value.opacity ?? 1]);
 const angleValue = ref<number[]>([options.value.angle ?? 180]);
 
 watch(angleValue, (newValue) => {
-  if (newValue?.length) {
-    options.value.angle = newValue[0];
-  }
+	if (newValue?.length) {
+		options.value.angle = newValue[0];
+	}
 });
 
 watch(opacityValue, (newValue) => {
-  if (newValue?.length && newValue[0] !== undefined) {
-    options.value.opacity = Number(newValue[0].toFixed(2));
-  }
+	if (newValue?.length && newValue[0] !== undefined) {
+		options.value.opacity = Number(newValue[0].toFixed(2));
+	}
 });
 
 const isGradient = computed(() => "colors" in props.colorData);
 
 const applyOpacityToColor = (color: string, opacity: number): string => {
-  if (color.startsWith("rgb(")) {
-    return color.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
-  } else if (color.startsWith("#")) {
-    const hex = color.replace("#", "");
-    const r = parseInt(hex.substring(0, 2), 16);
-    const g = parseInt(hex.substring(2, 4), 16);
-    const b = parseInt(hex.substring(4, 6), 16);
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  }
-  return color;
+	if (color.startsWith("rgb(")) {
+		return color.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
+	} else if (color.startsWith("#")) {
+		const hex = color.replace("#", "");
+		const r = parseInt(hex.substring(0, 2), 16);
+		const g = parseInt(hex.substring(2, 4), 16);
+		const b = parseInt(hex.substring(4, 6), 16);
+		return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+	}
+	return color;
 };
 
 const backgroundStyle = computed(() => {
-  const opacity = options.value.opacity;
+	const opacity = options.value.opacity;
 
-  if (isGradient.value) {
-    const { colors } = props.colorData as GradientColor;
-    const { direction, angle } = options.value;
+	if (isGradient.value) {
+		const { colors } = props.colorData as GradientColor;
+		const { direction, angle } = options.value;
 
-    const colorStops = colors
-      .map((color) => applyOpacityToColor(color, opacity ?? 1))
-      .join(", ");
+		const colorStops = colors
+			.map((color) => applyOpacityToColor(color, opacity ?? 1))
+			.join(", ");
 
-    if (direction === "linear") {
-      return {
-        background: `linear-gradient(${angle}deg, ${colorStops})`,
-      };
-    } else if (direction === "radial") {
-      return {
-        background: `radial-gradient(circle, ${colorStops})`,
-      };
-    } else {
-      return {
-        background: `conic-gradient(${colorStops})`,
-      };
-    }
-  } else {
-    const { color } = props.colorData as SolidColor;
-    return {
-      backgroundColor: applyOpacityToColor(color, opacity ?? 1),
-    };
-  }
+		if (direction === "linear") {
+			return {
+				background: `linear-gradient(${angle}deg, ${colorStops})`,
+			};
+		} else if (direction === "radial") {
+			return {
+				background: `radial-gradient(circle, ${colorStops})`,
+			};
+		} else {
+			return {
+				background: `conic-gradient(${colorStops})`,
+			};
+		}
+	} else {
+		const { color } = props.colorData as SolidColor;
+		return {
+			backgroundColor: applyOpacityToColor(color, opacity ?? 1),
+		};
+	}
 });
 
 const cssCode = computed(() => {
-  const opacity = options.value.opacity;
+	const opacity = options.value.opacity;
 
-  if (isGradient.value) {
-    const { colors } = props.colorData as GradientColor;
-    const { direction, angle } = options.value;
+	if (isGradient.value) {
+		const { colors } = props.colorData as GradientColor;
+		const { direction, angle } = options.value;
 
-    const colorStops = colors
-      .map((color) => applyOpacityToColor(color, opacity ?? 1))
-      .join(", ");
+		const colorStops = colors
+			.map((color) => applyOpacityToColor(color, opacity ?? 1))
+			.join(", ");
 
-    if (direction === "linear") {
-      return `background: linear-gradient(${angle}deg, ${colorStops});`;
-    } else if (direction === "radial") {
-      return `background: radial-gradient(circle, ${colorStops});`;
-    } else {
-      return `background: conic-gradient(${colorStops});`;
-    }
-  } else {
-    const { color } = props.colorData as SolidColor;
-    return `background-color: ${applyOpacityToColor(color, opacity ?? 1)};`;
-  }
+		if (direction === "linear") {
+			return `background: linear-gradient(${angle}deg, ${colorStops});`;
+		} else if (direction === "radial") {
+			return `background: radial-gradient(circle, ${colorStops});`;
+		} else {
+			return `background: conic-gradient(${colorStops});`;
+		}
+	} else {
+		const { color } = props.colorData as SolidColor;
+		return `background-color: ${applyOpacityToColor(color, opacity ?? 1)};`;
+	}
 });
 
 const nonSettingsActions = [
-  {
-    label: "Download",
-    icon: Download,
-    handler: async () => {
-      const element = document.querySelector("#downloadable");
-      const controls = document.querySelector("#controls");
+	{
+		label: "Download",
+		icon: Download,
+		handler: async () => {
+			const element = document.querySelector("#downloadable");
+			const controls = document.querySelector("#controls");
 
-      if (!element) return;
+			if (!element) return;
 
-      try {
-        if (controls) controls.classList.add("hidden");
+			try {
+				if (controls) controls.classList.add("hidden");
 
-        const canvas = await html2canvas(element as HTMLElement, {
-          backgroundColor: null,
-          scale: 10,
-        });
+				const canvas = await html2canvas(element as HTMLElement, {
+					backgroundColor: null,
+					scale: 10,
+				});
 
-        const img = canvas.toDataURL("image/png");
-        const a = document.createElement("a");
-        a.href = img;
-        a.download = `${props.colorData.name || "color"}.png`;
-        a.click();
+				const img = canvas.toDataURL("image/png");
+				const a = document.createElement("a");
+				a.href = img;
+				a.download = `${props.colorData.name || "color"}.png`;
+				a.click();
 
-        toast.success("Successfully downloaded image!");
-      } catch (error) {
-        console.error("Failed to download image", error);
-        toast.error("Failed to download image!");
-      } finally {
-        if (controls) controls.classList.remove("hidden");
-      }
-    },
-  },
-  {
-    label: "Preview",
-    icon: Eye,
-    handler: () => {
-      const colorParams = new URLSearchParams();
+				toast.success("Successfully downloaded image!");
+			} catch (error) {
+				console.error("Failed to download image", error);
+				toast.error("Failed to download image!");
+			} finally {
+				if (controls) controls.classList.remove("hidden");
+			}
+		},
+	},
+	{
+		label: "Preview",
+		icon: Eye,
+		handler: () => {
+			const colorParams = new URLSearchParams();
 
-      if (isGradient.value) {
-        const gradientData = props.colorData as GradientColor;
-        colorParams.set("type", "gradient");
-        colorParams.set("colors", JSON.stringify(gradientData.colors));
-        colorParams.set("direction", options.value.direction || "linear");
-        colorParams.set("angle", (options.value.angle ?? 90).toString());
-      } else {
-        const solidData = props.colorData as SolidColor;
-        colorParams.set("type", "solid");
-        colorParams.set("color", solidData.color);
-      }
+			if (isGradient.value) {
+				const gradientData = props.colorData as GradientColor;
+				colorParams.set("type", "gradient");
+				colorParams.set("colors", JSON.stringify(gradientData.colors));
+				colorParams.set(
+					"direction",
+					options.value.direction || "linear",
+				);
+				colorParams.set(
+					"angle",
+					(options.value.angle ?? 90).toString(),
+				);
+			} else {
+				const solidData = props.colorData as SolidColor;
+				colorParams.set("type", "solid");
+				colorParams.set("color", solidData.color);
+			}
 
-      colorParams.set("opacity", (options.value.opacity ?? 1).toString());
-      colorParams.set("name", props.colorData.name || "");
+			colorParams.set("opacity", (options.value.opacity ?? 1).toString());
+			colorParams.set("name", props.colorData.name || "");
 
-      window.location.href = `/preview?${colorParams.toString()}`;
-    },
-  },
+			window.location.href = `/preview?${colorParams.toString()}`;
+		},
+	},
 ];
 
 const copyCSS = () => {
-  try {
-    navigator.clipboard.writeText(cssCode.value);
-    toast.success("Successfully copied CSS code!");
-  } catch (error) {
-    console.error("Failed to copy CSS code", error);
-    toast.error("Failed to copy CSS code!");
-  }
+	try {
+		navigator.clipboard.writeText(cssCode.value);
+		toast.success("Successfully copied CSS code!");
+	} catch (error) {
+		console.error("Failed to copy CSS code", error);
+		toast.error("Failed to copy CSS code!");
+	}
 };
 </script>
 

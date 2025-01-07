@@ -3,11 +3,11 @@ import LangToggle from "@/components/common/LangToggle.vue";
 import ModeToggle from "@/components/common/ModeToggle.vue";
 import { Button } from "@/components/ui/button";
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
 } from "@/components/ui/sheet";
 import { useDark } from "@vueuse/core";
 import { Menu, Palette } from "lucide-vue-next"; // Import Menu icon for hamburger
@@ -24,9 +24,9 @@ const isDark = useDark();
 const isNavOpen = ref(false); // Reactive property to toggle navigation menu
 
 const NavItems = [
-  { label: "Collections", navRoute: "/collections" },
-  { label: "Tints", navRoute: "/tints" },
-  // { label: "Color Palettes", navRoute: "/color-palettes" },
+	{ label: "Collections", navRoute: "/collections" },
+	{ label: "Tints", navRoute: "/tints" },
+	// { label: "Color Palettes", navRoute: "/color-palettes" },
 ];
 </script>
 

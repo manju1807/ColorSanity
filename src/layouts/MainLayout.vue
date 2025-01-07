@@ -4,7 +4,7 @@ import { RouterView } from "vue-router";
 import Footer from "../components/common/Footer.vue";
 
 defineOptions({
-  name: "MainLayout",
+	name: "MainLayout",
 });
 </script>
 

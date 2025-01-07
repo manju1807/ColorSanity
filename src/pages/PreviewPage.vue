@@ -5,155 +5,180 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import type { CardOptions, ColorData, GradientColor, SolidColor } from "@/types/colors";
+import type {
+	CardOptions,
+	ColorData,
+	GradientColor,
+	SolidColor,
+} from "@/types/colors";
 import {
-  ArrowRight,
-  Brush,
-  Code,
-  Github,
-  Instagram,
-  Layers,
-  Menu,
-  Palette,
-  Star,
-  Twitter
-} from 'lucide-vue-next';
-import { onMounted, ref } from 'vue';
+	ArrowRight,
+	Brush,
+	Code,
+	Github,
+	Instagram,
+	Layers,
+	Menu,
+	Palette,
+	Star,
+	Twitter,
+} from "lucide-vue-next";
+import { onMounted, ref } from "vue";
 
 // State Management
 const colorData = ref<ColorData | null>(null);
 const options = ref<CardOptions>({
-  opacity: 1,
-  direction: 'linear',
-  angle: 90,
+	opacity: 1,
+	direction: "linear",
+	angle: 90,
 });
-const backgroundStyle = ref<{ background?: string; backgroundColor?: string }>({});
+const backgroundStyle = ref<{ background?: string; backgroundColor?: string }>(
+	{},
+);
 const isMenuOpen = ref(false);
 
 // Helper Functions
 // URL Parameter Processing
 onMounted(() => {
-  const params = new URLSearchParams(window.location.search);
-  const type = params.get('type');
-  const opacity = parseFloat(params.get('opacity') || '1');
-  const name = params.get('name') || '';
+	const params = new URLSearchParams(window.location.search);
+	const type = params.get("type");
+	const opacity = parseFloat(params.get("opacity") || "1");
+	const name = params.get("name") || "";
 
-  if (type === 'gradient') {
-    const colors = JSON.parse(params.get('colors') || '[]');
-    const directionParam = params.get('direction') || 'linear';
-    const direction = (directionParam === 'linear' || directionParam === 'radial' || directionParam === 'conic') ? directionParam : 'linear';
-    const angle = parseInt(params.get('angle') || '90');
+	if (type === "gradient") {
+		const colors = JSON.parse(params.get("colors") || "[]");
+		const directionParam = params.get("direction") || "linear";
+		const direction =
+			directionParam === "linear" ||
+			directionParam === "radial" ||
+			directionParam === "conic"
+				? directionParam
+				: "linear";
+		const angle = parseInt(params.get("angle") || "90");
 
-    colorData.value = { name, colors } as GradientColor;
-    options.value = { opacity, direction, angle };
+		colorData.value = { name, colors } as GradientColor;
+		options.value = { opacity, direction, angle };
 
-    const colorStops = colors
-      .map((color: string) => {
-        const rgbColor = color.replace(/rgba?\(([^)]+)\)/, "rgb($1)").replace(/,\s*[\d.]+\s*\)/, ")");
-        return rgbColor.replace("rgb(", "rgba(").replace(")", `, ${opacity})`);
-      })
-      .join(", ");
+		const colorStops = colors
+			.map((color: string) => {
+				const rgbColor = color
+					.replace(/rgba?\(([^)]+)\)/, "rgb($1)")
+					.replace(/,\s*[\d.]+\s*\)/, ")");
+				return rgbColor
+					.replace("rgb(", "rgba(")
+					.replace(")", `, ${opacity})`);
+			})
+			.join(", ");
 
-    if (direction === 'linear') {
-      backgroundStyle.value = {
-        background: `linear-gradient(${angle}deg, ${colorStops})`,
-      };
-    } else if (direction === 'radial') {
-      backgroundStyle.value = {
-        background: `radial-gradient(circle, ${colorStops})`,
-      };
-    } else {
-      backgroundStyle.value = {
-        background: `conic-gradient(${colorStops})`,
-      };
-    }
-  } else {
-    const color = params.get('color') || '';
-    colorData.value = { name, color } as SolidColor;
-    backgroundStyle.value = {
-      backgroundColor: color.replace("rgb", "rgba").replace(")", `, ${opacity})`),
-    };
-  }
+		if (direction === "linear") {
+			backgroundStyle.value = {
+				background: `linear-gradient(${angle}deg, ${colorStops})`,
+			};
+		} else if (direction === "radial") {
+			backgroundStyle.value = {
+				background: `radial-gradient(circle, ${colorStops})`,
+			};
+		} else {
+			backgroundStyle.value = {
+				background: `conic-gradient(${colorStops})`,
+			};
+		}
+	} else {
+		const color = params.get("color") || "";
+		colorData.value = { name, color } as SolidColor;
+		backgroundStyle.value = {
+			backgroundColor: color
+				.replace("rgb", "rgba")
+				.replace(")", `, ${opacity})`),
+		};
+	}
 });
 
 // Features Data
 const features = ref([
-  {
-    title: "Color System Design",
-    description: "Create cohesive color palettes that align with your brand identity and enhance user experience.",
-    icon: Palette
-  },
-  {
-    title: "Design Tokens",
-    description: "Manage design tokens efficiently for consistent styling across your applications.",
-    icon: Brush
-  },
-  {
-    title: "Component Library",
-    description: "Access a comprehensive library of pre-styled components using your color system.",
-    icon: Layers
-  },
-  {
-    title: "Code Generation",
-    description: "Automatically generate CSS variables and utility classes for your color system.",
-    icon: Code
-  }
+	{
+		title: "Color System Design",
+		description:
+			"Create cohesive color palettes that align with your brand identity and enhance user experience.",
+		icon: Palette,
+	},
+	{
+		title: "Design Tokens",
+		description:
+			"Manage design tokens efficiently for consistent styling across your applications.",
+		icon: Brush,
+	},
+	{
+		title: "Component Library",
+		description:
+			"Access a comprehensive library of pre-styled components using your color system.",
+		icon: Layers,
+	},
+	{
+		title: "Code Generation",
+		description:
+			"Automatically generate CSS variables and utility classes for your color system.",
+		icon: Code,
+	},
 ]);
 
 // Services Data
 const services = ref([
-  {
-    title: "Brand Color Analysis",
-    description: "Get expert analysis of your brand colors and recommendations for improvement.",
-    price: "$299/month"
-  },
-  {
-    title: "Custom Palette Creation",
-    description: "Work with our design team to create a unique color palette for your brand.",
-    price: "$499/month"
-  },
-  {
-    title: "Design System Implementation",
-    description: "Full implementation of your color system across your digital products.",
-    price: "$999/month"
-  },
-  {
-    title: "Ongoing Consultation",
-    description: "Regular reviews and updates to keep your color system current.",
-    price: "$199/month"
-  }
+	{
+		title: "Brand Color Analysis",
+		description:
+			"Get expert analysis of your brand colors and recommendations for improvement.",
+		price: "$299/month",
+	},
+	{
+		title: "Custom Palette Creation",
+		description:
+			"Work with our design team to create a unique color palette for your brand.",
+		price: "$499/month",
+	},
+	{
+		title: "Design System Implementation",
+		description:
+			"Full implementation of your color system across your digital products.",
+		price: "$999/month",
+	},
+	{
+		title: "Ongoing Consultation",
+		description:
+			"Regular reviews and updates to keep your color system current.",
+		price: "$199/month",
+	},
 ]);
 
 // Statistics Data
 const statistics = ref([
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "500+", label: "Projects Completed" },
-  { value: "50K+", label: "Color Palettes Generated" },
-  { value: "100+", label: "Enterprise Clients" }
+	{ value: "98%", label: "Client Satisfaction" },
+	{ value: "500+", label: "Projects Completed" },
+	{ value: "50K+", label: "Color Palettes Generated" },
+	{ value: "100+", label: "Enterprise Clients" },
 ]);
 
 // Testimonials Data
 const testimonials = ref([
-  {
-    name: "Sarah Chen",
-    position: "Lead Designer at TechCorp",
-    avatar: "SC",
-    text: "The color system transformed our design workflow. We've seen a 40% increase in design consistency across teams."
-  },
-  {
-    name: "Marcus Rodriguez",
-    position: "Creative Director",
-    avatar: "MR",
-    text: "Implementing this color system cut our design decision time in half. The results are stunning."
-  },
-  {
-    name: "Emily Parker",
-    position: "UI/UX Designer",
-    avatar: "EP",
-    text: "The best color management tool I've used. It's intuitive and the results are always on point."
-  }
+	{
+		name: "Sarah Chen",
+		position: "Lead Designer at TechCorp",
+		avatar: "SC",
+		text: "The color system transformed our design workflow. We've seen a 40% increase in design consistency across teams.",
+	},
+	{
+		name: "Marcus Rodriguez",
+		position: "Creative Director",
+		avatar: "MR",
+		text: "Implementing this color system cut our design decision time in half. The results are stunning.",
+	},
+	{
+		name: "Emily Parker",
+		position: "UI/UX Designer",
+		avatar: "EP",
+		text: "The best color management tool I've used. It's intuitive and the results are always on point.",
+	},
 ]);
-
 </script>
 
 <template>

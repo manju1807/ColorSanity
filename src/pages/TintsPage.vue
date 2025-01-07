@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import ColorPalette from "@/components/custom/ColorPalette.vue";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import TintColors from "@/config/constants/data/tints.json";
 import { ChevronDownIcon } from "lucide-vue-next";

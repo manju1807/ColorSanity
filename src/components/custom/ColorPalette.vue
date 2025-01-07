@@ -1,61 +1,61 @@
 <script setup lang="ts">
 import { TransitionRoot } from "@headlessui/vue";
 import {
-  AlertCircle as AlertCircleIcon,
-  Check as CheckIcon,
-  Copy as CopyIcon,
+	AlertCircle as AlertCircleIcon,
+	Check as CheckIcon,
+	Copy as CopyIcon,
 } from "lucide-vue-next";
 import { ref } from "vue";
 
 interface ColorInfo {
-  className: string;
-  rgb: string;
-  hsl: string;
-  hex: string;
+	className: string;
+	rgb: string;
+	hsl: string;
+	hex: string;
 }
 
 interface Props {
-  colors: Record<string, Record<string, ColorInfo>>;
-  format?: "hex" | "rgb" | "hsl";
+	colors: Record<string, Record<string, ColorInfo>>;
+	format?: "hex" | "rgb" | "hsl";
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  format: "hex",
+	format: "hex",
 });
 
 const copiedStates = ref<Record<string, boolean>>({});
 const showError = ref(false);
 
 const getFormattedValue = (colorInfo: ColorInfo): string => {
-  switch (props.format) {
-    case "rgb":
-      return colorInfo.rgb;
-    case "hsl":
-      return colorInfo.hsl;
-    default:
-      return colorInfo.hex;
-  }
+	switch (props.format) {
+		case "rgb":
+			return colorInfo.rgb;
+		case "hsl":
+			return colorInfo.hsl;
+		default:
+			return colorInfo.hex;
+	}
 };
 
 const handleCopy = async (
-  colorName: string,
-  shade: string,
-  colorInfo: ColorInfo,
+	colorName: string,
+	shade: string,
+	colorInfo: ColorInfo,
 ) => {
-  const textToCopy = getFormattedValue(colorInfo);
-  try {
-    await navigator.clipboard.writeText(textToCopy);
-    copiedStates.value[`${colorName}-${shade}`] = true;
-    setTimeout(() => {
-      copiedStates.value[`${colorName}-${shade}`] = false;
-    }, 2000);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (err) {
-    showError.value = true;
-    setTimeout(() => {
-      showError.value = false;
-    }, 3000);
-  }
+	const textToCopy = getFormattedValue(colorInfo);
+	try {
+		await navigator.clipboard.writeText(textToCopy);
+		copiedStates.value[`${colorName}-${shade}`] = true;
+		setTimeout(() => {
+			copiedStates.value[`${colorName}-${shade}`] = false;
+		}, 2000);
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	} catch (err) {
+		showError.value = true;
+		setTimeout(() => {
+			showError.value = false;
+		}, 3000);
+	}
 };
 </script>
 

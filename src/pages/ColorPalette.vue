@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 defineOptions({
-  name: "ColorPalette",
+	name: "ColorPalette",
 });
 
 const colors = ref([
-  { hex: '#D496A7', name: 'Place' },
-  { hex: '#9D695A', name: 'Redwood' },
-  { hex: '#78E0DC', name: 'Tiffany Blue' },
-  { hex: '#8EEDF7', name: 'Electric blue' },
-  { hex: '#AtCDF1', name: 'Light Sky Blue' },
+	{ hex: "#D496A7", name: "Place" },
+	{ hex: "#9D695A", name: "Redwood" },
+	{ hex: "#78E0DC", name: "Tiffany Blue" },
+	{ hex: "#8EEDF7", name: "Electric blue" },
+	{ hex: "#AtCDF1", name: "Light Sky Blue" },
 ]);
 
 const generatePalette = () => {
-  // Function to generate new color palettes
-  colors.value = [
-    { hex: '#D496A7', name: 'Place' },
-    { hex: '#9D695A', name: 'Redwood' },
-    { hex: '#78E0DC', name: 'Tiffany Blue' },
-    { hex: '#8EEDF7', name: 'Electric blue' },
-    { hex: '#AtCDF1', name: 'Light Sky Blue' },
-  ];
+	// Function to generate new color palettes
+	colors.value = [
+		{ hex: "#D496A7", name: "Place" },
+		{ hex: "#9D695A", name: "Redwood" },
+		{ hex: "#78E0DC", name: "Tiffany Blue" },
+		{ hex: "#8EEDF7", name: "Electric blue" },
+		{ hex: "#AtCDF1", name: "Light Sky Blue" },
+	];
 };
 
 const exportPalette = () => {
-  // Function to export the color palette
-  console.log('Exporting palette:', colors.value);
+	// Function to export the color palette
+	console.log("Exporting palette:", colors.value);
 };
 
 const savePalette = () => {
-  // Function to save the color palette
-  console.log('Saving palette:', colors.value);
+	// Function to save the color palette
+	console.log("Saving palette:", colors.value);
 };
 </script>
 

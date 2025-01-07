@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -36,24 +36,24 @@ const presets = Object.keys(THEME_PRESETS) as PresetTheme[];
 const fontFamilyOptions = Object.keys(FONT_FAMILIES);
 
 const handleColorChange = (colorKey: string, value: string) => {
-  themeStore.updateColors(
-    { [colorKey]: value },
-    isDark.value ? "dark" : "light",
-  );
+	themeStore.updateColors(
+		{ [colorKey]: value },
+		isDark.value ? "dark" : "light",
+	);
 };
 
 const handleReset = () => themeStore.resetTheme();
 const handleRadiusChange = (value: number[] | undefined) => {
-  if (value?.[0] !== undefined) themeStore.updateRadius(value[0]);
+	if (value?.[0] !== undefined) themeStore.updateRadius(value[0]);
 };
 const handleBorderWidthChange = (value: number[] | undefined) => {
-  if (value?.[0] !== undefined) themeStore.updateBorderWidth(value[0]);
+	if (value?.[0] !== undefined) themeStore.updateBorderWidth(value[0]);
 };
 const handleFontFamilyChange = (value: string) => {
-  if (fontFamilyOptions.includes(value)) themeStore.updateFontFamily(value);
+	if (fontFamilyOptions.includes(value)) themeStore.updateFontFamily(value);
 };
 const handlePresetChange = (preset: PresetTheme) => {
-  themeStore.applyPreset(preset);
+	themeStore.applyPreset(preset);
 };
 </script>
 
