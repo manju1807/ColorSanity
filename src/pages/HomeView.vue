@@ -52,7 +52,7 @@ onMounted(() => {
         developers, and creatives.
       </p>
       <div class="flex flex-row space-y-0 space-x-4">
-        <router-link to="/color-palettes"
+        <router-link to="/collections"
           class="bg-primary text-sm text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
           Get Started
         </router-link>
