@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import GradientSquares from "../components/icons/GradientSquares.vue";
 import { useThemeStore } from "../stores/theme-store";
 
+// Component options
 defineOptions({
 	name: "HomeView",
 });
 
+// Theme store and computed properties
 const themeStore = useThemeStore();
 const currentRadius = computed(() => themeStore.currentRadius);
 const currentBorderWidth = computed(() => themeStore.currentBorderWidth);
@@ -18,47 +21,63 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
     <section
       class="container min-h-screen flex flex-col justify-center items-center text-center p-4 md:p-8 bg-gradient-to-b from-background/10 to-background">
       <h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-tight max-w-3xl mb-4">
-        Create Stunning Color Palettes with <span class="text-primary">ColorSanity</span>
+        Elevate Your Projects with <span class="text-primary">ColorSanity</span>
       </h1>
-      <p class="text-sm md:text-md text-muted-foreground mb-8 max-w-2xl">
+      <p class="text-sm md:text-md text-muted-foreground mb-8 max-w-xl">
         Generate, customize, and explore beautiful colors, gradients, and CSS code snippets. Perfect for designers,
         developers, and creatives.
       </p>
-      <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+      <div class="flex flex-row space-y-0 space-x-4">
         <router-link to="/color-palettes"
-          class="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          class="bg-primary text-sm text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
           Get Started
         </router-link>
         <router-link to="/collections"
-          class="bg-secondary text-secondary-foreground px-6 py-2 rounded-lg hover:bg-secondary/90 transition-colors">
+          class="bg-secondary text-sm text-secondary-foreground px-6 py-2 rounded-lg hover:bg-secondary/90 transition-colors">
           Explore Collections
         </router-link>
       </div>
-      <!-- 3D Visual Placeholder -->
+      <!-- Updated 3D Placeholder with Texture and Animation -->
       <div
-        class="mt-12 w-full max-w-4xl h-64 md:h-96 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-2xl flex items-center justify-center">
-        <span class="text-white text-xl md:text-2xl">3D Visual Here</span>
+        class="mt-12 w-full max-w-5xl h-64 md:h-96 rounded-lg shadow-2xl relative overflow-hidden flex items-center justify-center">
+        <!-- Texture Background -->
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 animate-texture"></div>
+        <!-- Animated Moving Elements -->
+        <div class="absolute inset-0 animate-move">
+          <div class="w-36 h-36 bg-white/10 rounded-full absolute -bottom-1/4 left-3"></div>
+          <div class="w-32 h-32 bg-white/10 rounded-full absolute top-1/4 left-1/4"></div>
+          <div class="w-24 h-24 bg-white/20 rounded-full absolute bottom-1/4 right-1/4"></div>
+          <div class="w-16 h-16 bg-white/30 rounded-full absolute top-1/3 right-1/3"></div>
+          <div class="w-12 h-12 bg-white/40 rounded-full absolute top-1/2 left-1/2"></div>
+          <div class="w-44 h-44 bg-white/10 rounded-full absolute -top-4 -right-4"></div>
+        </div>
+        <!-- Overlay Text or Content -->
+        <div class="relative text-white text-lg md:text-3xl font-bold z-40 drop-shadow-sm">
+          Explore the Magic of Colors
+        </div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section class="container py-8 md:py-16 px-4 md:px-8">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         <!-- Color Palette Generator -->
         <div
           class="md:col-span-2 md:row-span-2 bg-card border border-border/40 hover:border-border p-6 md:p-8 hover:shadow-xl transition-all relative overflow-clip"
           :style="{ borderRadius: `${currentRadius}rem`, borderWidth: `${currentBorderWidth}px` }">
           <h3 class="text-xl md:text-2xl font-semibold mb-4">Color Palette Generator</h3>
-          <p class="text-sm md:text-md text-muted-foreground mb-4">Create custom color palettes with ease. Perfect for
-            branding and design projects.</p>
+          <p class="text-sm md:text-md text-muted-foreground mb-4">
+            Create custom color palettes with ease. Perfect for branding and design projects.
+          </p>
           <div class="mt-auto flex gap-2">
             <div class="h-8 w-8 rounded-full bg-primary" :style="{ borderRadius: `${innerBorderRadius}rem` }"></div>
             <div class="h-8 w-8 rounded-full bg-secondary" :style="{ borderRadius: `${innerBorderRadius}rem` }"></div>
             <div class="h-8 w-8 rounded-full bg-accent" :style="{ borderRadius: `${innerBorderRadius}rem` }"></div>
           </div>
-          <div class="absolute -right-24 bottom-30 h-20 w-full">
-            <img v-bind:src="'https://cssgradient.io/images/shades/color-shades-9de2a05b.svg'" alt="">
+          <div class="absolute -right-2 md:-right-8 bottom-0 md:bottom-12 h-2/3 w-2/3">
+            <GradientSquares :width="460" :height="460" :scale="1.2"
+              :custom-blue-gradient="['#000033', '#000099', '#3333FF', '#9999FF']" />
           </div>
         </div>
 
@@ -77,16 +96,10 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
           <h3 class="text-lg md:text-xl font-semibold mb-4">Tints & Shades</h3>
           <p class="text-sm text-muted-foreground">Explore color variations.</p>
           <div class="mt-4 flex flex-row gap-2">
-            <div class="h-16 w-4"
-              :style="{ borderRadius: `${innerBorderRadius}rem`, backgroundColor: 'rgba(71, 85, 105,0.2)' }"></div>
-            <div class="h-16 w-4"
-              :style="{ borderRadius: `${innerBorderRadius}rem`, backgroundColor: 'rgba(71, 85, 105,0.4)' }"></div>
-            <div class="h-16 w-4"
-              :style="{ borderRadius: `${innerBorderRadius}rem`, backgroundColor: 'rgba(71, 85, 105,0.6)' }"></div>
-            <div class="h-16 w-4"
-              :style="{ borderRadius: `${innerBorderRadius}rem`, backgroundColor: 'rgba(71, 85, 105,0.8)' }"></div>
-            <div class="h-16 w-4"
-              :style="{ borderRadius: `${innerBorderRadius}rem`, backgroundColor: 'rgba(71, 85, 105,1.0)' }"></div>
+            <div v-for="(opacity, index) in 10" :key="index" class="h-16 w-full md:w-4" :style="{
+              borderRadius: `${innerBorderRadius}rem`,
+              backgroundColor: `rgba(71, 85, 105, ${index * 0.1})`
+            }" />
           </div>
         </div>
 
@@ -114,6 +127,7 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- Collections Section -->
@@ -141,9 +155,11 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
               <div class="w-8 h-8 bg-green-500 rounded"></div>
             </div>
           </div>
-          <router-link to="/collections" class="text-primary hover:text-primary/80 transition-colors mt-auto">Explore
-            →</router-link>
+          <router-link to="/collections" class="text-primary hover:text-primary/80 transition-colors mt-auto">
+            Explore →
+          </router-link>
         </div>
+
         <!-- Gradients Card -->
         <div
           class="bg-card border border-border/40 hover:border-border p-6 rounded-lg hover:shadow-xl transition-all relative overflow-clip flex flex-col"
@@ -158,8 +174,9 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
               </svg>
             </div>
             <h3 class="text-lg md:text-xl font-semibold mb-4">Gradients</h3>
-            <p class="text-sm md:text-md text-muted-foreground mb-6">Discover beautiful gradients to elevate your
-              designs.</p>
+            <p class="text-sm md:text-md text-muted-foreground mb-6">
+              Discover beautiful gradients to elevate your designs.
+            </p>
             <!-- Gradients Sample -->
             <div class="flex flex-row gap-2 mb-6 w-full">
               <div class="w-full h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
@@ -167,9 +184,11 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
               <div class="w-full h-8 bg-gradient-to-r from-orange-500 to-yellow-500 rounded"></div>
             </div>
           </div>
-          <router-link to="/collections" class="text-primary hover:text-primary/80 transition-colors mt-auto">Explore
-            →</router-link>
+          <router-link to="/collections" class="text-primary hover:text-primary/80 transition-colors mt-auto">
+            Explore →
+          </router-link>
         </div>
+
         <!-- Tints & Shades Card -->
         <div
           class="bg-card border border-border/40 hover:border-border p-6 rounded-lg hover:shadow-xl transition-all relative overflow-clip flex flex-col"
@@ -183,8 +202,9 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
               </svg>
             </div>
             <h3 class="text-lg md:text-xl font-semibold mb-4">Tints & Shades</h3>
-            <p class="text-sm md:text-md text-muted-foreground mb-6">Explore tints and shades for any color in our
-              collection.</p>
+            <p class="text-sm md:text-md text-muted-foreground mb-6">
+              Explore tints and shades for any color in our collection.
+            </p>
             <!-- Tints & Shades Sample -->
             <div class="flex flex-row gap-2 mb-6 w-full">
               <div class="w-full h-8 bg-blue-100 rounded"></div>
@@ -193,8 +213,9 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
               <div class="w-full h-8 bg-blue-700 rounded"></div>
             </div>
           </div>
-          <router-link to="/tints" class="text-primary hover:text-primary/80 transition-colors mt-auto">Explore
-            →</router-link>
+          <router-link to="/tints" class="text-primary hover:text-primary/80 transition-colors mt-auto">
+            Explore →
+          </router-link>
         </div>
       </div>
     </section>
@@ -203,36 +224,62 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
     <section class="container py-8 md:py-16 px-4 md:px-8">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">What Our Users Say</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-card p-6 rounded-lg shadow-md">
-          <p class="text-sm md:text-md text-muted-foreground mb-4">
+        <!-- Testimonial Card 1 -->
+        <div
+          class="bg-card border border-border/40 hover:border-border p-6 rounded-lg hover:shadow-xl transition-all relative overflow-hidden group"
+          :style="{ borderRadius: `${currentRadius}rem`, borderWidth: `${currentBorderWidth}px` }">
+          <!-- Decorative Element -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+          <p class="text-sm md:text-md text-muted-foreground mb-4 italic">
             "ColorSanity has completely transformed my design workflow. The gradient generator is a game-changer!"
           </p>
           <div class="flex items-center space-x-4">
-            <div class="h-10 w-10 bg-primary rounded-full"></div>
+            <div
+              class="h-10 w-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
+              JD
+            </div>
             <div>
               <p class="font-semibold">John Doe</p>
               <p class="text-sm text-muted-foreground">UI/UX Designer</p>
             </div>
           </div>
         </div>
-        <div class="bg-card p-6 rounded-lg shadow-md">
-          <p class="text-sm md:text-md text-muted-foreground mb-4">
+
+        <!-- Testimonial Card 2 -->
+        <div
+          class="bg-card border border-border/40 hover:border-border p-6 rounded-lg hover:shadow-xl transition-all relative overflow-hidden group"
+          :style="{ borderRadius: `${currentRadius}rem`, borderWidth: `${currentBorderWidth}px` }">
+          <!-- Decorative Element -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-500"></div>
+          <p class="text-sm md:text-md text-muted-foreground mb-4 italic">
             "I love how easy it is to generate and customize color palettes. Highly recommend!"
           </p>
           <div class="flex items-center space-x-4">
-            <div class="h-10 w-10 bg-primary rounded-full"></div>
+            <div
+              class="h-10 w-10 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold">
+              JS
+            </div>
             <div>
               <p class="font-semibold">Jane Smith</p>
               <p class="text-sm text-muted-foreground">Frontend Developer</p>
             </div>
           </div>
         </div>
-        <div class="bg-card p-6 rounded-lg shadow-md">
-          <p class="text-sm md:text-md text-muted-foreground mb-4">
+
+        <!-- Testimonial Card 3 -->
+        <div
+          class="bg-card border border-border/40 hover:border-border p-6 rounded-lg hover:shadow-xl transition-all relative overflow-hidden group"
+          :style="{ borderRadius: `${currentRadius}rem`, borderWidth: `${currentBorderWidth}px` }">
+          <!-- Decorative Element -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-500"></div>
+          <p class="text-sm md:text-md text-muted-foreground mb-4 italic">
             "The tints and shades feature is a lifesaver for creating cohesive designs."
           </p>
           <div class="flex items-center space-x-4">
-            <div class="h-10 w-10 bg-primary rounded-full"></div>
+            <div
+              class="h-10 w-10 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold">
+              AJ
+            </div>
             <div>
               <p class="font-semibold">Alex Johnson</p>
               <p class="text-sm text-muted-foreground">Graphic Designer</p>
@@ -249,7 +296,7 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
         <div class="flex flex-col w-full px-4 md:px-16 justify-center">
           <h3 class="text-lg font-semibold mb-4 relative">
             <span class="z-20">Hello fellow creators!</span>
-            <div class="absolute bg-primary h-2 w-32 top-4 z-0 opacity-30"></div>
+            <div class="absolute bg-blue-400 h-2 w-32 top-4 z-0 opacity-30"></div>
           </h3>
           <p class="text-sm mb-4">
             I'm Manjunath R, the creator and developer behind the <b>ColorSanity</b>.
@@ -270,10 +317,52 @@ const innerBorderRadius = computed(() => themeStore.currentRadius * 0.75);
           <div class="h-48 w-48 md:h-60 md:w-60 rounded-xl shadow-xl border-border">
             <img class="grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
               v-bind:src="'https://manjunath18.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDP.630992a6.png&w=1080&q=100'"
-              height="100%" width="100%" alt="">
+              height="100%" width="100%" alt="" />
           </div>
         </div>
       </div>
     </footer>
   </div>
 </template>
+
+<style lang="css" scoped>
+/* Texture Animation */
+@keyframes texture {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-texture {
+  background: linear-gradient(45deg, #8a2be2, #ff69b4, #8a2be2);
+  background-size: 200% 200%;
+  animation: texture 10s ease infinite;
+}
+
+/* Moving Elements Animation */
+@keyframes move {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-move {
+  animation: move 8s ease-in-out infinite;
+}
+</style>
