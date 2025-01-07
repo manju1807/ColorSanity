@@ -15,7 +15,7 @@ Start by forking the repository to your own GitHub account.
 Clone your fork locally to your machine:
 
 ```bash
-git clone https://github.com/your-username/color-sanity.git
+git clone https://github.com/your-username/ColorSanity.git
 cd color-sanity
 ```
 
