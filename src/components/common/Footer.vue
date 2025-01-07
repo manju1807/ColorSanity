@@ -53,12 +53,12 @@ defineOptions({
             <IconLogo />
             <span class="text-xl font-semibold text-foreground tracking-tight">ColorSanity</span>
           </div>
-          <p class="mb-6">
+          <p class="mb-6 text-sm">
             Create, customize, and explore stunning color palettes, gradients, and CSS code snippets. Perfect for
             designers, developers, and creatives.
           </p>
           <router-link to="/color-palettes"
-            class="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            class="bg-primary text-sm text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
             Get Started Now
           </router-link>
         </div>
@@ -68,8 +68,8 @@ defineOptions({
           <div>
             <h3 class="text-lg font-semibold mb-4 text-foreground">{{ col.title }}</h3>
             <ul>
-              <li v-for="(item, i) in col.items" :key="i" class="mb-2">
-                <router-link :to="item.link" class="hover:text-foreground transition-colors">
+              <li v-for="(item, i) in col.items" :key="i" class="mb-1">
+                <router-link :to="item.link" class="hover:text-foreground text-sm transition-colors">
                   {{ item.name }}
                 </router-link>
               </li>
@@ -79,15 +79,15 @@ defineOptions({
       </div>
 
       <!-- Bottom Section -->
-      <div class="mt-16 pt-8 border-t border-border">
+      <div class="mt-12 pt-4 border-t border-border">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <!-- Social Media Links -->
           <div class="flex space-x-6 mb-4 md:mb-0">
-            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/manju1807/" target="_blank" rel="noopener noreferrer">
               <Linkedin
                 class="h-5 w-5 text-muted-foreground hover:text-foreground transition-all duration-300 ease-in-out cursor-pointer" />
             </a>
-            <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/manju1807" target="_blank" rel="noopener noreferrer">
               <GithubIcon
                 class="h-5 w-5 text-muted-foreground hover:text-foreground transition-all duration-300 ease-in-out cursor-pointer" />
             </a>
