@@ -35,7 +35,7 @@
 		"@headlessui/vue": "^1.7.23",
 		"@radix-icons/vue": "^1.0.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tanstack/vue-query": "^5.62.9",
+		"@tanstack/vue-query": "^5.62.16",
 		"@unovis/ts": "^1.5.0",
 		"@unovis/vue": "^1.5.0",
 		"@vee-validate/zod": "^4.15.0",
