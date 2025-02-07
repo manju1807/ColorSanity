@@ -242,8 +242,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       rollup-plugin-visualizer:
-        specifier: ^5.13.1
-        version: 5.13.1(rollup@2.79.2)
+        specifier: ^5.14.0
+        version: 5.14.0(rollup@2.79.2)
       shadcn-vue:
         specifier: ^0.11.3
         version: 0.11.3(@vitest/ui@2.1.8)(eslint@9.17.0(jiti@2.4.2))(magicast@0.3.5)(vitest@2.1.8)(vue@3.5.13(typescript@5.7.2))
@@ -6144,8 +6144,8 @@ packages:
   robust-predicates@3.0.2:
     resolution: {integrity: sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==}
 
-  rollup-plugin-visualizer@5.13.1:
-    resolution: {integrity: sha512-vMg8i6BprL8aFm9DKvL2c8AwS8324EgymYQo9o6E26wgVvwMhsJxS37aNL6ZsU7X9iAcMYwdME7gItLfG5fwJg==}
+  rollup-plugin-visualizer@5.14.0:
+    resolution: {integrity: sha512-VlDXneTDaKsHIw8yzJAFWtrzguoJ/LnQ+lMpoVfYJ3jJF4Ihe5oYLAqLklIK/35lgUY+1yEzCkHyZ1j4A5w5fA==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -13664,7 +13664,7 @@ snapshots:
 
   robust-predicates@3.0.2: {}
 
-  rollup-plugin-visualizer@5.13.1(rollup@2.79.2):
+  rollup-plugin-visualizer@5.14.0(rollup@2.79.2):
     dependencies:
       open: 8.4.2
       picomatch: 4.0.2
