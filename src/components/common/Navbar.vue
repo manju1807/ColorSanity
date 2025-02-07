@@ -3,11 +3,11 @@ import LangToggle from "@/components/common/LangToggle.vue";
 import ModeToggle from "@/components/common/ModeToggle.vue";
 import { Button } from "@/components/ui/button";
 import {
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { useDark } from "@vueuse/core";
 import { Menu, Palette } from "lucide-vue-next";
@@ -24,18 +24,18 @@ const isDark = useDark();
 const isNavOpen = ref(false);
 
 const NavItems = [
-	{ label: "Collections", navRoute: "/collections" },
-	{ label: "Tints", navRoute: "/tints" },
-	// { label: "Color Palettes", navRoute: "/color-palettes" },
+  { label: "Collections", navRoute: "/collections" },
+  { label: "Tints", navRoute: "/tints" },
+  { label: "Color Palettes", navRoute: "/color-palettes" },
 ];
 
 const navigateAndCloseSheet = (navRoute: string) => {
-	router.push(navRoute);
-	isNavOpen.value = false; // Close the sheet after navigation
+  router.push(navRoute);
+  isNavOpen.value = false; // Close the sheet after navigation
 };
 
 const isCurrentRoute = (navRoute: string): boolean => {
-	return router.currentRoute.value.path === navRoute;
+  return router.currentRoute.value.path === navRoute;
 };
 </script>
 

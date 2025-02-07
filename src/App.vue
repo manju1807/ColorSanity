@@ -4,7 +4,6 @@
 import { Toaster } from "@/components/ui/sonner";
 // import { computed } from 'vue'
 import { RouterView } from "vue-router";
-
 // const isDev = computed(() => import.meta.env.MODE === 'development')
 </script>
 
